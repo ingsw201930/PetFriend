@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrototipoApplication",
+            "request": "launch",
+            "mainClass": "com.petfriend.prototipo.PrototipoApplication",
+            "projectName": "prototipo"
+        }
+    ]
+}
