@@ -16,8 +16,8 @@ public class Publicacion {
     private int id;
     @Column(name = "FECHA")
     private Date fecha;//TODO
-    @ManyToOne
-    private Usuario duenho;
+    //@ManyToOne
+    //private Usuario duenho;
     @Column(name = "DESCRIPCION")
     private String descripcion; //TODO
     //TODO --- foto
@@ -37,14 +37,14 @@ public class Publicacion {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-
+/*
     public Usuario getDuenho() {
         return duenho;
     }
 
     public void setDuenho(Usuario duenho) {
         this.duenho = duenho;
-    }
+    }*/
 
     public String getDescripcion() {
         return descripcion;
