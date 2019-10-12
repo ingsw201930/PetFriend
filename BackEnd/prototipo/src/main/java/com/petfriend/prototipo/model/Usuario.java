@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Usuario {
     @Id
@@ -18,8 +20,9 @@ public class Usuario {
     private String correo;
     @Column(name = "CONTRASENHA")
     private String contrasenha;
-    //@OneToMany()
-    //private List<Publicacion> publicaciones;
+    @OneToMany(mappedBy = "duenho")
+    @JsonIgnore
+    private List<Publicacion> publicaciones;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -44,7 +47,7 @@ public class Usuario {
     public void setContrasenha(String contrasenha) {
         this.contrasenha = contrasenha;
     }
-/*
+
     public List<Publicacion> getPublicaciones() {
         return publicaciones;
     }
@@ -52,5 +55,5 @@ public class Usuario {
     public void setPublicaciones(List<Publicacion> publicaciones) {
         this.publicaciones = publicaciones;
     }
-*/
+
 }
