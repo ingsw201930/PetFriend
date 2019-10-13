@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-<link rel="stylesheet" href="estilos/estilos.css">
+<link rel="stylesheet" href="publicacion-final.component.css">
 <meta charset="utf-8">
 <title>PetFriend - publicación</title>
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -50,27 +50,34 @@
           <h3>ColorEjemplo2</h3>
         <h2>Esterilizado:</h2>
           <h3>EsterilizadoEjemplo</h3>
+        <h2>Localidad:</h2>
+          <h3>LocalidadEjemplo</h3>
         <h2>Descripción:</h2>
           <h3>DescripciónEjemplo</h3>
       </div>
-      <div class="fotosDatos">
-        <div class="fotoPrincipal">
-          <img id="myImg" src="imagenes/computadoras.jpg"  width="465" height="465">
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <span class="close">×</span>
-              <img class="modal-content" id="img01">
-              <div id="caption"></div>
-            </div>
+      <div class="segundaColumna">
+        <div class="fotosDatos">
+          <div class="fotoPrincipal">
+            <img id="myImg" src="computadoras.jpg"  width="465" height="465">
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
+          </div>
+          <div class="otraFotos">
+            <img id="myImg" src="fondo.jpg" width="150" height="150">
+            <img id="myImg" src="fondo.jpg" width="150" height="150">
+            <img id="myImg" src="fondo.jpg" width="150" height="150">
+          </div>
         </div>
-        <div class="otraFotos">
-          <img id="myImg" src="imagenes/fondo.jpg" width="150" height="150">
-          <img id="myImg" src="imagenes/fondo.jpg" width="150" height="150">
-          <img id="myImg" src="imagenes/fondo.jpg" width="150" height="150">
+        <div class="botonComunicarse">
+          <input type="submit" value="Comunicarse con propietario">
         </div>
-
-
-
+        <div class="botonEditar">
+          <input type="submit" value="Editar">
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +113,36 @@ span.onclick = function() {
 }
 </script>
 
+<script>
+$(document).ready(function(){
+$(window).scroll(function(){
+  scroll = $(window).scrollTop();
+  if(scroll > 100){
+    $('.menu').css({"position":"fixed"});
+    $('.menu').css({"width":"100%"});
+    $('.menu').css({"top":"0"});
+    $('.menu').css({"background":"#fff"});
+    $('.menu a').css({"color":"#000"});
+    $('.logo').css({"color":"#000"});
+    $('.menu').css({"box-shadow":"rgba(0,0,0,0.22) 6px 1px 1px"});
+    $('.menu').css({"z-index":"100"});
+  }
+  else{
+    $('.menu').css({"position":"relative"});
+    $('.menu').css({"background":"transparent"});
+    $('.menu').css({"box-shadow":"0 0 0"});
+    $('.menu a').css({"color":"#fff"});
+    $('.logo').css({"color":"#fff"});
+  }
+})
+
+$('.menu-icon').click(function(){
+  $('header nav').slideToggle();
+})
+
+})
+
+</script>
 
 
 

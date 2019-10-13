@@ -37,11 +37,12 @@ a{
 header{
   background: #13CE66;
   height: 130px;
+  width: 1350px;
   background-size: cover;
 }
 
 body{
-  background: url(../imagenes/fondo.jpg);
+  background: url(fondo.jpg);
 }
 
 .contenedorPublicación{
@@ -77,9 +78,11 @@ body{
   text-align: left;
 }
 
+.segundaColumna{
+  padding-left: 300px;
+}
 
 .fotosDatos{
-  padding-left: 300px;
   display: flex;
 }
 
@@ -190,8 +193,36 @@ body{
   }
 }
 
+.botonComunicarse{
+  padding: 60px 0px 0px 100px;
+}
 
 
+.botonComunicarse input[type="submit"]{
+  font-size: 25px;
+  color: #ffffff;
+  background: #13CE66;
+  padding: 14px 24px;
+  width: 400px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+}
+
+.botonEditar{
+  padding: 250px 0px 0px 450px;
+}
+
+.botonEditar input[type="submit"]{
+  font-size: 25px;
+  color: #ffffff;
+  background: #00A6FF;
+  padding: 14px 24px;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+}
 
 
 
