@@ -6,6 +6,7 @@ import { PantallaPrincipalComponent } from './componentes/pantalla-principal/pan
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { TiposDePublicacionComponent } from './componentes/tipos-de-publicacion/tipos-de-publicacion.component';
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
+import { NotFoundComponent } from './componentes/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'EditarPublicacion', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'PublicacionFinal', component: VistaPreviaComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
