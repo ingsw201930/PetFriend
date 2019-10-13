@@ -9,6 +9,7 @@ import { TiposDePublicacionComponent } from './componentes/tipos-de-publicacion/
 import { CrearPubicacionComponent } from './componentes/crear-pubicacion/crear-pubicacion.component';
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
+import { NotFoundComponent } from './componentes/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PublicacionFinalComponent } from './componentes/publicacion-final/publi
     TiposDePublicacionComponent,
     CrearPubicacionComponent,
     VistaPreviaComponent,
-    PublicacionFinalComponent
+    PublicacionFinalComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
