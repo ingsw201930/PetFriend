@@ -82,6 +82,11 @@ body{
   padding-left: 300px;
 }
 
+.segundaColumna h2{
+  padding-top: 20px;
+  padding-left: 0px;
+}
+
 .fotosDatos{
   display: flex;
 }
@@ -92,6 +97,7 @@ body{
 
 .otraFotos img{
   border-radius: 8px;
+  display: flex;
 }
 
 .otraFotos div{
@@ -104,9 +110,6 @@ body{
 }
 
 
-
-
-
 #myImg {
   border-radius: 5px;
   cursor: pointer;
@@ -114,6 +117,31 @@ body{
 }
 
 #myImg:hover {opacity: 0.7;}
+
+
+#myImg1 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1:hover {opacity: 0.7;}
+
+#myImg2 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg2:hover {opacity: 0.7;}
+
+#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg3:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
@@ -207,10 +235,12 @@ body{
   text-align: center;
   display: inline-block;
   margin: auto;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .botonEditar{
-  padding: 250px 0px 0px 450px;
+  padding: 100px 0px 0px 450px;
 }
 
 .botonEditar input[type="submit"]{
@@ -222,6 +252,8 @@ body{
   text-align: center;
   display: inline-block;
   margin: auto;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 
