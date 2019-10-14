@@ -1,1 +1,252 @@
-<p>vista-previa works!</p>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<link rel="stylesheet" href="vista-previa.component.css">
+<meta charset="utf-8">
+<title>PetFriend - vista previa</title>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="owl/owl.carousel.min.css">
+<link rel="stylesheet" href="owl/owl.theme.default.min.css">
+</head>
+
+<body>
+<header>
+  <div class="menu">
+    <div class="contenedor">
+      <p class="logo">Mi nombre</p>
+      <nav>
+        <ul>
+          <li><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="vistaPreviaPublicacion">
+  <div class="pantalla">
+    <div class="tituloVistaPrevia">
+      <h1>Vista previa publicación</h1>
+    </div>
+    <div class="contenedorPublicación">
+      <h1>Titulo</h1>
+      <div class="datos">
+        <div class="tituloDatos">
+          <h2>Nombre:</h2>
+            <h3>NombreEjemplo</h3>
+          <h2>Especie:</h2>
+            <h3>EspecieEjemplo</h3>
+          <h2>Edad:</h2>
+            <h3>EdadEjemplo</h3>
+          <h2>Genero:</h2>
+            <h3>GeneroEjemplo</h3>
+          <h2>Raza:</h2>
+            <h3>RazaEjemplo</h3>
+          <h2>Color:</h2>
+            <h3>ColorEjemplo1</h3>
+            <h3>ColorEjemplo2</h3>
+          <h2>Esterilizado:</h2>
+            <h3>EsterilizadoEjemplo</h3>
+          <h2>Localidad:</h2>
+            <h3>LocalidadEjemplo</h3>
+          <h2>Descripción:</h2>
+            <h3>DescripciónEjemplo</h3>
+        </div>
+        <div class="segundaColumna">
+          <div class="fotosDatos">
+            <div class="fotoPrincipal">
+              <img id="myImg" src="gato.jpg"  width="300" height="300">
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <span class="close">×</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+            </div>
+            <div class="otrasFotos">
+              <img id="myImg1" src="gato1.jpg" width="100" height="100">
+                <div id="myModal" class="modal">
+                  <span class="close">×</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+              <img id="myImg2" src="gato2.jpg" width="100" height="100">
+                <div id="myModal" class="modal">
+                  <span class="close">×</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+              <img id="myImg3" src="gato3.jpg" width="100" height="100">
+              <div id="myModal" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
+            </div>
+          </div>
+          <div class="botonComunicarse">
+            <input type="submit" value="Comunicarse con propietario">
+          </div>
+          <h2>Nombre de usuario:</h2>
+          <h3>NombreEjemplo</h3>
+          <div class="botonReportar">
+            <input type="submit" value="Reportar">
+          </div>
+        </div>
+      </div>
+      <div class="botones">
+        <div class="btnCambiar">
+          <input type="submit" name="b" value="Cambiar">
+        </div>
+        <div class="btnListo">
+          <input type="submit" name="aaa" value="Listo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg1');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg2');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg3');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+<script>
+$(document).ready(function(){
+$(window).scroll(function(){
+  scroll = $(window).scrollTop();
+  if(scroll > 100){
+    $('.menu').css({"position":"fixed"});
+    $('.menu').css({"width":"100%"});
+    $('.menu').css({"top":"0"});
+    $('.menu').css({"background":"#fff"});
+    $('.menu a').css({"color":"#000"});
+    $('.logo').css({"color":"#000"});
+    $('.menu').css({"box-shadow":"rgba(0,0,0,0.22) 6px 1px 1px"});
+    $('.menu').css({"z-index":"100"});
+  }
+  else{
+    $('.menu').css({"position":"relative"});
+    $('.menu').css({"background":"transparent"});
+    $('.menu').css({"box-shadow":"0 0 0"});
+    $('.menu a').css({"color":"#fff"});
+    $('.logo').css({"color":"#fff"});
+  }
+})
+
+$('.menu-icon').click(function(){
+  $('header nav').slideToggle();
+})
+
+})
+
+</script>
+
+
+
+</body>
+
+</html>

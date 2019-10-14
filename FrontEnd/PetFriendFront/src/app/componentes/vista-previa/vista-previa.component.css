@@ -1,0 +1,541 @@
+
+
+body{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+header .contenedor{
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+}
+
+header ul{
+  display: flex;
+}
+
+header li{
+  list-style: none;
+  margin-right: 15px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.contenedor{
+  max-width: 1280px;
+  width: 90&;
+  margin: auto;
+}
+
+
+/*
+*/
+
+header{
+  background: #13CE66;
+  height: 130px;
+  width: 1350px;
+  background-size: cover;
+}
+
+body{
+  background: url(fondo.jpg);
+}
+
+.pantalla div{
+  align-content: center;
+}
+
+.tituloVistaPrevia h1{
+  color: #000000;
+  font-size: 60px;
+  padding-left: 30px;
+}
+
+.contenedorPublicación{
+  background-color: rgba(90, 105, 120, 0.25);
+  border-radius: 25px;
+  width: 1000px;
+  height: 700px;
+  margin: 20px 30px 24px 180px;
+}
+
+.datos{
+  display: flex;
+}
+
+.contenedorPublicación h1{
+  color: #47525E;
+  font-size: 35px;
+  margin: 10px 10px 10px 10px;
+  padding: 0;
+}
+
+.contenedorPublicación h2{
+  color: #47525E;
+  font-size: 20px;
+  margin: 10px 10px 0px 70px;
+}
+
+.contenedorPublicación h3{
+  color: #000000;
+  font-size: 15px;
+  margin: 0px 10px 0px 110px;
+  text-align: left;
+}
+
+.segundaColumna{
+  padding-left: 250px;
+}
+
+.fotosDatos{
+  display: flex;
+}
+
+.fotosDatos img{
+  border-radius: 8px;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+
+#myImg1 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1:hover {opacity: 0.7;}
+
+#myImg2 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg2:hover {opacity: 0.7;}
+
+#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg3:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1400px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)}
+  to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+.segundaColumna h2{
+  padding-top: 20px;
+  padding-left: 0px;
+}
+
+
+.otrasFotos img{
+  display: flex;
+}
+
+.botonComunicarse{
+  padding: 40px 0px 0px 70px;
+}
+
+.botonComunicarse input[type="submit"]{
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #13CE66;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botonReportar{
+  padding: 100px 0px 0px 350px;
+}
+
+.botonReportar input[type="submit"]{
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #f95f62;
+  padding: 14px;
+  width: 120px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+.btnListo input[type="submit"]{
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #00A6FF;
+  padding: 14px;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  margin-left: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnCambiar input[type="submit"]{
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #B3BBC5;
+  padding: 14px;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botones{
+  padding: 50px 0px 20px 750px;
+  display: flex;
+}
+
+.botones input{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+
+
+
+
+
+
+/*
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+#contenedor-titulo-flex{
+  display: flex;
+  justify-content: center;
+  margin: 18vh 0;
+  max-width: 1600px;
+}
+
+h1{
+  font-size: 60px;
+  color: #fff;
+  margin: 0;
+}
+
+h2{
+  font-size: 25px;
+  color: #fff;
+}
+
+.contenedor-titulo{
+  text-align: center;
+}
+
+.contenedor-titulo a, #sobre-mi a, #blog a, #que-esperas a, #contacto input[type="submit"]{
+  font-size: 14px;
+  color: #fff;
+  background: #5cb8ff;
+  padding: 14px 24px;
+  width: 128px;
+  text-align: center;
+  display: inline-block;
+}
+
+p.logo{
+  color: #fff;
+  font-size: 20px;
+}
+
+nav ul li a{
+  color: #fff;
+}
+
+
+/*Seccion de sobre mi*/
+h3{
+  text-align: center;
+  font-size: 55px;
+  font-weight: normal;
+}
+
+#sobre-mi .contenedor-sobre-mi{
+  display: flex;
+  justify-content: space-around;
+}
+
+#sobre-mi .texto{
+  width: 42%;
+}
+
+
+/*Seccion servicios*/
+
+.contenedor-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.servicio{
+  width: 24%;
+  padding: 34px 30px 38px 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.servicio h4 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.servicio p{
+  margin-bottom: 20px;
+  height: 194px;
+}
+
+
+.contenedor-servicios .violeta{
+  background-image:linear-gradient(to top,#5055df,#6d68f3);
+  box-shadow: 0 12px 30px 0 rgba(80,85,223,.37);
+}
+
+.contenedor-servicios .azul{
+  background:linear-gradient(to top,#40a8f9,#5cb8ff);
+  box-shadow: 0 12px 30px 0 rgba(86,163,222,.3);
+}
+
+.icono{
+  float: right;
+}
+
+
+/*Seccion mis trabajos*/
+
+button.owl-prev, button.owl-next{
+  font-size: 40px !important;
+}
+
+span{
+  color: #71bcfa;
+}
+
+#mis-trabajos p{
+  text-align: center;
+  color: #000;
+}
+
+
+/*trabajr conmigo*/
+.contenedor-trabajar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#Porque-trabajar .item{
+  width: 24%;
+  text-align: center;
+}
+
+#Porque-trabajar ul li{
+  list-style: none;
+}
+
+#Porque-trabajar ul li:nth-child(1){
+  font-weight: bold;
+  font-size: 19px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#Porque-trabajar ul li:nth-child(2){
+  line-height: 31px;
+}
+
+
+/*blog*/
+
+#blog{
+  background: #f213;
+}
+
+#blog .contenedor-publicaciones{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+#blog .publicacion{
+  width: 30%;
+  box-shadow: 1px 1px 14px #ccc;
+}
+#blog .contenido{
+  background: #fff;
+  padding: 20px;
+}
+#blog h4{
+  font-size: 23px;
+  margin-bottom: 15px;
+  margin: 0;
+}
+
+#blog p{
+  font-size: 26px;
+  color: #5a6169;
+  line-height: 24px;
+}
+
+#blog a{
+  width: 87px;
+}
+
+/* Seccion que esperas*/
+
+#que-esperas{
+  background: linear-gradient(rgba(84,93,220,.94),rgba(96,171,245,.9));
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 40px;
+}
+#que-esperas h3{
+  font-size: 23px;
+  color: #fff;
+}
+
+/* seccion contacto */
+#contacto form{
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  width: 77%;
+  margin: auto;
+}
+
+input[type="text"], input[type="email"]{
+  width: 49%;
+  margin-bottom: 15px;
+  padding: 18px 0;
+  border: 0;
+  border-bottom: 1px solid #5cb8ff;
+  font-size: 17px;
+}
+
+textarea{
+  padding: 18px;
+  border: 0;
+  border-bottom: 1px solid #5cb8ff;
+  font-size: 17px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+#contacto input[type="submit"]{
+  width: 166px;
+  margin: auto;
+}
