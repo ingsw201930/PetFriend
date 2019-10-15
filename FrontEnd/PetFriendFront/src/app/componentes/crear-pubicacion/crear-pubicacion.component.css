@@ -17,3 +17,7 @@ img {
     border-radius: 5px;
     display: block;
 }
+
+body {
+    background-image: url('assets/pet.png')
+}
