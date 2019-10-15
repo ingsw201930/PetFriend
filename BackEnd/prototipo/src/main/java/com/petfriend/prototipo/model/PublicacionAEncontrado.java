@@ -15,5 +15,4 @@ public class PublicacionAEncontrado extends PublicacionBusqueda {
 	public void setLugarEncontrado(String lugarEncontrado) {
 		this.lugarEncontrado = lugarEncontrado;
 	}
-	
 }
