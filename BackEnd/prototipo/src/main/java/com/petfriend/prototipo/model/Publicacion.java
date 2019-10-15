@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Publicacion {
+public /*abstract*/ class Publicacion {
     @Id
     @GeneratedValue
     @Column(name = "ID")
@@ -26,7 +26,10 @@ public class Publicacion {
     @Column(name = "DESCRIPCION")
     private String descripcion; //TODO
     //TODO --- foto
-
+    
+    public Publicacion()
+    {
+    }
     public int getId() {
         return id;
     }

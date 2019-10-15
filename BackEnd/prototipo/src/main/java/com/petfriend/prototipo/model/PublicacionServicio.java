@@ -6,10 +6,7 @@ import javax.persistence.Entity;
 @Entity
 //@PrimaryKeyJoinColumn(name = "pubI")
 public class PublicacionServicio extends Publicacion {
-	
-	
-	public PublicacionServicio() {
-		
-	}
 
+	public PublicacionServicio() {
+	}	
 }

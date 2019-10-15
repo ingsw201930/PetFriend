@@ -18,5 +18,8 @@ public class PublicacionAdopcion extends PublicacionAnimal {
 	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
 	}
+
+	public PublicacionAdopcion() {
+	}
 	
 }

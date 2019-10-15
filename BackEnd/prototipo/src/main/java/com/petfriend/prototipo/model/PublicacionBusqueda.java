@@ -7,5 +7,8 @@ import javax.persistence.Entity;
 @Entity
 @PrimaryKeyJoinColumn(name = "id_publicacion")
 public class PublicacionBusqueda extends PublicacionAnimal {
-
+	
+	public PublicacionBusqueda() {
+	}
+	
 }

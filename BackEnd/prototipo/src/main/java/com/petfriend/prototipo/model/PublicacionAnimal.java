@@ -9,13 +9,16 @@ import javax.persistence.OneToOne;
 @PrimaryKeyJoinColumn(name = "id_publicacion")
 public class PublicacionAnimal extends Publicacion {
 	@OneToOne(mappedBy = "publicacion")
-	private Animal animal;
-
+	private Animal animalAsociado;
+	
 	public Animal getAnimal() {
-		return animal;
+		return animalAsociado;
+	}
+	
+	public void setAnimal(Animal animal) {
+		this.animalAsociado = animal;
 	}
 
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
+	public PublicacionAnimal() {
 	}
 }

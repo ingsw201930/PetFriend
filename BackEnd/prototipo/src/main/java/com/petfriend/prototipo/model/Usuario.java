@@ -55,5 +55,7 @@ public class Usuario {
     public void setPublicaciones(List<Publicacion> publicaciones) {
         this.publicaciones = publicaciones;
     }
-
+    public void pushPublicacion(Publicacion p) {
+    	this.publicaciones.add(p);
+    }
 }
