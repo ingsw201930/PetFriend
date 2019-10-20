@@ -6,19 +6,19 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@PrimaryKeyJoinColumn(name = "pubAni")
+@PrimaryKeyJoinColumn(name = "PUBLICACIONANIMAL")
 public class PublicacionAdopcion extends PublicacionAnimal {
-	@Column(name="LOCALIDAD")
-	private String localidad;
+	@Column(name="ENCONTRADO")
+	private boolean encontrado;
 
-	public String getLocalidad() {
-		return localidad;
+	public boolean isEncontrado() {
+		return encontrado;
 	}
-
-	public void setLocalidad(String localidad) {
-		this.localidad = localidad;
+	
+	public void setEncontrado(boolean encontrado) {
+		this.encontrado = encontrado;
 	}
-
+	
 	public PublicacionAdopcion() {
 	}
 	

@@ -18,7 +18,7 @@ public /*abstract*/ class Publicacion {
     @GeneratedValue
     @Column(name = "ID")
     private int id;
-    @Column(name = "FECHA")
+    @Column(name = "FECHACREACION")
     private Date fecha;//TODO
     @ManyToOne
     @JoinColumn(name="ID_DUENIO", nullable=false)
@@ -26,6 +26,8 @@ public /*abstract*/ class Publicacion {
     @Column(name = "DESCRIPCION")
     private String descripcion; //TODO
     //TODO --- foto
+    @Column(name = "LOCALIDADPUBLICACION")
+    private String localidad;//TODO
     
     public Publicacion()
     {
@@ -61,5 +63,12 @@ public /*abstract*/ class Publicacion {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+	public String getLocalidad() {
+		return localidad;
+	}
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+    
     
 }
