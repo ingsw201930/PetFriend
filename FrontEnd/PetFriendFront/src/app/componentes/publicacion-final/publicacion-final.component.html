@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-<link rel="stylesheet" href="publicacion-final.component.css">
-<meta charset="utf-8">
-<title>PetFriend - publicación</title>
-<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="owl/owl.carousel.min.css">
-<link rel="stylesheet" href="owl/owl.theme.default.min.css">
-</head>
+
+<link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
 <body>
-
 <header>
   <div class="menu">
     <div class="contenedor">
-      <p class="logo">Mi nombre</p>
+      <p class="logo">PetFriend</p>
       <nav>
         <ul>
           <li><a href="">1</a></li>
@@ -28,7 +20,7 @@
   </div>
 </header>
 
-<main>
+
 
 <section id="publicacion">
   <div class="contenedorPublicación">
@@ -36,24 +28,22 @@
     <div class="datos">
       <div class="tituloDatos">
         <h2>Nombre:</h2>
-          <h3>NombreEjemplo</h3>
+          <h3>{{nombreAnimal}}</h3>
         <h2>Especie:</h2>
-          <h3>EspecieEjemplo</h3>
+          <h3>{{especieAnimal}}</h3>
         <h2>Edad:</h2>
-          <h3>EdadEjemplo</h3>
+          <h3>{{edadAnimal}}</h3>
         <h2>Genero:</h2>
-          <h3>GeneroEjemplo</h3>
+          <h3>{{generoAnimal}}</h3>
         <h2>Raza:</h2>
-          <h3>RazaEjemplo</h3>
+          <h3>{{razaAnimal}}</h3>
         <h2>Color:</h2>
-          <h3>ColorEjemplo1</h3>
-          <h3>ColorEjemplo2</h3>
+          <h3>{{color1Animal}}</h3>
+          <h3>{{color2Animal}}</h3>
         <h2>Esterilizado:</h2>
-          <h3>EsterilizadoEjemplo</h3>
+          <h3>{{esterilizadoAnimal}}</h3>
         <h2>Localidad:</h2>
-          <h3>LocalidadEjemplo</h3>
-        <h2>Descripción:</h2>
-          <h3>DescripciónEjemplo</h3>
+          <h3>{{localidadAnimal}}</h3>
       </div>
       <div class="segundaColumna">
         <div class="fotosDatos">
@@ -97,6 +87,10 @@
         </div>
       </div>
     </div>
+    <div class="descripcion">
+      <h2>Descripción:</h2>
+        <h3>{{descripcionPublicacion}}</h3>
+    </div>
   </div>
 
 </section>
@@ -104,134 +98,4 @@
 
 
 
-</main>
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg1');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg2');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg3');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
-
-<script>
-$(document).ready(function(){
-$(window).scroll(function(){
-  scroll = $(window).scrollTop();
-  if(scroll > 100){
-    $('.menu').css({"position":"fixed"});
-    $('.menu').css({"width":"100%"});
-    $('.menu').css({"top":"0"});
-    $('.menu').css({"background":"#fff"});
-    $('.menu a').css({"color":"#000"});
-    $('.logo').css({"color":"#000"});
-    $('.menu').css({"box-shadow":"rgba(0,0,0,0.22) 6px 1px 1px"});
-    $('.menu').css({"z-index":"100"});
-  }
-  else{
-    $('.menu').css({"position":"relative"});
-    $('.menu').css({"background":"transparent"});
-    $('.menu').css({"box-shadow":"0 0 0"});
-    $('.menu a').css({"color":"#fff"});
-    $('.logo').css({"color":"#fff"});
-  }
-})
-
-$('.menu-icon').click(function(){
-  $('header nav').slideToggle();
-})
-
-})
-
-</script>
-
-
-
 </body>
-
-</html>

@@ -1,14 +1,30 @@
 
+header{
+  position: sticky;
+  background: #13CE66;
+  height: 130px;
+  width: 100%;
+  background-size: cover;
+  margin: 0px 0px 0px 0px;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+}
 
-body{
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+p.logo{
+  color: #ffffff;
+  font-size: 90px;
+  font-family: 'Grand Hotel', cursive;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding-left: 0px;
+  margin: 0px 0px 0px 0px;
+  text-shadow: 1px 7px #333, 1px 10px #000;
 }
 
 header .contenedor{
   display: flex;
-  justify-content: space-between;
-  color: #ffffff;
+  color: #000000;
 }
 
 header ul{
@@ -20,55 +36,46 @@ header li{
   margin-right: 15px;
 }
 
+.contenedor{
+  max-width: 1280px;
+  width: 95%;
+  margin: auto;
+}
+
+body{
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background: url("src\assets\fondo.jpg");
+}
+
 a{
   text-decoration: none;
 }
 
-.contenedor{
-  max-width: 1280px;
-  width: 90&;
-  margin: auto;
-}
-
-
-/*
-*/
-
-header{
-  background: #13CE66;
-  height: 130px;
-  width: 1350px;
-  background-size: cover;
-}
-
-body{
-  background: url(fondo.jpg);
+.publicacion {
+  margin: 20px 20px 0px 20px;
 }
 
 .contenedorPublicación{
   background-color: rgba(90, 105, 120, 0.25);
   border-radius: 25px;
-  width: 1300px;
-  height: 1000px;
-  margin: 30px 30px 24px 30px;
-}
-
-.datos{
-  display: flex;
-  columns: 3;
+  width: 1230px;
+  height: 1240px;
+  margin: 30px 30px 0px 30px;
 }
 
 .contenedorPublicación h1{
   color: #47525E;
   font-size: 40px;
-  margin: 20px 20px 20px 20px;
-  padding: 0;
+  margin: 0px 20px 0px 20px;
+  padding: 20px 0px 10px 0px;
 }
 
 .contenedorPublicación h2{
   color: #47525E;
-  font-size: 25px;
+  font-size: 30px;
   margin: 20px 20px 0px 80px;
+  padding: 10px 0px 10px 0px;
 }
 
 .contenedorPublicación h3{
@@ -78,8 +85,16 @@ body{
   text-align: left;
 }
 
+.datos{
+  display: flex;
+}
+
+.descripcion{
+  margin-right: 150px;
+}
+
 .segundaColumna{
-  padding-left: 300px;
+  padding-left: 250px;
 }
 
 .segundaColumna h2{
@@ -256,15 +271,6 @@ body{
   border-radius: 8px;
 }
 
-
-
-
-
-
-
-/*
-*/
-
 html {
   scroll-behavior: smooth;
 }
@@ -276,223 +282,10 @@ html {
   max-width: 1600px;
 }
 
-h1{
-  font-size: 60px;
-  color: #fff;
-  margin: 0;
-}
 
-h2{
-  font-size: 25px;
-  color: #fff;
-}
 
-.contenedor-titulo{
-  text-align: center;
-}
 
-.contenedor-titulo a, #sobre-mi a, #blog a, #que-esperas a, #contacto input[type="submit"]{
-  font-size: 14px;
-  color: #fff;
-  background: #5cb8ff;
-  padding: 14px 24px;
-  width: 128px;
-  text-align: center;
-  display: inline-block;
-}
-
-p.logo{
-  color: #fff;
-  font-size: 20px;
-}
 
 nav ul li a{
   color: #fff;
-}
-
-
-/*Seccion de sobre mi*/
-h3{
-  text-align: center;
-  font-size: 55px;
-  font-weight: normal;
-}
-
-#sobre-mi .contenedor-sobre-mi{
-  display: flex;
-  justify-content: space-around;
-}
-
-#sobre-mi .texto{
-  width: 42%;
-}
-
-
-/*Seccion servicios*/
-
-.contenedor-servicios {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  color: #fff;
-}
-
-.servicio{
-  width: 24%;
-  padding: 34px 30px 38px 30px;
-  border-radius: 15px;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.servicio h4 {
-  font-size: 30px;
-  margin: 0;
-}
-
-.servicio p{
-  margin-bottom: 20px;
-  height: 194px;
-}
-
-
-.contenedor-servicios .violeta{
-  background-image:linear-gradient(to top,#5055df,#6d68f3);
-  box-shadow: 0 12px 30px 0 rgba(80,85,223,.37);
-}
-
-.contenedor-servicios .azul{
-  background:linear-gradient(to top,#40a8f9,#5cb8ff);
-  box-shadow: 0 12px 30px 0 rgba(86,163,222,.3);
-}
-
-.icono{
-  float: right;
-}
-
-
-/*Seccion mis trabajos*/
-
-button.owl-prev, button.owl-next{
-  font-size: 40px !important;
-}
-
-span{
-  color: #71bcfa;
-}
-
-#mis-trabajos p{
-  text-align: center;
-  color: #000;
-}
-
-
-/*trabajr conmigo*/
-.contenedor-trabajar{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-#Porque-trabajar .item{
-  width: 24%;
-  text-align: center;
-}
-
-#Porque-trabajar ul li{
-  list-style: none;
-}
-
-#Porque-trabajar ul li:nth-child(1){
-  font-weight: bold;
-  font-size: 19px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#Porque-trabajar ul li:nth-child(2){
-  line-height: 31px;
-}
-
-
-/*blog*/
-
-#blog{
-  background: #f213;
-}
-
-#blog .contenedor-publicaciones{
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
-
-
-#blog .publicacion{
-  width: 30%;
-  box-shadow: 1px 1px 14px #ccc;
-}
-#blog .contenido{
-  background: #fff;
-  padding: 20px;
-}
-#blog h4{
-  font-size: 23px;
-  margin-bottom: 15px;
-  margin: 0;
-}
-
-#blog p{
-  font-size: 26px;
-  color: #5a6169;
-  line-height: 24px;
-}
-
-#blog a{
-  width: 87px;
-}
-
-/* Seccion que esperas*/
-
-#que-esperas{
-  background: linear-gradient(rgba(84,93,220,.94),rgba(96,171,245,.9));
-  text-align: center;
-  padding: 50px 0;
-  margin-top: 40px;
-}
-#que-esperas h3{
-  font-size: 23px;
-  color: #fff;
-}
-
-/* seccion contacto */
-#contacto form{
-  display: flex;
-  justify-content:space-between;
-  flex-wrap: wrap;
-  width: 77%;
-  margin: auto;
-}
-
-input[type="text"], input[type="email"]{
-  width: 49%;
-  margin-bottom: 15px;
-  padding: 18px 0;
-  border: 0;
-  border-bottom: 1px solid #5cb8ff;
-  font-size: 17px;
-}
-
-textarea{
-  padding: 18px;
-  border: 0;
-  border-bottom: 1px solid #5cb8ff;
-  font-size: 17px;
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-#contacto input[type="submit"]{
-  width: 166px;
-  margin: auto;
 }

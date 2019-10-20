@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publicacion-final.component.css']
 })
 export class PublicacionFinalComponent implements OnInit {
+    title = 'PetFriend';
 
-  constructor() { }
-
-  ngOnInit() {
+    nombreAnimal = "Nombre";
+    especieAnimal = "Especie";
+    edadAnimal = "Edad";
+    generoAnimal = "Genero";
+    razaAnimal = "Raza";
+    color1Animal = "Color1";
+    color2Animal = "Color2";
+    esterilizadoAnimal = "Si";
+    localidadAnimal = "LocalidadAnimal";
+    descripcionPublicacion = "Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción "
   }
-
-}
