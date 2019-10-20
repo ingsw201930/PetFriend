@@ -1,5 +1,6 @@
 package com.petfriend.prototipo.model;
 
+import java.io.File;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -23,6 +24,22 @@ public class Usuario {
     @OneToMany(mappedBy = "duenho")
     @JsonIgnore
     private List<Publicacion> publicaciones;
+
+    @Column(name = "FOTO")
+    private byte[] foto;
+
+    public Usuario(){
+    }
+
+    public Usuario(String correo, String contrasenha, File foto){
+        this.correo = correo;
+        this.contrasenha = contrasenha;
+        try{
+            this.foto = Utils.ImageToByte(foto);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
     public int getIdUsuario() {
         return idUsuario;
@@ -55,6 +72,15 @@ public class Usuario {
     public void setPublicaciones(List<Publicacion> publicaciones) {
         this.publicaciones = publicaciones;
     }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
     public void pushPublicacion(Publicacion p) {
     	this.publicaciones.add(p);
     }
