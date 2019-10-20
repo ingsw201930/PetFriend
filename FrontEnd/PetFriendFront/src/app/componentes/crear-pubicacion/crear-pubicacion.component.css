@@ -2,7 +2,7 @@ img {
     max-width: 100%;
     margin: 2px;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
     display: block;
 }
 
@@ -16,8 +16,4 @@ img {
     border: 1px solid black;
     border-radius: 5px;
     display: block;
-}
-
-body {
-    background-image: url('assets/pet.png')
 }
