@@ -1,68 +1,67 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
-  </head>
+</head>
 <div class="fondo">
-    <nav class="navbar navbar-expand-lg navbar-default"  >
-      <a class="navbar-brand" href="Principal">PetFriend</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-default">
+        <a class="navbar-brand" href="Principal">PetFriend</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-primary" href="#" style="color:#FFFFFF;">Adopta <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-primary" href="#" style="color:#FFFFFF;">Encuentra</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-primary" href="#" style="color:#FFFFFF;">Publica</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-primary" href="#" style="color:#FFFFFF;">Servicios</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-right">
-          <li><a [routerLink]="['/IniciarSesion']" class="btn btn-primary">Registrarse</a></li>
-          <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Iniciar Sesión</a></li>
-        </ul>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Adopta <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Encuentra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Publica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Servicios</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li><a [routerLink]="['/IniciarSesion']" class="btn btn-primary">Registrarse</a></li>
+                <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Iniciar Sesión</a></li>
+            </ul>
 
-      </div>
+        </div>
     </nav>
-  </div>
-  <div class="mainPrincipal">
-      <section id="login" class="mb-5 mt-0">
-          <div class="container">
+</div>
+<br>
+<br>
+<div class="mainPrincipal">
+    <section id="login" class="mb-5 mt-0">
+        <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-                <div class="card_login">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <form action="">
-                        <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Iniciar sesión en Petfriend</h1>
-                        <div class="alert alert-danger" role="alert" *ngIf="isError">
-                          Something is wrong!
+                <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                    <div class="card_login">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <form action="">
+                                    <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Iniciar sesión en Petfriend</h1>
+                                    <div class="alert alert-danger" role="alert" *ngIf="isError">
+                                        Something is wrong!
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
+                                    <div class="form-group">
+                                        <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <input type="email" id="email" name="email" class="form-control" placeholder="Email"  required>
-                        </div>
-                        <div class="form-group">
-                          <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-                            required>
-                        </div>
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
-                        <div class="form-group">
-                          <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
-                        </div>
-                      </form>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
-
-        aiuda
-  </div>
+        </div>
+    </section>
+</div>
