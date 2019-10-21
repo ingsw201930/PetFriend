@@ -1,3 +1,44 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
+</head>
+<div class="fondo">
+    <nav class="navbar navbar-expand-lg navbar-default">
+        <a class="navbar-brand" href="Principal">PetFriend</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Adopta <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Encuentra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Publica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Servicios</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li><a [routerLink]="['/login']" class="btn btn-primary">Registrarse</a></li>
+                <li><a [routerLink]="['/registro']" class="btn btn-secondary">Iniciar Sesión</a></li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<div class="mainPrincipal">
+    <div class="formPrincipal">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Search</button>
+        </form>
+    </div>
+</div>
 <br>
 <br>
 <div class="container">

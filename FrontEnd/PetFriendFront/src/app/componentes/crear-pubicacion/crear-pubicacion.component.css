@@ -17,3 +17,58 @@ img {
     border-radius: 5px;
     display: block;
 }
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 60px;
+    font-family: 'Grand Hotel', cursive;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding-left: 0px;
+    margin-right: 100px;
+    text-shadow: 1px 7px #333, 1px 2px #000;
+}
+
+.navbar {
+    background-image: none;
+    background-color: #00ff40a1;
+    color: #ffffff;
+}
+
+.navbar-nav {
+    font-size: 30px;
+    font-family: 'Arial', cursive;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding-left: 10px;
+    text-shadow: 1px 2px #333, 1px 1px #000;
+}
+
+.navbar-brand:focus {
+    color: #ecdbff;
+}
+
+.navbar-link {
+    color: #ffffff;
+}
+
+.mainPrincipal {
+    background-image: url("../../../assets/fondo.jpg");
+}
+
+.formPrincipal {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.form-control {
+    width: 18em;
+}
+
+.nav-primary {
+    margin: 20px;
+}
+
+.btn {
+    margin: 5px;
+}
