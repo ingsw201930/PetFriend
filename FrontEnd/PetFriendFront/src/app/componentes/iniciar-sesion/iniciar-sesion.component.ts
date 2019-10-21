@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class IniciarSesionComponent implements OnInit {
 
   constructor() { }
-
+  private titulo: string = 'Petfriend';
   ngOnInit() {
   }
 
