@@ -27,7 +27,7 @@ public class UsuarioController {
 
 	@GetMapping("/test")
 	public void test() {
-		Usuario u = new Usuario("correo@gmail.com", "larecontra", new File("prototipo/pasaporte.jpg"));
+		Usuario u = new Usuario("correo@gmail.com", "larecontra", new File("pasaporte.jpg"));
 		usuarioRepo.save(u);
 
 		Usuario test = usuarioRepo.findById(1).orElse(null);
