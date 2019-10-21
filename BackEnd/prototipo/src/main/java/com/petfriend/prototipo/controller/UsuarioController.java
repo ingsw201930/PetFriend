@@ -40,7 +40,7 @@ public class UsuarioController {
 	 }
 	@GetMapping("/pubAnimal")
 	public void test2() {
-		Usuario u= usuarioRepo.findById(7).orElse(null);
+		Usuario u= usuarioRepo.findById(4).get();
 		if(u!=null) {
 			PublicacionAdopcion p=new PublicacionAdopcion();
 			p.setLocalidad("Chapi");

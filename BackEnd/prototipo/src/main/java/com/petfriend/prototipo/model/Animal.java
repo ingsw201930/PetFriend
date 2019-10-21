@@ -5,6 +5,7 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -17,10 +18,8 @@ public class Animal implements Serializable{
      */
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue
     private int idAnimal;
-    @OneToOne
-    @JsonIgnore
-    private PublicacionAnimal publicacion;
     @Column(name = "NOMBRE")
     private String nombre;
     @Column(name = "ESPECIE")
@@ -35,6 +34,9 @@ public class Animal implements Serializable{
     private Boolean esterilizado;
     @Column(name = "FECHA")
     private Date fecha;//TODO
+    @OneToOne
+    @JsonIgnore
+    private PublicacionAnimal publicacion;
     //TODO --- fotos
     
     public Animal(PublicacionAnimal publicacion, String nombre, String especie, String raza, String color,
@@ -48,6 +50,17 @@ public class Animal implements Serializable{
 		this.sexo = sexo;
 		this.esterilizado = esterilizado;
 	}
+	public Animal(Animal n) {
+		super();
+		this.nombre = n.nombre;
+		this.especie = n.especie;
+		this.raza = n.raza;
+		this.color = n.color;
+		this.sexo = n.sexo;
+		this.esterilizado = n.esterilizado;
+		this.fecha = n.fecha;
+	}
+
 	public int getIdAnimal() {
 		return idAnimal;
 	}
