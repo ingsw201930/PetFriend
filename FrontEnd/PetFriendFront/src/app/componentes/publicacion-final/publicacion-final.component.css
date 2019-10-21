@@ -45,7 +45,7 @@ header li{
 body{
   margin: 0;
   font-family: 'Lato', sans-serif;
-  background: url("src\assets\fondo.jpg");
+  background: url('\..\..\..\assets\fondo.jpg');
 }
 
 a{

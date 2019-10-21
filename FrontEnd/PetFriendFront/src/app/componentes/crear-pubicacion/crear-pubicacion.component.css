@@ -1,0 +1,19 @@
+img {
+    max-width: 100%;
+    margin: 2px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: block;
+}
+
+.file {
+    margin-bottom: 50px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-left: 20px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+}
