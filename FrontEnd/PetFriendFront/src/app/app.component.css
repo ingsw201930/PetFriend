@@ -32,10 +32,6 @@
     color: #ffffff;
 }
 
-.mainPrincipal {
-    background-image: url("../../imagenes/fondoPrincipal.jpeg");
-}
-
 .formPrincipal {
     margin: 0 auto;
     width: 400px;
@@ -51,4 +47,10 @@
 
 .btn {
     margin: 5px;
+}
+
+.fondo {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('..\assets\fondo.jpg');
 }

@@ -1,7 +1,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
 </head>
-<div class="fondo">
+<div class="fondo ">
     <nav class="navbar navbar-expand-lg navbar-default">
         <a class="navbar-brand" href="Principal">PetFriend</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,19 +13,19 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <br>
-                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Adopta <span class="sr-only">(current)</span></a>
+                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Adopta <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <br>
-                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Encuentra</a>
+                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Encuentra</a>
                 </li>
                 <li class="nav-item">
                     <br>
-                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Publica</a>
+                    <a class="nav-primary" [routerLink]="['/TiposDePublicacion']" style="color:#FFFFFF;">Publica</a>
                 </li>
                 <li class="nav-item">
                     <br>
-                    <a class="nav-primary" href="#" style="color:#FFFFFF;">Servicios</a>
+                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Servicios</a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right">
@@ -36,4 +36,6 @@
         </div>
     </nav>
 </div>
-<router-outlet></router-outlet>
+<div class="fondo">
+    <router-outlet></router-outlet>
+</div>
