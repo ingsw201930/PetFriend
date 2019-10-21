@@ -1,1 +1,114 @@
-<p>vista-previa works!</p>
+<link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+
+<body>
+    <header>
+        <div class="menu">
+            <div class="contenedor">
+                <p class="logo">PetFriend</p>
+                <nav>
+                    <ul>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="vistaPreviaPublicacion">
+        <div class="pantalla">
+            <div class="tituloVistaPrevia">
+                <h1>Vista previa publicación</h1>
+            </div>
+            <div class="contenedorPublicación">
+                <h1>Titulo</h1>
+                <div class="datos">
+                    <div class="tituloDatos">
+                        <h2>Nombre:</h2>
+                        <h3>{{nombreAnimal}}</h3>
+                        <h2>Especie:</h2>
+                        <h3>{{especieAnimal}}</h3>
+                        <h2>Edad:</h2>
+                        <h3>{{edadAnimal}}</h3>
+                        <h2>Genero:</h2>
+                        <h3>{{generoAnimal}}</h3>
+                        <h2>Raza:</h2>
+                        <h3>{{razaAnimal}}</h3>
+                        <h2>Color:</h2>
+                        <h3>{{color1Animal}}</h3>
+                        <h3>{{color2Animal}}</h3>
+                        <h2>Esterilizado:</h2>
+                        <h3>{{esterilizadoAnimal}}</h3>
+                        <h2>Localidad:</h2>
+                        <h3>{{localidadAnimal}}</h3>
+                    </div>
+                    <div class="segundaColumna">
+                        <div class="fotosDatos">
+                            <div class="fotoPrincipal">
+                                <img id="myImg" src="assets\gato.jpg" width="300" height="300">
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+                                    <span class="close">×</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                            </div>
+                            <div class="otraFotos">
+                                <img id="myImg1" src="assets\gato1.jpg" width="100" height="100">
+                                <div id="myModal" class="modal">
+                                    <span class="close">×</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                                <img id="myImg2" src="assets\gato2.jpg" width="100" height="100">
+                                <div id="myModal" class="modal">
+                                    <span class="close">×</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                                <img id="myImg3" src="gato3.jpg" width="100" height="100">
+                                <div id="myModal" class="modal">
+                                    <span class="close">×</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botonComunicarse">
+                            <input type="submit" value="Comunicarse con propietario">
+                        </div>
+                        <h2>Nombre de usuario:</h2>
+                        <h3>NombreEjemplo</h3>
+                        <div class="botonReportar">
+                            <input type="submit" value="Reportar">
+                        </div>
+                    </div>
+                </div>
+                <div class="descripcion">
+                    <h2>Descripción:</h2>
+                    <h3>{{descripcionPublicacion}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="botones">
+            <div class="botonCambiar">
+                <input type="submit" name="b" value="Cambiar">
+            </div>
+            <div class="botonListo">
+                <input type="submit" name="aaa" value="Listo">
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+</body>
