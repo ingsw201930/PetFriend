@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Animal implements Serializable{
     /**
@@ -17,6 +19,7 @@ public class Animal implements Serializable{
     @Id
     private int idAnimal;
     @OneToOne
+    @JsonIgnore
     private PublicacionAnimal publicacion;
     @Column(name = "NOMBRE")
     private String nombre;
@@ -25,7 +28,7 @@ public class Animal implements Serializable{
     @Column(name = "RAZA")
     private String raza;
     @Column(name = "COLOR")
-    private Character color;
+    private String color;
     @Column(name = "SEXO")
     private Character sexo;
     @Column(name = "ESTERILIZADO")
@@ -34,7 +37,17 @@ public class Animal implements Serializable{
     private Date fecha;//TODO
     //TODO --- fotos
     
-	
+    public Animal(PublicacionAnimal publicacion, String nombre, String especie, String raza, String color,
+			Character sexo, Boolean esterilizado) {
+		super();
+		this.publicacion = publicacion;
+		this.nombre = nombre;
+		this.especie = especie;
+		this.raza = raza;
+		this.color = color;
+		this.sexo = sexo;
+		this.esterilizado = esterilizado;
+	}
 	public int getIdAnimal() {
 		return idAnimal;
 	}
@@ -66,10 +79,10 @@ public class Animal implements Serializable{
 	public void setRaza(String raza) {
 		this.raza = raza;
 	}
-	public Character getColor() {
+	public String getColor() {
 		return color;
 	}
-	public void setColor(Character color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 	public Character getSexo() {

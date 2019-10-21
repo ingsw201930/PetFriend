@@ -56,7 +56,7 @@ public class UsuarioIniciadoRESTController {
 		return this.animalEncRepo.save(pAnimal);
 	}
 	
-	@GetMapping("{id}/publicacionAPerdio/{idP}")
+	@GetMapping("{id}/publicacionAEncontrado/{idP}")
 	public PublicacionAnimal obtenerPAEncontrado(@PathVariable int idP)
 	{
 		return this.animalEncRepo.findById(idP).get();

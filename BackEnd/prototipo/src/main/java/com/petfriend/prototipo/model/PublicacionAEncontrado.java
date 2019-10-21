@@ -25,5 +25,4 @@ public class PublicacionAEncontrado extends PublicacionBusqueda {
 	public void setEncontrado(boolean encontrado) {
 		this.encontrado = encontrado;
 	}
-	
 }

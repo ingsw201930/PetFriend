@@ -11,6 +11,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public /*abstract*/ class Publicacion {
@@ -22,6 +24,7 @@ public /*abstract*/ class Publicacion {
     private Date fecha;//TODO
     @ManyToOne
     @JoinColumn(name="ID_DUENIO", nullable=false)
+    @JsonIgnore
     private Usuario duenho;
     @Column(name = "DESCRIPCION")
     private String descripcion; //TODO
