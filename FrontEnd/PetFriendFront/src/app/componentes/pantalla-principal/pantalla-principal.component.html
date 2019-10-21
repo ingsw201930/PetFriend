@@ -1,8 +1,30 @@
-<div class="mainPrincipal">
-    <div class="formPrincipal">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Search</button>
-        </form>
+<div class="row">
+    <div class="col-1"> </div>
+    <div class="col-10  contenedorPublicación">
+        <div class="mainPrincipal">
+            <div class="formPrincipal">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <section class="slideshow">
+                <div class="content">
+
+                    <div class="content-carrousel">
+
+                        <figure *ngFor="let imgnm of imagen" class="shadow">
+                            <img [src]="imgnm" alt="">
+                        </figure>
+
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <div class="col-1"></div>
 </div>

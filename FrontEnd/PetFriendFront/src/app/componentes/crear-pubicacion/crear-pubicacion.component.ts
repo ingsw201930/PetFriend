@@ -37,8 +37,10 @@ export class CrearPubicacionComponent implements OnInit {
     reader.onload = (_event) => {
       if (this.url1 === 'assets/pet.png') {
         this.url1 = reader.result;
+        console.log(this.url1);
         return;
       }
+
       if (this.url2 === 'assets/pet.png') {
         this.url2 = reader.result;
         return;
