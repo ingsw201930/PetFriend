@@ -11,6 +11,8 @@ import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.co
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RestClientService } from './servicios/rest-client.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +27,10 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RestClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
