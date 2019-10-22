@@ -13,8 +13,18 @@ import javax.persistence.Entity;
 public class PublicacionBusqueda extends PublicacionAnimal {
     @Column(name = "ULTIMO_MOMENTO_VISTO")
     private Date ultimoEncuentro;
+	@Column( name = "ENCONTRADO")
+	private boolean encontrado;
 
 	public PublicacionBusqueda() {
+	}
+
+	public boolean isEncontrado() {
+		return encontrado;
+	}
+
+	public void setEncontrado(boolean encontrado) {
+		this.encontrado = encontrado;
 	}
 	
 }

@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 public class PublicacionAEncontrado extends PublicacionBusqueda {
 	@Column(name = "LUGARENCONTRADO")
 	private String lugarEncontrado;
-	@Column( name = "ENCONTRADO")
-	private boolean encontrado;
 	
 	public String getLugarEncontrado() {
 		return lugarEncontrado;
@@ -16,13 +14,5 @@ public class PublicacionAEncontrado extends PublicacionBusqueda {
 
 	public void setLugarEncontrado(String lugarEncontrado) {
 		this.lugarEncontrado = lugarEncontrado;
-	}
-
-	public boolean isEncontrado() {
-		return encontrado;
-	}
-
-	public void setEncontrado(boolean encontrado) {
-		this.encontrado = encontrado;
 	}
 }

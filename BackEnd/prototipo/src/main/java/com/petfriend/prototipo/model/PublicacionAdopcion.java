@@ -8,15 +8,15 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
 @PrimaryKeyJoinColumn(name = "PUBLICACIONANIMAL")
 public class PublicacionAdopcion extends PublicacionAnimal {
-	@Column(name="ENCONTRADO")
-	private boolean encontrado;
+	@Column(name="ADOPTADO")
+	private boolean adoptado;
 
-	public boolean isEncontrado() {
-		return encontrado;
+	public boolean isAdoptado() {
+		return adoptado;
 	}
 	
-	public void setEncontrado(boolean encontrado) {
-		this.encontrado = encontrado;
+	public void setAdoptado(boolean adoptado) {
+		this.adoptado = adoptado;
 	}
 	
 	public PublicacionAdopcion() {

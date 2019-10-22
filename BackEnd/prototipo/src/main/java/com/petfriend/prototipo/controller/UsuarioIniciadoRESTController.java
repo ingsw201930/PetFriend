@@ -45,7 +45,8 @@ public class UsuarioIniciadoRESTController {
 			p.setDescripcion(pAnimal.getDescripcion());
 			p.setDuenho(u);
 			//u.pushPublicacion(p);
-			Animal a= new Animal(p,pAnimal.getAnimal().getNombre(),
+			Animal a= new Animal(p,
+								 pAnimal.getAnimal().getNombre(),
 								 pAnimal.getAnimal().getEspecie(),
 								 pAnimal.getAnimal().getRaza(),
 								 pAnimal.getAnimal().getColor(),
