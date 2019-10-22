@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AnimalCompañiaService } from 'src/app/servicios/animal-compañia.service';
+import { AnimalCompañia } from 'src/app/modelo/animal-compañia';
 
 @Component({
   selector: 'app-crear-pubicacion',
@@ -6,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-pubicacion.component.css']
 })
 export class CrearPubicacionComponent implements OnInit {
-  especie = '';
-  title = 'imagen';
+  nombre: string = '';
+  especie: string = '';
+  raza: string = '';
+  edad: string = '';
+  color1: string = '';
+  color2: string = '';
+  descripcion: string = '';
+  esHembra: boolean = false;
+  esterilizado: boolean = false;
+  animal: AnimalCompañia = new AnimalCompañia;
+  title: string = 'imagen';
 
   imgURL: any;
   public message: string;
@@ -20,7 +32,7 @@ export class CrearPubicacionComponent implements OnInit {
   url4: any = 'assets/pet.png';
 
   urls: any[] = [];
-  constructor() { }
+  constructor(private router: Router, private service: AnimalCompañiaService) { }
 
   ngOnInit() {
 
@@ -56,6 +68,18 @@ export class CrearPubicacionComponent implements OnInit {
     };
   }
 
-
+  publicar(){
+    this.animal.nombre = this.nombre;
+    this.animal.especie = this.especie;
+    this.animal.raza = this.raza;
+    this.animal.edad = this.edad;
+    this.animal.color1 = this.color1;
+    this.animal.color2 = this.color2;
+    this.animal.esHembra = this.esHembra;
+    this.animal.esterilizado = this.esterilizado;
+    this.animal.descripcion = this.descripcion;
+    this.service.animal = this.animal;
+    this.router.navigate(['/VistaPrevia']);
+  }
 
 }

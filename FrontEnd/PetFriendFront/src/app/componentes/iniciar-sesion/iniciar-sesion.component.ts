@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestClientService } from 'src/app/servicios/rest-client.service';
 import { Usuario } from 'src/app/modelo/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -18,22 +19,18 @@ export class IniciarSesionComponent implements OnInit {
   
   message: any;
   
-  constructor(private restClient: RestClientService) {}
+  constructor(private restClient: RestClientService, private router: Router) {
+  }
 
   ngOnInit() {}
 
   doLogin() {
     console.log(this.user + ' - ' + this.password);
-    this.restClient.login(this.user, this.password).subscribe(data => {
-        //Exito
-        console.log('YASSSSSSSSSSSS');
+    if(this.restClient.login(this.user, this.password)){
+      this.router.navigate([``]);
+    }
+    else{
 
-      }, error => {
-        //Fracaso
-
-
-        console.error(error);
-        this.message = JSON.stringify(error);
-      });
+    }
   }
 }

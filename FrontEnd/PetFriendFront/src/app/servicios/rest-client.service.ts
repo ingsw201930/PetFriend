@@ -5,17 +5,22 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class RestClientService {
   constructor(private http: HttpClient) {}
 
+  usuarios: string[] = ['Brayan', 'Karen', 'Camilo', 'Leyder', 'Dorian', 'user'];
+  contras: string[] = ['Brayan', 'Karen', 'Camilo', 'Leyder', 'Dorian', 'user'];
+
+
+
+
+
+
+
   login(username: string, password: string) {
-    const formHeaders = new HttpHeaders();
-    formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
-    const formParams = new HttpParams()
-      .set('username', username)
-      .set('password', password);
-    return this.http.post('http://localhost:9890/login', null, {
-      headers: formHeaders,
-      params: formParams,
-      withCredentials: true
-    });
+    for(let i = 0 ; i<this.usuarios.length ; ++i){
+      if(username == this.usuarios[i] && password == this.contras[i]){
+        return true;
+      }
+    }
+    return false;
   }
 
   getCompanies() {
