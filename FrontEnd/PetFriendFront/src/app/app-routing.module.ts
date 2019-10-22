@@ -12,7 +12,7 @@ import { NotFoundComponent } from './componentes/not-found/not-found.component';
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
   { path: 'IniciarSesion', component: IniciarSesionComponent },
-  { path: '', component: PantallaPrincipalComponent },
+  { path: 'Principal', component: PantallaPrincipalComponent },
   { path: 'EditarPublicacion', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'PublicacionFinal', component: VistaPreviaComponent },
