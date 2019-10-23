@@ -22,4 +22,5 @@ datos llamada demo, no se le efectúa ningún cambio y se procede a correr el ar
 el cual se encuentra en la carpeta backend/prototipo/src/main/java/com/petfriend/prottipo
 
 por último se ejecuta el front-end con la consola de comandos ubicada en el sitio FrontEnd/PetFriendFront usando el comando ng serve -o
+
 En caso de que se abra internet explorer o Microsoft edge, copiar la url, abrir google chrome o mozilla firefox, y pegar la url copiada.
