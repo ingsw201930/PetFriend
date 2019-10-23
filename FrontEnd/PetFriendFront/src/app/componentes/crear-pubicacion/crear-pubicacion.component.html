@@ -53,10 +53,10 @@
 
                     <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
                         <option selected>Seleccione</option>
-                        <option value="Angora">Angora</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Pinscher">Pinscher</option>
                         <option value="Criollo">Criollo</option>
-                        <option value="Adulto">Adulto</option>
-                        <option value="Senil">Senil</option>
+                        <option value="No lo se">No lo se</option>
                     </select>
                 </div>
             </div>
@@ -68,8 +68,8 @@
                         <option selected>Seleccione</option>
                         <option value="Angora">Angora</option>
                         <option value="Criollo">Criollo</option>
-                        <option value="Adulto">Adulto</option>
-                        <option value="Senil">Senil</option>
+                        <option value="Persa">Persa</option>
+                        <option value="No lo se">No lo se</option>
                     </select>
                 </div>
             </div>
@@ -99,10 +99,10 @@
 
                             <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color1">
                                 <option selected>Color Predominante</option>
-                                <option value="Cachorro">Cachorro</option>
-                                <option value="Joven">Joven</option>
-                                <option value="Adulto">Adulto</option>
-                                <option value="Senil">Senil</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Cafe">Cafe</option>
+                                <option value="Amarillo">Amarillo</option>
                             </select>
                         </div>
                     </div>
@@ -111,10 +111,10 @@
 
                             <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color2">
                                 <option selected>Color Secundario</option>
-                                <option value="Cachorro">Cachorro</option>
-                                <option value="Joven">Joven</option>
-                                <option value="Adulto">Adulto</option>
-                                <option value="Senil">Senil</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Cafe">Cafe</option>
+                                <option value="Amarillo">Amarillo</option>
                             </select>
                         </div>
                     </div>
@@ -164,6 +164,12 @@
                 <label for="exampleInputEmail1">Descripción</label>
                 <div class="input-group">
                     <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
+                </div>
+            </div>
+            <div  [hidden]="ban" class="from-group" >
+                <label for="exampleInputEmail1">Fecha</label>
+                <div class="input-group">
+                    <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>
                 </div>
             </div>
             <br>

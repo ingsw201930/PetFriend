@@ -3,7 +3,7 @@ import { Animal } from './animal';
 export class PublicacionAEncontrado {
     descripcion: string;
     localidad: string;
-    animalAsociado: Animal;
+    animal: Animal;
     encontrado: boolean;
     lugarEncontrado: String;
 }

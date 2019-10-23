@@ -1,5 +1,17 @@
 package com.petfriend.prototipo.controller;
 
+import com.petfriend.prototipo.model.Animal;
+import com.petfriend.prototipo.model.PublicacionAEncontrado;
+import com.petfriend.prototipo.model.PublicacionAPerdido;
+import com.petfriend.prototipo.model.PublicacionAdopcion;
+import com.petfriend.prototipo.model.PublicacionAnimal;
+import com.petfriend.prototipo.model.Usuario;
+import com.petfriend.prototipo.repositories.IAnimalRepositorio;
+import com.petfriend.prototipo.repositories.IPublicacionAEncontradoRepositorio;
+import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
+import com.petfriend.prototipo.repositories.IPublicacionAdopcionRepositorio;
+import com.petfriend.prototipo.repositories.IUsuarioRepositorio;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,18 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.petfriend.prototipo.model.PublicacionAdopcion;
-import com.petfriend.prototipo.model.PublicacionAnimal;
-import com.petfriend.prototipo.model.Usuario;
-import com.petfriend.prototipo.model.Animal;
-import com.petfriend.prototipo.model.PublicacionAEncontrado;
-import com.petfriend.prototipo.model.PublicacionAPerdido;
-import com.petfriend.prototipo.repositories.IAnimalRepositorio;
-import com.petfriend.prototipo.repositories.IPublicacionAEncontradoRepositorio;
-import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
-import com.petfriend.prototipo.repositories.IPublicacionAdopcionRepositorio;
-import com.petfriend.prototipo.repositories.IUsuarioRepositorio;
 
 @RestController
 @RequestMapping("/usuario")
@@ -39,11 +39,17 @@ public class UsuarioIniciadoRESTController {
 	{
 		Usuario u= usuarioRepo.findById(id).get();
 		PublicacionAdopcion aux=null;
+		System.out.println("entra");
 		if(u!=null) {
 			PublicacionAdopcion p=new PublicacionAdopcion();
+			
+			System.out.println("entra7" +pAnimal.getLocalidad());
+
 			p.setLocalidad(pAnimal.getLocalidad());
 			p.setDescripcion(pAnimal.getDescripcion());
 			p.setDuenho(u);
+			
+			System.out.println("entra2"+pAnimal.getAnimal().getNombre());
 			//u.pushPublicacion(p);
 			Animal a= new Animal(p,
 								 pAnimal.getAnimal().getNombre(),
@@ -52,6 +58,9 @@ public class UsuarioIniciadoRESTController {
 								 pAnimal.getAnimal().getColor(),
 								 pAnimal.getAnimal().getSexo(),
 								 pAnimal.getAnimal().getEsterilizado());
+								 
+			System.out.println("entra3");
+
 			aux=this.animalAdopRepo.save(p);
 			animalRepo.save(a);
 			//usuarioRepo.save(u);
@@ -106,7 +115,7 @@ public class UsuarioIniciadoRESTController {
 			p.setDescripcion(pAnimal.getDescripcion());
 			p.setDuenho(u);
 			//u.pushPublicacion(p);
-			Animal a= new Animal(p,pAnimal.getAnimal().getNombre(),
+			Animal a= new Animal(p, pAnimal.getAnimal().getNombre(),
 								 pAnimal.getAnimal().getEspecie(),
 								 pAnimal.getAnimal().getRaza(),
 								 pAnimal.getAnimal().getColor(),

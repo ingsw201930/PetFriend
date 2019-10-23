@@ -8,4 +8,5 @@ export class AnimalCompañia {
   descripcion: string;
   esHembra: boolean;
   esterilizado: boolean;
+  fecha: string;
 }

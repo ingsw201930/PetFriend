@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimalCompañiaService } from 'src/app/servicios/animal-compañia.service';
 import { AnimalCompañia } from 'src/app/modelo/animal-compañia';
+import { PublicacionService } from 'src/app/servicios/publicacion.service';
 
 @Component({
   selector: 'app-crear-pubicacion',
@@ -20,6 +21,8 @@ export class CrearPubicacionComponent implements OnInit {
   esterilizado: boolean = false;
   animal: AnimalCompañia = new AnimalCompañia;
   title: string = 'imagen';
+  fecha: string = '';
+  ban: boolean =this.servP.getTipoPublicacion() == 'adopcion';
 
   imgURL: any;
   public message: string;
@@ -32,10 +35,10 @@ export class CrearPubicacionComponent implements OnInit {
   url4: any = 'assets/pet.png';
 
   urls: any[] = [];
-  constructor(private router: Router, private service: AnimalCompañiaService) { }
+  constructor(private router: Router, private service: AnimalCompañiaService, private servP: PublicacionService) { }
 
   ngOnInit() {
-
+    this.service.urls=[];
   }
   preview(files) {
     const mimeType = files[0].type;
@@ -48,21 +51,25 @@ export class CrearPubicacionComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     reader.onload = (_event) => {
       if (this.url1 === 'assets/pet.png') {
-        this.url1 = reader.result;
-        console.log(this.url1);
+        this.service.urls[0]=reader.result;
+        this.url1 = this.service.urls[0];
+        //console.log(this.url1);
         return;
       }
 
       if (this.url2 === 'assets/pet.png') {
-        this.url2 = reader.result;
+        this.service.urls[1]=reader.result;
+        this.url2 = this.service.urls[1];
         return;
       }
       if (this.url3 === 'assets/pet.png') {
-        this.url3 = reader.result;
+        this.service.urls[2]=reader.result;
+        this.url3 = this.service.urls[2];
         return;
       }
       if (this.url4 === 'assets/pet.png') {
-        this.url4 = reader.result;
+        this.service.urls[3]=reader.result;
+        this.url4 = this.service.urls[3];
         return;
       }
     };
@@ -78,6 +85,7 @@ export class CrearPubicacionComponent implements OnInit {
     this.animal.esHembra = this.esHembra;
     this.animal.esterilizado = this.esterilizado;
     this.animal.descripcion = this.descripcion;
+    this.animal.fecha = this.fecha;
     this.service.animal = this.animal;
     this.router.navigate(['/VistaPrevia']);
   }

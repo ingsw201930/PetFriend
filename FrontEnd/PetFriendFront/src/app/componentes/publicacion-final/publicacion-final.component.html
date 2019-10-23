@@ -21,11 +21,13 @@
                     <h3>{{esterilizadoAnimal}}</h3>
                     <h2>Localidad:</h2>
                     <h3>{{localidadAnimal}}</h3>
+                    <h2 [hidden] = "ban">Última vez que se vio:</h2>
+                    <h3 [hidden] = "ban">{{fecha}}</h3>
                 </div>
                 <div class="segundaColumna">
                     <div class="fotosDatos">
                         <div class="fotoPrincipal">
-                            <img id="myImg" src="assets\gato.jpg" width="450" height="450">
+                            <img id="myImg" [src]="url1" width="450" height="450">
                             <!-- The Modal -->
                             <div id="myModal" class="modal">
                                 <span class="close">×</span>
@@ -34,19 +36,19 @@
                             </div>
                         </div>
                         <div class="otraFotos">
-                            <img id="myImg1" src="assets\gato1.jpg" width="150" height="150">
+                            <img id="myImg1" [src]="url2" width="150" height="150">
                             <div id="myModal" class="modal">
                                 <span class="close">×</span>
                                 <img class="modal-content" id="img01">
                                 <div id="caption"></div>
                             </div>
-                            <img id="myImg2" src="assets\gato2.jpg" width="150" height="150">
+                            <img id="myImg2" [src]="url3" width="150" height="150">
                             <div id="myModal" class="modal">
                                 <span class="close">×</span>
                                 <img class="modal-content" id="img01">
                                 <div id="caption"></div>
                             </div>
-                            <img id="myImg3" src="gato3.jpg" width="150" height="150">
+                            <img id="myImg3" [src]="url4" width="150" height="150">
                             <div id="myModal" class="modal">
                                 <span class="close">×</span>
                                 <img class="modal-content" id="img01">
@@ -57,8 +59,8 @@
                     <div class="botonComunicarse">
                         <input type="submit" value="Comunicarse con propietario">
                     </div>
-                    <h2>Nombre de usuario:</h2>
-                    <h3>NombreEjemplo</h3>
+                    <h2 [hidden] = "true">Nombre de usuario:</h2>
+                    <h3 [hidden] = "true">NombreEjemplo</h3>
                     <div class="botonEditar">
                         <input type="submit" value="Editar">
                     </div>
