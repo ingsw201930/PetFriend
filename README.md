@@ -1,8 +1,8 @@
 # PetFriend
-Guia de prueba
+Manual de prueba
 1. Descargar Node.js
 
-1.1 ir a nodejs.org
+1.1 Ir a nodejs.org
 
 1.2 Descargar la versión 12.13.0 LTS (recomendado para la mayoría de usuarios).
 
@@ -16,15 +16,15 @@ Guia de prueba
 
 3. Descargar Angular 
 
-3.1 escribir en la terminal npm install -g @angular/cli
+3.1 Escribir en la terminal npm install -g @angular/cli
 
-3.2 escribir en la terminal npm install
+3.2 Escribir en la terminal npm install
 
-3.3 escribir en la terminal ng update
+3.3 Escribir en la terminal ng update
 
-3.4 escribir en la terminal npm update
+3.4 Escribir en la terminal npm update
 
-se instala PostgreSQL, se deja como usuario postgres(el que trae por defecto).
+4. Se instala PostgreSQL, se deja como usuario postgres(el que trae por defecto).
 La contraseña que se coloca debe se 'admin' 
 por ultimo cuando se ha instalado con el pgAdmin se inicia y se crea una base de 
 datos llamada demo, no se le efectúa ningún cambio y se procede a correr el archivo PrototipoAplication.java
