@@ -19,3 +19,5 @@ La contraseña que se coloca debe se 'admin'
 por ultimo cuando se ha instalado con el pgAdmin se inicia y se crea una base de 
 datos llamada demo, no se le efectúa ningún cambio y se procede a correr el archivo PrototipoAplication.java
 el cual se encuentra en la carpeta backend/prototipo/src/main/java/com/petfriend/prottipo
+
+por último se ejecuta el front-end con la consola de comandos ubicada en el sitio FrontEnd/PetFriendFront usando el comando ng serve -o
