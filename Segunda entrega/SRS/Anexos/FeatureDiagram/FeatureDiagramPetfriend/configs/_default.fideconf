@@ -1,0 +1,31 @@
+# Lists all features from the model with manual (first digit) and automatic (second digit) selection
+# 0 = deselected, 1 = selected, 2 = undefined
+21Petfriend
+21PublicacionAnimal
+21PublicacionEncontrado
+21PublicacionPerdido
+21PublicacionAdopcion
+21InteraccionUsuarios
+21Chat
+22ChatUsuarios
+21ChatProveedoresDeServicio
+22Calificar
+22CalificarPublicacion
+22CalificarPerfil
+22Donación
+22DonarDinero
+21Reporte
+21ReportarPublicacion
+21ReportarPerfil
+11Autenticacion
+21Normal
+22Facebook
+22Google
+21Refugios
+21Ubicación
+21Notificación
+21NotificaciónDeChat
+21NotificaciónDeAnimalEncontrado
+21NotificaciónDeAnimalPerdido
+21Verificación
+21VerificaciónReporte

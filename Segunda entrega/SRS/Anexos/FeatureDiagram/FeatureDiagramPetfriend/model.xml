@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="4">
+		<struct>
+			<and abstract="true" mandatory="true" name="Petfriend">
+				<and mandatory="true" name="PublicacionAnimal">
+					<feature mandatory="true" name="PublicacionEncontrado"/>
+					<feature mandatory="true" name="PublicacionPerdido"/>
+					<feature mandatory="true" name="PublicacionAdopcion"/>
+				</and>
+				<and mandatory="true" name="InteraccionUsuarios">
+					<and mandatory="true" name="Chat">
+						<feature name="ChatUsuarios"/>
+						<feature mandatory="true" name="ChatProveedoresDeServicio"/>
+					</and>
+					<and name="Calificar">
+						<feature mandatory="true" name="CalificarPublicacion"/>
+						<feature mandatory="true" name="CalificarPerfil"/>
+					</and>
+				</and>
+				<and name="Donación">
+					<feature mandatory="true" name="DonarDinero"/>
+				</and>
+				<and mandatory="true" name="Reporte">
+					<feature mandatory="true" name="ReportarPublicacion"/>
+					<feature mandatory="true" name="ReportarPerfil"/>
+				</and>
+				<and mandatory="true" name="Autenticacion">
+					<feature mandatory="true" name="Normal"/>
+					<feature name="Facebook"/>
+					<feature name="Google"/>
+				</and>
+				<and mandatory="true" name="Refugios">
+					<feature mandatory="true" name="Ubicación"/>
+				</and>
+				<and mandatory="true" name="Notificación">
+					<feature mandatory="true" name="NotificaciónDeChat"/>
+					<feature mandatory="true" name="NotificaciónDeAnimalEncontrado"/>
+					<feature mandatory="true" name="NotificaciónDeAnimalPerdido"/>
+				</and>
+				<and mandatory="true" name="Verificación">
+					<feature mandatory="true" name="VerificaciónReporte"/>
+				</and>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
