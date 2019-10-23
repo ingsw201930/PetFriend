@@ -1,0 +1,1 @@
+El boton de donar, como se ve en esta pantalla, deberia estar en cada uno de los mockups. Pero para hacer esto se tendria que modificar cada uno de los Mockups, tomando bastante tiempo, por lo que unicamente se dejo en esta pantalla dejando en claro que las demas pantallas tambien tendrian este boton.
