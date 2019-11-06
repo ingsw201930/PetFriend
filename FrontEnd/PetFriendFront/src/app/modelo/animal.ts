@@ -1,7 +1,9 @@
 export class Animal {
     nombre: string;
     especie: string;
-    color: string;
+    raza: string;
+    color1: string;
+    color2: string;
     sexo: string;
     esterilizado: string;
 }

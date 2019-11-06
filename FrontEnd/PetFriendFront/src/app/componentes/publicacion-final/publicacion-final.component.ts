@@ -24,10 +24,10 @@ export class PublicacionFinalComponent implements OnInit {
   animal: AnimalCompañia;
   fecha: string;
   ban: boolean;
-  url1: any = this.servicio.urls[0];
-  url2: any = this.servicio.urls[1];
-  url3: any = this.servicio.urls[2];
-  url4: any = this.servicio.urls[3];
+  url1: any = this.servPub.urls[0];
+  url2: any = this.servPub.urls[1];
+  url3: any = this.servPub.urls[2];
+  url4: any = this.servPub.urls[3];
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private servicio: AnimalCompañiaService, private servPub: PublicacionService) {}
   ngOnInit() {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Publicacion } from 'src/app/modelo/publicacion';
+import { PublicacionService } from 'src/app/servicios/publicacion.service';
 
 @Component({
   selector: 'app-pantalla-principal',
@@ -21,9 +23,10 @@ export class PantallaPrincipalComponent implements OnInit {
     'https://img.soy-chile.cl/Fotos/2014/11/10/file_20141110121800.jpg'
 
   ];
-  constructor() { }
+  constructor(private service: PublicacionService) { }
 
   ngOnInit() {
+    this.service.getRandom();
   }
 
 }

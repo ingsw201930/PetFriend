@@ -15,6 +15,7 @@ export class PublicacionService {
   private publicacionEncontrado: PublicacionAEncontrado;
   private publicacionPerdido: PublicacionAPerdido;
   private animal: Animal;
+  urls: any[] = [];
 
   setTipoPublicacion(nom: string){
     this.tipoPublicacion = nom;
@@ -25,12 +26,24 @@ export class PublicacionService {
     return this.tipoPublicacion;
   }
 
+  getRandom(){
+    this.http.get('http://localhost:9890/paginaPrincipal').subscribe(data=> {
+      console.log(data);
+    },
+    err => {
+      console.log('error');
+      console.log(err);
+    })
+    //)
+    ;
+  }
+
   send(animal: AnimalCompañia){
 
     this.animal = new Animal;
     this.animal.nombre = animal.nombre;
     this.animal.especie = animal.especie;
-    this.animal.color = animal.color1;
+    this.animal.color1 = animal.color1;
     this.animal.sexo = (animal.esHembra == true? 'H' : 'M');
     this.animal.esterilizado = (animal.esterilizado == true? 'true' : 'false');
     const formHeaders = new HttpHeaders();
@@ -40,8 +53,16 @@ export class PublicacionService {
       this.publicacionAdopcion = new PublicacionAdopcion;
       this.publicacionAdopcion.animal = this.animal;
       this.publicacionAdopcion.descripcion = animal.descripcion;
-      this.publicacionAdopcion.localidad = 'Bogota';
+      this.publicacionAdopcion.localidad = 'Bogota'; //TODO
       this.publicacionAdopcion.adoptado = false;
+      if(this.urls[0] !== 'assets/pet.png')
+        this.publicacionAdopcion.imagen1 = this.urls[0];
+      if(this.urls[1] !== 'assets/pet.png')
+        this.publicacionAdopcion.imagen2 = this.urls[1];
+      if(this.urls[2] !== 'assets/pet.png')
+        this.publicacionAdopcion.imagen3 = this.urls[2];
+      if(this.urls[3] !== 'assets/pet.png')
+        this.publicacionAdopcion.imagen4 = this.urls[3];
 
       
       console.log(this.publicacionAdopcion);
@@ -61,9 +82,18 @@ export class PublicacionService {
       this.publicacionEncontrado = new PublicacionAEncontrado;
       this.publicacionEncontrado.animal = this.animal;
       this.publicacionEncontrado.descripcion = animal.descripcion;
-      this.publicacionEncontrado.localidad = 'Bogota';
-      this.publicacionEncontrado.lugarEncontrado = 'Bogota';
+      this.publicacionEncontrado.localidad = 'Bogota'; //TODO
+      this.publicacionEncontrado.lugarEncontrado = 'Bogota'; //TODO
       this.publicacionEncontrado.encontrado = false;
+      if(this.urls[0] !== 'assets/pet.png')
+        this.publicacionEncontrado.imagen1 = this.urls[0];
+      if(this.urls[1] !== 'assets/pet.png')
+        this.publicacionEncontrado.imagen2 = this.urls[1];
+      if(this.urls[2] !== 'assets/pet.png')
+        this.publicacionEncontrado.imagen3 = this.urls[2];
+      if(this.urls[3] !== 'assets/pet.png')
+        this.publicacionEncontrado.imagen4 = this.urls[3];
+
       this.http.post('http://localhost:9890/usuario/1/publicacionAEncontrado',
         this.publicacionEncontrado).subscribe(data=> {
           console.log('entra');
@@ -79,9 +109,18 @@ export class PublicacionService {
       this.publicacionPerdido = new PublicacionAPerdido;
       this.publicacionPerdido.animal = this.animal;
       this.publicacionPerdido.descripcion = animal.descripcion;
-      this.publicacionPerdido.localidad = 'Bogota';
-      this.publicacionPerdido.lugarPerdido = 'Bogota';
+      this.publicacionPerdido.localidad = 'Bogota'; //TODO
+      this.publicacionPerdido.lugarPerdido = 'Bogota'; //TODO
       this.publicacionPerdido.encontrado = false;
+      if(this.urls[0] !== 'assets/pet.png')
+        this.publicacionPerdido.imagen1 = this.urls[0];
+      if(this.urls[1] !== 'assets/pet.png')
+        this.publicacionPerdido.imagen2 = this.urls[1];
+      if(this.urls[2] !== 'assets/pet.png')
+        this.publicacionPerdido.imagen3 = this.urls[2];
+      if(this.urls[3] !== 'assets/pet.png')
+        this.publicacionPerdido.imagen4 = this.urls[3];
+
       this.http.post('http://localhost:9890/usuario/1/publicacionAPerdido',
         this.publicacionPerdido).subscribe(data=> {
           console.log('entra');

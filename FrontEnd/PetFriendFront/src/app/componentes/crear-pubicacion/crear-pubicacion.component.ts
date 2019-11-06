@@ -38,7 +38,7 @@ export class CrearPubicacionComponent implements OnInit {
   constructor(private router: Router, private service: AnimalCompañiaService, private servP: PublicacionService) { }
 
   ngOnInit() {
-    this.service.urls=[];
+    this.servP.urls=[];
   }
   preview(files) {
     const mimeType = files[0].type;
@@ -51,25 +51,25 @@ export class CrearPubicacionComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     reader.onload = (_event) => {
       if (this.url1 === 'assets/pet.png') {
-        this.service.urls[0]=reader.result;
-        this.url1 = this.service.urls[0];
+        this.servP.urls[0]=reader.result;
+        this.url1 = this.servP.urls[0];
         //console.log(this.url1);
         return;
       }
 
       if (this.url2 === 'assets/pet.png') {
-        this.service.urls[1]=reader.result;
-        this.url2 = this.service.urls[1];
+        this.servP.urls[1]=reader.result;
+        this.url2 = this.servP.urls[1];
         return;
       }
       if (this.url3 === 'assets/pet.png') {
-        this.service.urls[2]=reader.result;
-        this.url3 = this.service.urls[2];
+        this.servP.urls[2]=reader.result;
+        this.url3 = this.servP.urls[2];
         return;
       }
       if (this.url4 === 'assets/pet.png') {
-        this.service.urls[3]=reader.result;
-        this.url4 = this.service.urls[3];
+        this.servP.urls[3]=reader.result;
+        this.url4 = this.servP.urls[3];
         return;
       }
     };
