@@ -7,11 +7,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
     @Id
     @GeneratedValue
@@ -24,7 +27,9 @@ public class Usuario {
     @OneToMany(mappedBy = "duenho")
     @JsonIgnore
     private List<Publicacion> publicaciones;
-
+    @OneToMany(mappedBy = "reporte")
+    @JsonIgnore
+    private List<Reporte> reportes;
     @Column(name = "FOTO")
     private byte[] foto;
 
@@ -84,4 +89,13 @@ public class Usuario {
     public void pushPublicacion(Publicacion p) {
     	this.publicaciones.add(p);
     }
+
+	public List<Reporte> getReportes() {
+		return reportes;
+	}
+
+	public void setReportes(List<Reporte> reportes) {
+		this.reportes = reportes;
+	}
+    
 }

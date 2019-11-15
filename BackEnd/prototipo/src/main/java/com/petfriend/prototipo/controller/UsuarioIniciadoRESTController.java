@@ -14,7 +14,7 @@ import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAdopcionRepositorio;
 import com.petfriend.prototipo.repositories.IUsuarioRepositorio;
 
-import org.hibernate.query.Query;
+//import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
