@@ -26,14 +26,16 @@ export class PublicacionService {
     return this.tipoPublicacion;
   }
 
-  getRandom(){
-    this.http.get('http://localhost:9890/paginaPrincipal').subscribe(data=> {
+  getRandom(): PublicacionAdopcion[]{
+    this.http.get('http://localhost:9890/public/paginaPrincipal').subscribe(data=> {
       console.log(data);
+      return data;
     },
     err => {
       console.log('error');
       console.log(err);
     })
+    return null;
     //)
     ;
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Publicacion } from 'src/app/modelo/publicacion';
 import { PublicacionService } from 'src/app/servicios/publicacion.service';
+import { PublicacionAdopcion } from 'src/app/modelo/publicacion-adopcion';
 
 @Component({
   selector: 'app-pantalla-principal',
@@ -23,10 +24,20 @@ export class PantallaPrincipalComponent implements OnInit {
     'https://img.soy-chile.cl/Fotos/2014/11/10/file_20141110121800.jpg'
 
   ];
+
+  publicaciones: PublicacionAdopcion[];
+
   constructor(private service: PublicacionService) { }
 
   ngOnInit() {
-    this.service.getRandom();
+    this.publicaciones = this.service.getRandom();
+    if(this.publicaciones == null)
+      return;
+    var cont = 0;
+    this.publicaciones.forEach(element => {
+      this.imagen[cont] = element.imagen1;
+      cont++;
+    });
   }
 
 }

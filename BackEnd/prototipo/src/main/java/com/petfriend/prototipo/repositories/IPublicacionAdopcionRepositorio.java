@@ -7,6 +7,6 @@ import com.petfriend.prototipo.model.PublicacionAdopcion;
 import org.springframework.data.jpa.repository.Query;
 
 public interface IPublicacionAdopcionRepositorio<T extends PublicacionAdopcion> extends IPublicacionAAnimalRepositorio<PublicacionAdopcion> {
-    @Query("SELECT ID FROM PUBLICACION_ADOPCION ORDER BY RANDOM() LIMIT 10")
-    List<Integer> findRandom();
+    @Query(value = "SELECT publicacionanimal FROM publicacion_adopcion ORDER BY RANDOM()", nativeQuery = true)
+    public List<Integer> findRandom();
 }
