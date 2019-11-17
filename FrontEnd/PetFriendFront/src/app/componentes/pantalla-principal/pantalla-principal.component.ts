@@ -40,4 +40,8 @@ export class PantallaPrincipalComponent implements OnInit {
     });
   }
 
+  selectImage(i){
+    console.log(i);
+  }
+
 }

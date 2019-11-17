@@ -16,7 +16,7 @@
 
                     <div class="content-carrousel">
 
-                        <figure *ngFor="let imgnm of imagen" class="shadow">
+                        <figure class="shadow" [ngClass]="{ selected: i == selectedIndex }" *ngFor="let imgnm of imagen; let i = index" (mouseup)="selectImage(i)">
                             <img [src]="imgnm" alt="">
                         </figure>
 
