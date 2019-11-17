@@ -25,17 +25,19 @@ export class PantallaPrincipalComponent implements OnInit {
 
   ];
 
-  publicaciones: PublicacionAdopcion[];
+  publicaciones: any[];
 
   constructor(private service: PublicacionService) { }
 
-  ngOnInit() {
-    this.publicaciones = this.service.getRandom();
+  async ngOnInit(): Promise<void>{
+    this.publicaciones = await this.service.getRandom();
+    console.log(this.publicaciones);
     if(this.publicaciones == null)
       return;
-    var cont = 0;
+    var cont = 1;
     this.publicaciones.forEach(element => {
       this.imagen[cont] = element.imagen1;
+      console.log(element.imagen1);
       cont++;
     });
   }

@@ -5,6 +5,7 @@ import { PublicacionAEncontrado } from '../modelo/publicacion-aencontrado';
 import { PublicacionAPerdido } from '../modelo/publicacion-aperdido';
 import { Animal } from '../modelo/animal';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Publicacion } from '../modelo/publicacion';
 
 @Injectable({
   providedIn: 'root'
@@ -26,18 +27,23 @@ export class PublicacionService {
     return this.tipoPublicacion;
   }
 
-  getRandom(): PublicacionAdopcion[]{
-    this.http.get('http://localhost:9890/public/paginaPrincipal').subscribe(data=> {
-      console.log(data);
-      return data;
-    },
-    err => {
-      console.log('error');
-      console.log(err);
-    })
-    return null;
-    //)
-    ;
+  async getRandom(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/paginaPrincipal').subscribe(data => {
+        let randomPubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          randomPubs.push(temp);
+        }
+        resolve(randomPubs);
+      },
+      err => {
+        console.log('error');
+        console.log(err);
+        resolve(null);
+      });
+    });
   }
 
   send(animal: AnimalCompañia){
