@@ -28,6 +28,7 @@ public class UsuarioPublicoRESTController {
 		List<Integer> randoms = animalAdopRepo.findRandom();
 		List<Integer> ids = new ArrayList<Integer>();
 		List<Publicacion> solution = new ArrayList<Publicacion>();
+		System.out.println("Lo pide");
 		for (int i=0 ; i<10 ; ++i) {
 			if(randoms.size() > i){
 				ids.add(randoms.get(i));
