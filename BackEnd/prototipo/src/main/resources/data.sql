@@ -1,1 +1,0 @@
-insert into usuario (id, contrasenha, correo) values (1,'user','user@correo.com');
