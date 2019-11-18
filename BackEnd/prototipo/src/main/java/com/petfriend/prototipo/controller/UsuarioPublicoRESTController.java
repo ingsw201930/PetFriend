@@ -30,6 +30,7 @@ public class UsuarioPublicoRESTController {
 		List<Publicacion> solution = new ArrayList<Publicacion>();
 		System.out.println("Lo pide");
 		for (int i=0 ; i<10 ; ++i) {
+
 			if(randoms.size() > i){
 				ids.add(randoms.get(i));
 				System.out.println(ids.get(i));
