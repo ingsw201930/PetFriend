@@ -1,0 +1,372 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('\..\..\..\assets\fondo.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Contenedores{
+    display: flex;
+}
+
+.ContenedorOpciones{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 20%;
+    height: 600px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+.ImagenPerfil{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.ImagenPerfil img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.ImagenPerfil h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+}
+
+.Opciones h2{
+    font-size: 30px;
+}
+
+.EditarPerfil h3{
+    font-size: 25px;
+    margin-left: 8%;
+    color: rgba(16, 26, 173, 0.9);
+}
+
+hr{
+    border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
+}
+
+.ContenedorInformación{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 80%;
+    height: 600px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.InformaciónPublica{
+    display: flex;
+    margin: 30px 30px 30px 30px;
+    justify-content: space-between;
+}
+
+.ImagenPublica img{
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+}
+
+.InformaciónPublica .Texto h3{
+    font-size: 65px;
+}
+
+.InformaciónPrivada{
+    margin: 20px 30px 30px 30px;
+}
+
+.InformaciónPrivada .Titulo h3{
+    font-size: 50px;
+    font-weight: bold;   
+}
+
+.InformaciónPrivada h2{
+    font-size: 30px; 
+}
+
+
+
+
+.publicacion {
+    margin: 20px 20px 0px 20px;
+}
+
+.contenedorPublicación {
+    background-color: rgba(90, 105, 120, 0.25);
+    border-radius: 25px;
+    width: 1230px;
+    height: 1240px;
+    margin: 30px 30px 0px 30px;
+}
+
+.contenedorPublicación h1 {
+    color: #47525E;
+    font-size: 40px;
+    margin: 0px 20px 0px 20px;
+    padding: 20px 0px 10px 0px;
+}
+
+.contenedorPublicación h2 {
+    color: #47525E;
+    font-size: 30px;
+    margin: 20px 20px 0px 80px;
+    padding: 10px 0px 10px 0px;
+}
+
+.contenedorPublicación h3 {
+    color: #000000;
+    font-size: 20px;
+    margin: 0px 20px 10px 120px;
+    text-align: left;
+}
+
+.datos {
+    display: flex;
+}
+
+.descripcion {
+    margin-right: 150px;
+}
+
+.segundaColumna {
+    padding-left: 250px;
+}
+
+.segundaColumna h2 {
+    padding-top: 20px;
+    padding-left: 0px;
+}
+
+.fotosDatos {
+    display: flex;
+}
+
+.fotosDatos img {
+    border-radius: 8px;
+}
+
+.otraFotos img {
+    border-radius: 8px;
+    display: flex;
+}
+
+.otraFotos div {
+    width: 0%;
+    height: 0%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+#myImg1 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg1:hover {
+    opacity: 0.7;
+}
+
+#myImg2 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg2:hover {
+    opacity: 0.7;
+}
+
+#myImg3 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg3:hover {
+    opacity: 0.7;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content (image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+/* Caption of Modal Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1400px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+/* Add Animation */
+
+.modal-content,
+#caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.botonComunicarse {
+    padding: 60px 0px 0px 100px;
+}
+
+.botonComunicarse input[type="submit"] {
+    font-size: 25px;
+    color: #ffffff;
+    background: #13CE66;
+    padding: 14px 24px;
+    width: 400px;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.botonEditar {
+    padding: 100px 0px 0px 450px;
+}
+
+.botonEditar input[type="submit"] {
+    font-size: 25px;
+    color: #ffffff;
+    background: #00A6FF;
+    padding: 14px 24px;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+#contenedor-titulo-flex {
+    display: flex;
+    justify-content: center;
+    margin: 18vh 0;
+    max-width: 1600px;
+}
+
+nav ul li a {
+    color: #fff;
+}
