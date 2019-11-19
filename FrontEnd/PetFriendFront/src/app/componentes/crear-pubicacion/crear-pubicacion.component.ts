@@ -89,34 +89,7 @@ export class CrearPubicacionComponent implements OnInit {
     this.service.animal = this.animal;
     this.router.navigate(['/VistaPrevia']);
   }
-  preview(files) {
-    const mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      console.log('Only images are supported.');
-      return;
-    }
-    const reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    // tslint:disable-next-line: variable-name
-    reader.onload = (_event) => {
-      if (this.url1 === 'assets/pet.png') {
-        this.url1 = reader.result;
-        return;
-      }
-      if (this.url2 === 'assets/pet.png') {
-        this.url2 = reader.result;
-        return;
-      }
-      if (this.url3 === 'assets/pet.png') {
-        this.url3 = reader.result;
-        return;
-      }
-      if (this.url4 === 'assets/pet.png') {
-        this.url4 = reader.result;
-        return;
-      }
-    };
-  }
+  
 
 
 
