@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrearPubicacionComponent } from './crear-pubicacion.component';
+import { PerfilPropioComponent } from './perfil-propio.component';
 
-describe('CrearPubicacionComponent', () => {
-  let component: CrearPubicacionComponent;
-  let fixture: ComponentFixture<CrearPubicacionComponent>;
+describe('PerfilPropioComponent', () => {
+  let component: PerfilPropioComponent;
+  let fixture: ComponentFixture<PerfilPropioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CrearPubicacionComponent ]
+      declarations: [ PerfilPropioComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrearPubicacionComponent);
+    fixture = TestBed.createComponent(PerfilPropioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -13,6 +13,7 @@ import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
+import { PerfilPropioComponent } from './perfil-propio/perfil-propio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { RestClientService } from './servicios/rest-client.service';
     CrearPubicacionComponent,
     VistaPreviaComponent,
     PublicacionFinalComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PerfilPropioComponent
   ],
   imports: [
     BrowserModule,
