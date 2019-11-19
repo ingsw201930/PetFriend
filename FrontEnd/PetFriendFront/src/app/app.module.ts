@@ -13,6 +13,13 @@ import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
+import { RegistroComponent } from './componente/registro/registro.component';
+import { RegistrarUsuarioComponent } from './componente/registrar-usuario/registrar-usuario.component';
+import { RegistrarEntidadComponent } from './componente/registrar-entidad/registrar-entidad.component';
+import { AnimalesSimilaresComponent } from './componente/animales-similares/animales-similares.component';
+import { AnimalesComponent } from './componente/animales/animales.component';
+import { BusquedaComponent } from './componente/busqueda/busqueda.component';
+import { ResultadosBusquedaComponent } from './componente/resultados-busqueda/resultados-busqueda.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +29,14 @@ import { RestClientService } from './servicios/rest-client.service';
     CrearPubicacionComponent,
     VistaPreviaComponent,
     PublicacionFinalComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RegistroComponent,
+    RegistrarUsuarioComponent,
+    RegistrarEntidadComponent,
+    AnimalesSimilaresComponent,
+    AnimalesComponent,
+    BusquedaComponent,
+    ResultadosBusquedaComponent
   ],
   imports: [
     BrowserModule,
