@@ -29,10 +29,10 @@ export class VistaPreviaComponent implements OnInit {
   ban: boolean;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private servAnimal: AnimalCompañiaService, private servPub: PublicacionService) {}
-  url1: any = this.servAnimal.urls[0];
-  url2: any = this.servAnimal.urls[1];
-  url3: any = this.servAnimal.urls[2];
-  url4: any = this.servAnimal.urls[3];
+  url1: any = this.servPub.urls[0];
+  url2: any = this.servPub.urls[1];
+  url3: any = this.servPub.urls[2];
+  url4: any = this.servPub.urls[3];
   ngOnInit() {
     this.ban = this.servPub.getTipoPublicacion() == 'adopcion';
 
