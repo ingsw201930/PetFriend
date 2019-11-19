@@ -7,6 +7,7 @@ import { PublicacionFinalComponent } from './componentes/publicacion-final/publi
 import { TiposDePublicacionComponent } from './componentes/tipos-de-publicacion/tipos-de-publicacion.component';
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
+import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'PublicacionFinal', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'VistaPrevia', component: VistaPreviaComponent },
+  { path: 'Perfil', component: PerfilPropioComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
