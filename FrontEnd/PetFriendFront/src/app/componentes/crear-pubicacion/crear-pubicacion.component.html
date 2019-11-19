@@ -1,12 +1,12 @@
 <br>
 <br>
 <div class="container">
-    <div class="row">
+    <div class="row contenedorPublicación">
 
         <div class="col-5">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre del animal">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre del animal" [(ngModel)]="nombre">
 
             </div>
             <div class="form-group">
@@ -14,9 +14,9 @@
                 <div class="input-group mb-3">
                     <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie">
 
-                        <option value="1">Canino</option>
-                        <option value="2">Felino</option>
-                        <option value="3">Otro</option>
+                        <option value="Canino">Canino</option>
+                        <option value="Felino">Felino</option>
+                        <option value="Otro">Otro</option>
                     </select>
                 </div>
             </div>
@@ -24,12 +24,12 @@
                 <label for="exampleInputEmail1">Edad</label>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="edad">
                         <option selected>Seleccione</option>
-                        <option value="1">Cachorro</option>
-                        <option value="2">Joven</option>
-                        <option value="3">Adulto</option>
-                        <option value="4">Senil</option>
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Joven">Joven</option>
+                        <option value="Adulto">Adulto</option>
+                        <option value="Senil">Senil</option>
                     </select>
                 </div>
             </div>
@@ -47,37 +47,37 @@
                 </div>
 
             </div>
-            <div class="form-group" *ngIf="especie==='1'">
+            <div class="form-group" *ngIf="especie==='Canino'">
                 <label for="exampleInputEmail1">Raza</label>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
                         <option selected>Seleccione</option>
-                        <option value="1">Angora</option>
-                        <option value="2">Criollo</option>
-                        <option value="3">Adulto</option>
-                        <option value="4">Senil</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Pinscher">Pinscher</option>
+                        <option value="Criollo">Criollo</option>
+                        <option value="No lo se">No lo se</option>
                     </select>
                 </div>
             </div>
-            <div class="form-group" *ngIf="especie==='2'">
+            <div class="form-group" *ngIf="especie==='Felino'">
                 <label for="exampleInputEmail1">Raza</label>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
                         <option selected>Seleccione</option>
-                        <option value="1">Angora</option>
-                        <option value="2">Criollo</option>
-                        <option value="3">Adulto</option>
-                        <option value="4">Senil</option>
+                        <option value="Angora">Angora</option>
+                        <option value="Criollo">Criollo</option>
+                        <option value="Persa">Persa</option>
+                        <option value="No lo se">No lo se</option>
                     </select>
                 </div>
             </div>
-            <div class="form-group" *ngIf="especie==='3'">
+            <div class="form-group" *ngIf="especie==='Otro'">
                 <label for="exampleInputEmail1">Raza</label>
                 <div class="form-group">
 
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba la raza del animal">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba la raza del animal" [(ngModel)]="raza">
 
                 </div>
             </div>
@@ -85,7 +85,7 @@
                 <label for="exampleInputEmail1">Raza</label>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
                         <option selected>Seleccione una especie</option>
 
                     </select>
@@ -97,24 +97,24 @@
                     <div class="col">
                         <div class="input-group mb-3">
 
-                            <select class="custom-select" id="inputGroupSelect01">
+                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color1">
                                 <option selected>Color Predominante</option>
-                                <option value="1">Cachorro</option>
-                                <option value="2">Joven</option>
-                                <option value="3">Adulto</option>
-                                <option value="4">Senil</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Cafe">Cafe</option>
+                                <option value="Amarillo">Amarillo</option>
                             </select>
                         </div>
                     </div>
                     <div class="col">
                         <div class="input-group mb-3">
 
-                            <select class="custom-select" id="inputGroupSelect01">
+                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color2">
                                 <option selected>Color Secundario</option>
-                                <option value="1">Cachorro</option>
-                                <option value="2">Joven</option>
-                                <option value="3">Adulto</option>
-                                <option value="4">Senil</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Cafe">Cafe</option>
+                                <option value="Amarillo">Amarillo</option>
                             </select>
                         </div>
                     </div>
@@ -150,12 +150,12 @@
                 <label for="exampleInputEmail1">Esterilizado</label>
                 <div class="input-group mb-3">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Si</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+                        <label class="form-check-label" for="inlineRadio3">Si</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">No</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+                        <label class="form-check-label" for="inlineRadio4">No</label>
                     </div>
                 </div>
 
@@ -163,11 +163,17 @@
             <div class="from-group">
                 <label for="exampleInputEmail1">Descripción</label>
                 <div class="input-group">
-                    <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación"></textarea>
+                    <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
+                </div>
+            </div>
+            <div  [hidden]="ban" class="from-group" >
+                <label for="exampleInputEmail1">Fecha</label>
+                <div class="input-group">
+                    <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>
                 </div>
             </div>
             <br>
-            <button type="button" class="btn btn-primary btn-lg" style="float: right;">Publicar</button>
+            <button (click)="publicar()" type="button" class="btn btn-primary btn-lg" style="float: right;">Publicar</button>
         </div>
 
     </div>

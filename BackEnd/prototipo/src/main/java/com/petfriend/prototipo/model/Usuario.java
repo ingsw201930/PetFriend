@@ -1,5 +1,6 @@
 package com.petfriend.prototipo.model;
 
+import java.io.File;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Usuario {
@@ -16,10 +19,27 @@ public class Usuario {
     private int idUsuario;
     @Column(name = "CORREO")
     private String correo;
-    @Column(name = "CORREO")
+    @Column(name = "CONTRASENHA")
     private String contrasenha;
-    @OneToMany()
+    @OneToMany(mappedBy = "duenho")
+    @JsonIgnore
     private List<Publicacion> publicaciones;
+
+    @Column(name = "FOTO")
+    private byte[] foto;
+
+    public Usuario(){
+    }
+
+    public Usuario(String correo, String contrasenha, File foto){
+        this.correo = correo;
+        this.contrasenha = contrasenha;
+        try{
+            this.foto = Utils.ImageToByte(foto);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
     public int getIdUsuario() {
         return idUsuario;
@@ -53,4 +73,15 @@ public class Usuario {
         this.publicaciones = publicaciones;
     }
 
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public void pushPublicacion(Publicacion p) {
+    	this.publicaciones.add(p);
+    }
 }

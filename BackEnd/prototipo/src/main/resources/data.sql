@@ -1,0 +1,1 @@
+insert into usuario (id, contrasenha, correo, foto) values (1,'user','user@correo.com',null);

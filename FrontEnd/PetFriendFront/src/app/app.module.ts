@@ -10,7 +10,9 @@ import { CrearPubicacionComponent } from './componentes/crear-pubicacion/crear-p
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
-
+import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RestClientService } from './servicios/rest-client.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +26,11 @@ import { NotFoundComponent } from './componentes/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RestClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
