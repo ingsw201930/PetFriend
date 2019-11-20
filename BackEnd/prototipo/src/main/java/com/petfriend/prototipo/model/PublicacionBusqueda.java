@@ -2,6 +2,7 @@ package com.petfriend.prototipo.model;
 
 //import javax.persistence.Column;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 import java.sql.Date;
 
@@ -10,6 +11,7 @@ import javax.persistence.Entity;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id_publicacion")
+@Table(name = "publicacines_busqueda")
 public class PublicacionBusqueda extends PublicacionAnimal {
     @Column(name = "ULTIMO_MOMENTO_VISTO")
     private Date ultimoEncuentro;

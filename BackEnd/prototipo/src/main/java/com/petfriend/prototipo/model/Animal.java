@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+
 
 @Entity
 @Table(name="animales")
@@ -18,9 +21,9 @@ public class Animal implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "animal_generator")
-	@SequenceGenerator(name="animal_generator", sequenceName = "animal_seq")
-	@Column(name = "id", updatable = false, nullable = false)
-    private Long idAnimal;
+	@SequenceGenerator(name="animal_generator", sequenceName = "animal_seq", allocationSize=50)
+	@Column(name = "ID")
+    long idAnimal;
     @Column(name = "NOMBRE")
     private String nombre;
     @Column(name = "ESPECIE")

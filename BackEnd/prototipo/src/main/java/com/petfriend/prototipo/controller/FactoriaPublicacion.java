@@ -76,12 +76,12 @@ public class FactoriaPublicacion {
 			a.setSexo(pAnimal.getAnimal().getSexo());
 			a.setEsterilizado(pAnimal.getAnimal().getEsterilizado());
 
-			System.out.println("HOLA");
 			p.setAnimal(a);
 			aux = p;
 			em.getTransaction().begin();
 			
 			em.persist(a);
+			System.out.println("HELLO");
 			em.persist(p);
 
 			em.getTransaction().commit();

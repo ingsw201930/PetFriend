@@ -2,7 +2,9 @@ package com.petfriend.prototipo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 @Entity
+@Table(name = "personas_naturales")
 public class PersonaNatural extends Usuario {
 	@Column(name = "DIRECCION")
     private String direccion;

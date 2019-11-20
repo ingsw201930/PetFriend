@@ -10,6 +10,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,6 +18,7 @@ import org.hibernate.annotations.Type;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "publicaciones")
 public /*abstract*/ class Publicacion {
     @Id
     @GeneratedValue
