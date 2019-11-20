@@ -16,6 +16,7 @@ import { RestClientService } from './servicios/rest-client.service';
 import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
 import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
 import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
+import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-
     NotFoundComponent,
     PerfilPropioComponent,
     PerfilPropioChatsComponent,
-    PerfilPropioPublicacionesComponent
+    PerfilPropioPublicacionesComponent,
+    PerfilEntidadComponent
   ],
   imports: [
     BrowserModule,

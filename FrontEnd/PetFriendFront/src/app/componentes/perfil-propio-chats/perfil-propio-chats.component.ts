@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPropioChatsComponent implements OnInit {
   nombreUsuario: string;
+  nombreUsuarioChat: string;
+  descripcionMensaje: string;
+  cantidadMensajes: number;
   constructor() { }
 
   ngOnInit() {
     this.nombreUsuario = 'aaa';
+    this.nombreUsuarioChat = 'usuario2';
+    this.descripcionMensaje = 'Descripcion descripcion Descripcion descripcion Descripcion descripcion Descripcion descripcion';
+    this.cantidadMensajes = 2;
   }
 
 }

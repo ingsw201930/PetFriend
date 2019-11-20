@@ -50,13 +50,6 @@ html {
     margin-left: 8%;
     margin-bottom: 70%;
     font-weight: bold;
-}
-
-.Opciones{
-    margin-top: 5%;
-    margin-left: 8%;
-    margin-bottom: 70%;
-    font-weight: bold;
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -86,7 +79,7 @@ hr{
     border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
 }
 
-.ContenedorChats{
+.ContenedorInformación{
     background-color: rgba(90, 105, 120, 0.25);
     width: 80%;
     height: 700px;
@@ -94,88 +87,104 @@ hr{
     border-radius: 15px;
 }
 
-.Chat{
+.InformaciónPublica{
     display: flex;
-    background-color: rgb(255, 255, 255);
-    margin: 20px 20px 20px 20px;
-    border-radius: 20px;
-    height: 150px;
+    margin: 30px 30px 30px 30px;
+    justify-content: space-between;
 }
 
-.Chat-Imagen{
-    background-color: rgba(150, 159, 170, 0.2);
-    width: 20%;
-    height: 150px;
-    margin: auto;
-}
-
-.Chat-Imagen img{
+.ImagenPublica img{
     background-color: rgba(0, 0, 0, 0.9);
-    display: block;
-    margin: auto;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
-    margin-top: 15px;
 }
 
-.Chat-Informacion{
-    margin: 20px 20px 20px 20px;
-    display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-    align-content: stretch;
-    width: 100%;
+.InformaciónPublica .Texto h3{
+    font-size: 65px;
 }
 
-.Chat-p1{
-    width: 100%;
+.CalificarEntidad{
+    margin: 20px 30px 30px 30px;
+}
+
+.CalificacionActual h1{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.CalificacionNumeros{
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: baseline;
-	align-content: center;
+	justify-content: flex-start;
+	align-items: flex-end;
+	align-content: stretch;
 }
 
-.Chat-Titulo h2{
+.CalificacionNumeros h1{
+    display: flex;
+    font-size: 70px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0);
+}
+
+.CalificacionNumeros h2{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(39, 39, 39);
+}
+/*
+Para la calificación de estrellas
+*/
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 100px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+    font-size: 50px;
+  }
+  
+  .clasificacionEstrellas {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+/*
+Para la calificación de estrellas
+*/
+
+.DatosEntidad{
+    margin: 20px 30px 30px 30px;
+}
+
+.DatosEntidad h1{
     font-size: 35px;
 }
 
-.Chat-Notificacion{
-    background-color: rgba(0, 166, 255, 0.65);
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
+.DatosEntidad h2{
+    font-size: 25px;
 }
-
-.Chat-Notificacion h2{
-    font-weight: bolder;
-    font-size: 30px;
-    margin-top: 5px;
-}
-
-.Chat-p2{
-    display: flex;
-    max-height: 50px;
-    width: 90%;
-}
-
-.Chat-Flecha{
-    
-}
-
-.Chat-Descripcion{
-    margin-left: 10px;
-    max-height: 10px;
-}
-
-.Chat-Descripcion h3{
-    font-size: 16px;
-    max-height: 50px;
-    color: rgb(93, 93, 93);
-}
+  

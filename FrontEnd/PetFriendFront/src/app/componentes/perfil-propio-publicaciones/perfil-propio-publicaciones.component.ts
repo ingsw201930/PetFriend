@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPropioPublicacionesComponent implements OnInit {
   nombreUsuario: string;
+  tituloPublicacion: string;
+  descripcionPublicacion: string;
   constructor() { }
 
   ngOnInit() {
     this.nombreUsuario = 'aaa';
+    this.tituloPublicacion = 'Titulo';
+    this.descripcionPublicacion = 'Descripcion';
   }
 
 }

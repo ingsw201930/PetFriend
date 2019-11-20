@@ -8,7 +8,7 @@
                     </div>
                     <hr>
                     <div class="Opciones">
-                        <a [routerLink]="['/Perfil']" >Información</a>
+                        <a [routerLink]="['/Perfil-Usuario']" >Información</a>
                         <a [routerLink]="['/Perfil-Publicaciones']" >Publicaciones</a>
                         <a [routerLink]="['/Perfil-Chats']" >Chats</a>
                     </div>
@@ -21,8 +21,8 @@
                     <div class="Publicacion">
                         <div class="Descripcion-Publicacion">
                             <div class="Titulo-Publicacion">
-                                <h1>Titulo</h1>
-                                <h2>Descripcion Descripcion Descripcion</h2>
+                                <h1>{{tituloPublicacion}}</h1>
+                                <h2>{{descripcionPublicacion}}</h2>
                             </div>
                             <div class="Opciones-Publicacion">
                                 <div class="Chats-Publicacion">
