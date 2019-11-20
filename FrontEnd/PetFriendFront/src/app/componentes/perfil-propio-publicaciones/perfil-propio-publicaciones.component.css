@@ -1,0 +1,191 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('\..\..\..\assets\fondo.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Contenedores{
+    display: flex;
+}
+
+.ContenedorOpciones{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 20%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+.ImagenPerfil{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.ImagenPerfil img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.ImagenPerfil h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: center;
+}
+
+.Opciones a{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+.Opciones a:hover{
+    color: rgba(16, 149, 173, 0.9);
+}
+
+.EditarPerfil h3{
+    font-size: 25px;
+    margin-left: 8%;
+    color: rgba(16, 26, 173, 0.9);
+    font-weight: bolder;
+}
+
+hr{
+    border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
+}
+
+.ContenedorPublicaciones{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 80%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+
+.Publicacion{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: center;
+    background-color: rgb(255, 255, 255);
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px;
+    height: 225px;
+}
+
+.Imagen-Publicacion{
+    background-color: rgba(150, 159, 170, 0.2);
+    width: 30%;
+    height: 225px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.Imagen-Publicacion img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.Descripcion-Publicacion{
+    width: 100%;
+    margin: 20px 20px 20px 20px;
+}
+
+.Titulo-Publicacion h1{
+    font-size: 35px;
+}
+
+.Titulo-Publicacion h2{
+    font-size: 20px;
+}
+
+.Opciones-Publicacion{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.OtrasOpciones-Publicacion{
+    display: flex;
+}
+
+.Opciones-Publicacion a{
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.OtrasOpciones-Publicacion a{
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Editar-Publicacion a{
+    margin-right: 30px;
+    color: #00A6FF;
+}
+
+.Borrar-Publicacion a{
+    color: #F95F62;
+}
+
+.Chats-Publicacion a{
+    color: #00A6FF;
+}
+
+.Editar-Publicacion a:hover{
+    margin-right: 30px;
+    color: rgb(0, 103, 158);
+}
+
+.Borrar-Publicacion a:hover{
+    color: rgb(167, 63, 65);
+}
+
+.Chats-Publicacion a:hover{
+    color: rgb(0, 103, 158);
+}
+
