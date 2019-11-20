@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
 import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
+import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio
     VistaPreviaComponent,
     PublicacionFinalComponent,
     NotFoundComponent,
-    PerfilPropioComponent
+    PerfilPropioComponent,
+    PerfilPropioChatsComponent
   ],
   imports: [
     BrowserModule,

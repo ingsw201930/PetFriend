@@ -8,7 +8,7 @@ import { TiposDePublicacionComponent } from './componentes/tipos-de-publicacion/
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
-
+import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'VistaPrevia', component: VistaPreviaComponent },
   { path: 'Perfil', component: PerfilPropioComponent },
+  { path: 'Perfil-Chats', component: PerfilPropioChatsComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

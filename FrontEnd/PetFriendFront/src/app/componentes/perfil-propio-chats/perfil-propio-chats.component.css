@@ -50,6 +50,13 @@ html {
     margin-left: 8%;
     margin-bottom: 70%;
     font-weight: bold;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -67,6 +74,7 @@ html {
 .Opciones a:hover{
     color: rgba(16, 149, 173, 0.9);
 }
+
 .EditarPerfil h3{
     font-size: 25px;
     margin-left: 8%;
@@ -78,7 +86,7 @@ hr{
     border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
 }
 
-.ContenedorInformación{
+.ContenedorChats{
     background-color: rgba(90, 105, 120, 0.25);
     width: 80%;
     height: 700px;
@@ -86,31 +94,82 @@ hr{
     border-radius: 15px;
 }
 
-.InformaciónPublica{
+.Chat{
     display: flex;
-    margin: 30px 30px 30px 30px;
-    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px;
+    height: 150px;
 }
 
-.ImagenPublica img{
+.Chat-Imagen{
+    background-color: rgba(150, 159, 170, 0.2);
+    width: 20%;
+    height: 150px;
+    margin: auto;
+}
+
+.Chat-Imagen img{
     background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
+    margin-top: 15px;
 }
 
-.InformaciónPublica .Texto h3{
-    font-size: 65px;
+.Chat-Informacion{
+    margin: 20px 20px 20px 20px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+    align-content: stretch;
+    width: 100%;
 }
 
-.InformaciónPrivada{
-    margin: 20px 30px 30px 30px;
+.Chat-p1{
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: center;
 }
 
-.InformaciónPrivada .Titulo h3{
-    font-size: 50px;
-    font-weight: bold;   
+.Chat-Titulo h2{
+    font-size: 35px;
 }
 
-.InformaciónPrivada h2{
-    font-size: 30px; 
+.Chat-Notificacion{
+    background-color: rgba(0, 166, 255, 0.65);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
 }
 
+.Chat-p2{
+    display: flex;
+    max-height: 50px;
+    width: 90%;
+}
+
+.Chat-Flecha{
+    
+}
+
+.Chat-Descripcion{
+    margin-left: 10px;
+    max-height: 10px;
+}
+
+.Chat-Descripcion h3{
+    font-size: 16px;
+    max-height: 50px;
+    color: rgb(93, 93, 93);
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-perfil-propio',
   templateUrl: './perfil-propio.component.html',
