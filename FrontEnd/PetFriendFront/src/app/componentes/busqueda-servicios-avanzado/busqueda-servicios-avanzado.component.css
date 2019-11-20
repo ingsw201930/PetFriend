@@ -82,5 +82,40 @@ html {
 	align-content: center;
 }
 
+.boton {
+    margin: 10px 10px 10px 10px;
+    background-color: rgb(174, 174, 199);
+    border-radius: 15px;
+    width: 150px;
+    justify-content: center;
+    align-content: center;
+    justify-content: center;
+}
 
+.boton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.boton:hover{
+    background-color: brown;
+    color: rgba(255, 255, 255, 0.952);
+}
+
+.checkmark{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
   
+.boton input:checked ~ .checkmark {
+    background-color: rgb(26, 170, 195);
+}
+
+.boton span{
+    font-size: 25px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
