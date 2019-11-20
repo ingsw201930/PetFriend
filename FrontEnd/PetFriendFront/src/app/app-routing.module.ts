@@ -11,6 +11,7 @@ import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio
 import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
 import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
 import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
+import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'Perfil-Chats', component: PerfilPropioChatsComponent },
   { path: 'Perfil-Publicaciones', component: PerfilPropioPublicacionesComponent},
   { path: 'Perfil-Entidad', component: PerfilEntidadComponent },
+  { path: 'Busqueda-Servicios-Avanzado', component:  BusquedaServiciosAvanzadoComponent  },
   { path: '**', component: NotFoundComponent },
 ];
 

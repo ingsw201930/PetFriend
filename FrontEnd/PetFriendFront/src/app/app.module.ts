@@ -10,13 +10,16 @@ import { CrearPubicacionComponent } from './componentes/crear-pubicacion/crear-p
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
 import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
 import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
 import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
 import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
+import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,8 @@ import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-enti
     PerfilPropioComponent,
     PerfilPropioChatsComponent,
     PerfilPropioPublicacionesComponent,
-    PerfilEntidadComponent
+    PerfilEntidadComponent,
+    BusquedaServiciosAvanzadoComponent
   ],
   imports: [
     BrowserModule,
