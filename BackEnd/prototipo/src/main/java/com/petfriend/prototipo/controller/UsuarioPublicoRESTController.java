@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import com.petfriend.prototipo.model.Publicacion;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
@@ -21,11 +25,24 @@ public class UsuarioPublicoRESTController {
 	private IPublicacionAdopcionRepositorio<PublicacionAdopcion> animalAdopRepo;
 	@Autowired
 	private IPublicacionRepositorio<Publicacion> adopRepo;
+
+	private static EntityManagerFactory emf = new Persistence().createEntityManagerFactory("com.PetFriend");
+	
+	public static EntityManager getEntityManager() {
+		return emf.createEntityManager();
+	}
 	
 	@GetMapping("/paginaPrincipal")
 	public Iterable<Publicacion> pedirPaginaPrincipal()
 	{
-		List<Integer> randoms = animalAdopRepo.findRandom();
+		EntityManager em = getEntityManager();
+		List<Publicacion> prueba = em.createQuery("FROM PublicacionAdopcion ORDER BY RANDOM()").getResultList();
+		System.out.println(prueba.size());
+		for (Publicacion publicacion : prueba) {
+			System.out.println(publicacion);
+		}
+		return prueba;
+		/* List<Integer> randoms = animalAdopRepo.findRandom();
 		List<Integer> ids = new ArrayList<Integer>();
 		List<Publicacion> solution = new ArrayList<Publicacion>();
 		for (int i=0 ; i<10 ; ++i) {
@@ -37,7 +54,7 @@ public class UsuarioPublicoRESTController {
 		for (Integer integer : ids) {
 			solution.add(this.adopRepo.findById(integer).get());
 		}
-		return solution;
+		return solution; */
 	}
 
 	@GetMapping("/home")

@@ -1,5 +1,9 @@
 package com.petfriend.prototipo.controller;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import com.petfriend.prototipo.model.PublicacionAEncontrado;
 import com.petfriend.prototipo.model.PublicacionAPerdido;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
@@ -28,6 +32,12 @@ public class UsuarioIniciadoRESTController {
 	private IPublicacionAEncontradoRepositorio animalEncRepo;
 	@Autowired
 	private FactoriaPublicacion factoriaPub;
+
+	private static EntityManagerFactory emf = new Persistence().createEntityManagerFactory("com.PetFriend");
+	
+	public static EntityManager getEntityManager() {
+		return emf.createEntityManager();
+	}
 
 	@PostMapping("{id}/publicacionAAdopcion")
 	public PublicacionAdopcion crearPAAdopcion(@PathVariable int id,@RequestBody PublicacionAdopcion pAnimal)

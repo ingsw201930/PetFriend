@@ -2,13 +2,18 @@ package com.petfriend.prototipo.model;
 
 //import javax.persistence.Column;
 import javax.persistence.PrimaryKeyJoinColumn;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id_publicacion")
 public class PublicacionAnimal extends Publicacion {
-	@OneToOne(mappedBy = "publicacion")
+	@Cascade({CascadeType.SAVE_UPDATE})
+	@OneToOne
 	private Animal animalAsociado;
 	
 	public Animal getAnimal() {

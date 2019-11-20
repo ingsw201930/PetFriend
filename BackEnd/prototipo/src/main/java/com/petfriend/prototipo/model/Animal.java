@@ -5,20 +5,22 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name="animales")
 public class Animal implements Serializable{
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue
-    private int idAnimal;
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "animal_generator")
+	@SequenceGenerator(name="animal_generator", sequenceName = "animal_seq")
+	@Column(name = "id", updatable = false, nullable = false)
+    private Long idAnimal;
     @Column(name = "NOMBRE")
     private String nombre;
     @Column(name = "ESPECIE")
@@ -33,15 +35,17 @@ public class Animal implements Serializable{
     private Character sexo;
     @Column(name = "ESTERILIZADO")
     private Boolean esterilizado;
-    @OneToOne
-    @JsonIgnore
-    private PublicacionAnimal publicacion;
-    //TODO --- fotos
-    
-    public Animal(PublicacionAnimal publicacion, String nombre, String especie, String raza, String color1, String color2,
-			Character sexo, Boolean esterilizado) {
+	
+	//TODO --- fotos
+	
+	public Animal(){
 		super();
-		this.publicacion = publicacion;
+	}
+
+    public Animal (String nombre, String especie, String raza, String color1, String color2,
+	Character sexo, Boolean esterilizado) {
+		super();
+		
 		this.nombre = nombre;
 		this.especie = especie;
 		this.raza = raza;
@@ -52,6 +56,7 @@ public class Animal implements Serializable{
 	}
 	public Animal(Animal n) {
 		super();
+
 		this.nombre = n.nombre;
 		this.especie = n.especie;
 		this.raza = n.raza;
@@ -60,20 +65,11 @@ public class Animal implements Serializable{
 		this.sexo = n.sexo;
 		this.esterilizado = n.esterilizado;
 	}
-
-	public int getIdAnimal() {
+	
+	public Long getIdAnimal() {
 		return idAnimal;
 	}
-	public void setIdAnimal(int idAnimal) {
-		this.idAnimal = idAnimal;
-	}
-		
-	public PublicacionAnimal getPublicacion() {
-		return publicacion;
-	}
-	public void setPublicacion(PublicacionAnimal publicacion) {
-		this.publicacion = publicacion;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -116,10 +112,5 @@ public class Animal implements Serializable{
 	public void setEsterilizado(Boolean esterilizado) {
 		this.esterilizado = esterilizado;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	public Animal() {
-		
-	}
+	private static final long serialVersionUID = 1L;
 }
