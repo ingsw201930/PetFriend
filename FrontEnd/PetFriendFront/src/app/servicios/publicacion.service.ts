@@ -28,8 +28,9 @@ export class PublicacionService {
   }
 
   async getRandom(): Promise<Publicacion[]>{
-    return new Promise(resolve => {
-      this.http.get('http://localhost:9890/public/paginaPrincipal').subscribe(data => {
+    return new Promise(resolve => {    
+      const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
+      this.http.get('http://localhost:9890/public/paginaPrincipal', {headers}).subscribe(data => {
         let randomPubs = [];
         for(var i in data){
           let temp = new Publicacion();
@@ -74,17 +75,9 @@ export class PublicacionService {
 
       
       console.log(this.publicacionAdopcion);
-      //console.log(
-        this.http.post('http://localhost:9890/usuario/1/publicacionAAdopcion',
-        this.publicacionAdopcion).subscribe(data=> {
-          console.log('entra');
-        },
-        err => {
-          console.log('error');
-          console.log(err);
-        })
-        //)
-        ;
+
+        const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
+        this.http.post('http://localhost:9890/usuario/1/publicacionAAdopcion', this.publicacionAdopcion, {headers});
     }
     else if(this.tipoPublicacion == 'encontrado'){
       this.publicacionEncontrado = new PublicacionAEncontrado;

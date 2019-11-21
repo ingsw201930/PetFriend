@@ -3,6 +3,7 @@ package com.petfriend.prototipo.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -44,36 +45,41 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
-		.withUser("admin").password(encoder().encode("password")).roles("ADMIN")
+		.withUser("admin").password("{noop}password").roles("ADMIN")
         .and()
-        .withUser("user").password(encoder().encode("password")).roles("USER");
+        .withUser("user").password("{noop}password").roles("USER");
 		
 	}
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		
-		 http
-         .cors()
-         .and()
-         .csrf().disable()
-         .exceptionHandling()
-         .authenticationEntryPoint(entryPoint)
-         .and()
-         .authorizeRequests()
-             .antMatchers("/public/**", "/login/**", "/test/**","/pubAnimal/**","/usuario/**").permitAll()
-             .antMatchers("/admin/**").hasRole("ADMIN")
-             //.antMatchers("/usuario/**").hasRole("USER")
-             .anyRequest().authenticated()
-         .and()
-         .formLogin()
-             .successHandler(successHandler)
-             .failureHandler(new SimpleUrlAuthenticationFailureHandler())
-         .and()
-         .logout() 
-             .logoutSuccessHandler(logoutSuccessHandler)
-         .and()
-         ;
-		
+        http
+        .cors()
+        .and()
+        .csrf().disable()
+        .exceptionHandling()
+        .authenticationEntryPoint(entryPoint)
+        .and()
+        .authorizeRequests()
+            .antMatchers("/public/**", "/login/**", "/test/**","/pubAnimal/**").permitAll()
+            .antMatchers("/admin/**").hasRole("ADMIN")
+            .antMatchers("/usuario/**").hasRole("USER")
+            .anyRequest().authenticated()
+        .and()
+        .formLogin()
+            .successHandler(successHandler)
+            .failureHandler(new SimpleUrlAuthenticationFailureHandler())
+        .and()
+        .logout() 
+            .logoutSuccessHandler(logoutSuccessHandler)
+        .and()
+        ;
+/*         http.csrf().disable().
+        authorizeRequests().
+        antMatchers(HttpMethod.OPTIONS, "/**").permitAll().
+        anyRequest().authenticated().
+        and().
+        httpBasic(); */
     }
     @Bean
 	public CorsFilter corsFilter() {
@@ -86,6 +92,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		config.addAllowedMethod("*");
 		source.registerCorsConfiguration("/**", config);
 		return new CorsFilter(source);
-	}
-
+    }
+    
 }

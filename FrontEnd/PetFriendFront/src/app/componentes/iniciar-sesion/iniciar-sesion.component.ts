@@ -26,11 +26,6 @@ export class IniciarSesionComponent implements OnInit {
 
   doLogin() {
     console.log(this.user + ' - ' + this.password);
-    if(this.restClient.login(this.user, this.password)){
-      this.router.navigate([``]);
-    }
-    else{
-
-    }
+    this.restClient.authenticate(this.user, this.password)
   }
 }

@@ -5,22 +5,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class RestClientService {
   constructor(private http: HttpClient) {}
 
-  usuarios: string[] = ['Brayan', 'Karen', 'Camilo', 'Leyder', 'Dorian', 'user'];
-  contras: string[] = ['Brayan', 'Karen', 'Camilo', 'Leyder', 'Dorian', 'user'];
 
 
 
-
-
-
-
-  login(username: string, password: string) {
-    for(let i = 0 ; i<this.usuarios.length ; ++i){
-      if(username == this.usuarios[i] && password == this.contras[i]){
-        return true;
-      }
-    }
-    return false;
+  authenticate(username: string, password: string) {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    console.log(this.http.get('http://localhost:9890/usuario/1/validateLogin',{headers}));
   }
 
   getCompanies() {
