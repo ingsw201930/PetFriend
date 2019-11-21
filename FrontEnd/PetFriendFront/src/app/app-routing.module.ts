@@ -7,7 +7,11 @@ import { PublicacionFinalComponent } from './componentes/publicacion-final/publi
 import { TiposDePublicacionComponent } from './componentes/tipos-de-publicacion/tipos-de-publicacion.component';
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
-
+import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
+import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
+import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
+import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
+import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
@@ -16,6 +20,11 @@ const routes: Routes = [
   { path: 'PublicacionFinal', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'VistaPrevia', component: VistaPreviaComponent },
+  { path: 'Perfil-Usuario', component: PerfilPropioComponent },
+  { path: 'Perfil-Chats', component: PerfilPropioChatsComponent },
+  { path: 'Perfil-Publicaciones', component: PerfilPropioPublicacionesComponent},
+  { path: 'Perfil-Entidad', component: PerfilEntidadComponent },
+  { path: 'Busqueda-Servicios-Avanzado', component:  BusquedaServiciosAvanzadoComponent  },
   { path: '**', component: NotFoundComponent },
 ];
 

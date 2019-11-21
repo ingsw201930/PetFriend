@@ -1,0 +1,116 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('\..\..\..\assets\fondo.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Contenedores{
+    display: flex;
+}
+
+.ContenedorOpciones{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 20%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+.ImagenPerfil{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.ImagenPerfil img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.ImagenPerfil h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: center;
+}
+
+.Opciones a{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+.Opciones a:hover{
+    color: rgba(16, 149, 173, 0.9);
+}
+.EditarPerfil h3{
+    font-size: 25px;
+    margin-left: 8%;
+    color: rgba(16, 26, 173, 0.9);
+    font-weight: bolder;
+}
+
+hr{
+    border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
+}
+
+.ContenedorInformación{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 80%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.InformaciónPublica{
+    display: flex;
+    margin: 30px 30px 30px 30px;
+    justify-content: space-between;
+}
+
+.ImagenPublica img{
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+}
+
+.InformaciónPublica .Texto h3{
+    font-size: 65px;
+}
+
+.InformaciónPrivada{
+    margin: 20px 30px 30px 30px;
+}
+
+.InformaciónPrivada .Titulo h3{
+    font-size: 50px;
+    font-weight: bold;   
+}
+
+.InformaciónPrivada h2{
+    font-size: 30px; 
+}
+

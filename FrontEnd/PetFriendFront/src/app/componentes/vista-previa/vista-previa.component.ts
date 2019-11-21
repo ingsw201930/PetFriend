@@ -11,8 +11,8 @@ import { PublicacionService } from 'src/app/servicios/publicacion.service';
   styleUrls: ['./vista-previa.component.css']
 })
 export class VistaPreviaComponent implements OnInit {
-    
-  
+
+
   title: string;
   nombreAnimal: string;
   especieAnimal: string;

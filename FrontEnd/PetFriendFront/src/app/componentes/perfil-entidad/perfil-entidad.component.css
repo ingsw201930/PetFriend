@@ -1,0 +1,190 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('\..\..\..\assets\fondo.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Contenedores{
+    display: flex;
+}
+
+.ContenedorOpciones{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 20%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+.ImagenPerfil{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.ImagenPerfil img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.ImagenPerfil h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: center;
+}
+
+.Opciones a{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+.Opciones a:hover{
+    color: rgba(16, 149, 173, 0.9);
+}
+
+.EditarPerfil h3{
+    font-size: 25px;
+    margin-left: 8%;
+    color: rgba(16, 26, 173, 0.9);
+    font-weight: bolder;
+}
+
+hr{
+    border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
+}
+
+.ContenedorInformación{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 80%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.InformaciónPublica{
+    display: flex;
+    margin: 30px 30px 30px 30px;
+    justify-content: space-between;
+}
+
+.ImagenPublica img{
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+}
+
+.InformaciónPublica .Texto h3{
+    font-size: 65px;
+}
+
+.CalificarEntidad{
+    margin: 20px 30px 30px 30px;
+}
+
+.CalificacionActual h1{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.CalificacionNumeros{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-end;
+	align-content: stretch;
+}
+
+.CalificacionNumeros h1{
+    display: flex;
+    font-size: 70px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0);
+}
+
+.CalificacionNumeros h2{
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(39, 39, 39);
+}
+/*
+Para la calificación de estrellas
+*/
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 100px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+    font-size: 50px;
+  }
+  
+  .clasificacionEstrellas {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+/*
+Para la calificación de estrellas
+*/
+
+.DatosEntidad{
+    margin: 20px 30px 30px 30px;
+}
+
+.DatosEntidad h1{
+    font-size: 35px;
+}
+
+.DatosEntidad h2{
+    font-size: 25px;
+}
+  
