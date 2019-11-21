@@ -18,10 +18,11 @@ export class BusquedaServiciosAvanzadoComponent implements OnInit {
   aseo = false;
   juguetes = false;
   snacks = false;
-  
   theCheckbox = false;
   marked = false;
 
+  especie:string;
+  nombreBusqueda:string = 'www';
   constructor() { }
 
   ngOnInit() {

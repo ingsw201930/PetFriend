@@ -3,7 +3,7 @@
         <div class="Contenedores">
             <div class="formPrincipal">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
+                    <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search" [(ngModel)]="nombreBusqueda">
                     <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Buscar</button>
                 </form>
                 <h1>▲ Busqueda avanzada</h1>
@@ -65,20 +65,16 @@
                             <input type="checkbox" [(ngModel)]="snacks"  data-md-icheck (change)="toggleVisibility($event)"/>
                             <span class="checkmark">Snacks</span>
                         </label>
-                    </div>
-                    
-                    
-     
-
-                        <div>And <b>ngModel</b> also works, it's value is <b>{{veterinaria}}</b></div>
-                        <div>And <b>ngModel</b> also works, it's value is <b>{{refugio}}</b></div>
-                        <div>And <b>ngModel</b> also works, it's value is <b>{{peluqueria}}</b></div>
-                        <div>And <b>ngModel</b> also works, it's value is <b>{{comida}}</b></div>
+                    </div>             
                 </div>
                 
                 <h2>Seleccione especie del animal</h2>
                 <div class="EspecieAnimal">
-
+                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie">
+                        <option value="Canino">Canino</option>
+                        <option value="Felino">Felino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
                 </div>
             </div>        
         </div>
