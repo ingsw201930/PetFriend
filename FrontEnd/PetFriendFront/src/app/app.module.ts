@@ -20,6 +20,13 @@ import { AnimalesSimilaresComponent } from './componentes/animales-similares/ani
 import { AnimalesComponent } from './componentes/animales/animales.component';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { ResultadosBusquedaComponent } from './componentes/resultados-busqueda/resultados-busqueda.component';
+import { AdoptarComponent } from './componentes/componentes/adoptar/adoptar.component';
+import { AdoptaBasicoComponent } from './componentes/adopta-basico/adopta-basico.component';
+import { ResultadosAdoptaComponent } from './componentes/resultados-adopta/resultados-adopta.component';
+import { AdoptaAvanzadoComponent } from './componentes/adopta-avanzado/adopta-avanzado.component';
+import { EncontrarBasicoComponent } from './componentes/encontrar-basico/encontrar-basico.component';
+import { EncontrarAvanzadoComponent } from './componentes/encontrar-avanzado/encontrar-avanzado.component';
+import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar/resultados-encontrar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,14 @@ import { ResultadosBusquedaComponent } from './componentes/resultados-busqueda/r
     AnimalesSimilaresComponent,
     AnimalesComponent,
     BusquedaComponent,
-    ResultadosBusquedaComponent
+    ResultadosBusquedaComponent,
+    AdoptarComponent,
+    AdoptaBasicoComponent,
+    ResultadosAdoptaComponent,
+    AdoptaAvanzadoComponent,
+    EncontrarBasicoComponent,
+    EncontrarAvanzadoComponent,
+    ResultadosEncontrarComponent
   ],
   imports: [
     BrowserModule,

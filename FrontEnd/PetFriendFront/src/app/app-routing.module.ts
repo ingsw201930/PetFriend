@@ -21,14 +21,14 @@ const routes: Routes = [
   { path: 'PublicacionFinal', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'VistaPrevia', component: VistaPreviaComponent },
-  { path: '**', component: NotFoundComponent },
   { path: 'Animales', component: AnimalesComponent },
   { path: 'AnimalesSimilares', component: AnimalesSimilaresComponent },
   { path: 'Busqueda', component: BusquedaComponent },
   { path: 'RegistrarEntidad', component: RegistrarEntidadComponent },
   { path: 'RegistrarUsuario', component: RegistrarUsuarioComponent },
   { path: 'Registro', component: RegistroComponent },
-  { path: 'ResultadosBusqueda', component: ResultadosBusquedaComponent }
+  { path: 'ResultadosBusqueda', component: ResultadosBusquedaComponent },
+  { path: '**', component: NotFoundComponent }
 
 ];
 
