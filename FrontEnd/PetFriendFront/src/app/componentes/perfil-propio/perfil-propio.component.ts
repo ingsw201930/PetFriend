@@ -9,7 +9,7 @@ export class PerfilPropioComponent implements OnInit {
   nombreUsuario: string;
   correoUsuario: string;
   direccionUsuario: string;
-
+  url1: any;
   constructor() { }
 
   ngOnInit() {

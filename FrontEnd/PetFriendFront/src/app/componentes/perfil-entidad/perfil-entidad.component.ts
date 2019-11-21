@@ -10,6 +10,8 @@ export class PerfilEntidadComponent implements OnInit {
   correoEntidad: string;
   direccionEntidad: string;
   nitEntidad: string;
+  url1:any;
+  
   constructor() { }
 
   ngOnInit() {

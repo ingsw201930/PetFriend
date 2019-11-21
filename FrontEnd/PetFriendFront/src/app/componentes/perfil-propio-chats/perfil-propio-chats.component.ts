@@ -10,6 +10,7 @@ export class PerfilPropioChatsComponent implements OnInit {
   nombreUsuarioChat: string;
   descripcionMensaje: string;
   cantidadMensajes: number;
+  url1:any;
   constructor() { }
 
   ngOnInit() {

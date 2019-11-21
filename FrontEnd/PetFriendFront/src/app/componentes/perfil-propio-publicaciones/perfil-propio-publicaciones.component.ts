@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPropioPublicacionesComponent implements OnInit {
   nombreUsuario: string;
+  url1:any;
   tituloPublicacion: string;
   descripcionPublicacion: string;
   constructor() { }

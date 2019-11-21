@@ -16,7 +16,7 @@ export class IniciarSesionComponent implements OnInit {
   password = '';
   
   result: any;
-  
+  isError:boolean;
   message: any;
   
   constructor(private restClient: RestClientService, private router: Router) {
