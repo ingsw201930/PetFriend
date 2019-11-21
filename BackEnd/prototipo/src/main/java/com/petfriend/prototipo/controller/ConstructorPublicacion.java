@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice
-public class FactoriaPublicacion {
+public class ConstructorPublicacion {
 	@Autowired
 	private IPublicacionAdopcionRepositorio<PublicacionAdopcion> animalAdopRepo;
 	@Autowired
