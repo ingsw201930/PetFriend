@@ -89,7 +89,8 @@ hr{
 .ContenedorPublicaciones{
     background-color: rgba(90, 105, 120, 0.25);
     width: 80%;
-    height: 700px;
+    height: 100%;
+    min-height: 700px;;
     margin: 20px 20px 20px 20px;
     border-radius: 15px;
 }
@@ -188,4 +189,17 @@ hr{
 .Chats-Publicacion a:hover{
     color: rgb(0, 103, 158);
 }
+
+.ContenedorPublicaciones li {
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+}
+
+.ContenedorPublicaciones ul {
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+}
+
 

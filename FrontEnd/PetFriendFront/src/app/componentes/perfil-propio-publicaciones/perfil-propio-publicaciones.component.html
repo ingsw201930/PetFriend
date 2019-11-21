@@ -17,31 +17,35 @@
                         <h3>Editar perfil</h3>
                     </div>
                 </div>
-                <div class="ContenedorPublicaciones">
-                    <div class="Publicacion">
-                        <div class="Descripcion-Publicacion">
-                            <div class="Titulo-Publicacion">
-                                <h1>{{tituloPublicacion}}</h1>
-                                <h2>{{descripcionPublicacion}}</h2>
-                            </div>
-                            <div class="Opciones-Publicacion">
-                                <div class="Chats-Publicacion">
-                                    <a [routerLink]="['/Perfil']" >Chats</a>
-                                </div>
-                                <div class="OtrasOpciones-Publicacion">
-                                    <div class="Editar-Publicacion">
-                                        <a [routerLink]="['/Perfil']" >Editar</a>
+                <div class="ContenedorPublicaciones">             
+                        <ul>
+                            <li *ngFor="let item of items; let i = index">
+                              <div class="Publicacion" *ngIf="show">
+                                    <div class="Descripcion-Publicacion">
+                                        <div class="Titulo-Publicacion">
+                                            <h1>{{tituloPublicacion}}</h1>
+                                            <h2>{{descripcionPublicacion}}</h2>
+                                        </div>
+                                        <div class="Opciones-Publicacion">
+                                            <div class="Chats-Publicacion">
+                                                <a [routerLink]="['/Perfil']" >Chats</a>
+                                            </div>
+                                            <div class="OtrasOpciones-Publicacion">
+                                                <div class="Editar-Publicacion">
+                                                    <a [routerLink]="['/Perfil']" >Editar</a>
+                                                </div>
+                                                <div class="Borrar-Publicacion">
+                                                    <a [routerLink]="['/Perfil']" >Borrar</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="Borrar-Publicacion">
-                                        <a [routerLink]="['/Perfil']" >Borrar</a>
+                                    <div class="Imagen-Publicacion">
+                                        <img id="imgUsuario" [src]="url1" width="75%" height="75%">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="Imagen-Publicacion">
-                            <img id="imgUsuario" [src]="url1" width="75%" height="75%">
-                        </div>
-                    </div>
+                            </li>
+                        </ul>
                 </div>
                     
             </div>
