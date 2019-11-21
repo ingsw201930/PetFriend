@@ -13,7 +13,7 @@ import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-
 import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
 import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
-
+import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'Perfil-Publicaciones-Vacio', component: PerfilPropioPublicacionesVacioComponent},
   { path: 'Perfil-Entidad', component: PerfilEntidadComponent },
   { path: 'Busqueda-Servicios-Avanzado', component:  BusquedaServiciosAvanzadoComponent  },
+  { path: 'Resultados-Servicios', component:  ResultadosServiciosComponent  },
   { path: '**', component: NotFoundComponent },
 ];
 

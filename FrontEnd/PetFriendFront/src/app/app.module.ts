@@ -19,6 +19,7 @@ import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-
 import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
 import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
+import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-pr
     PerfilPropioPublicacionesComponent,
     PerfilEntidadComponent,
     BusquedaServiciosAvanzadoComponent,
-    PerfilPropioPublicacionesVacioComponent
+    PerfilPropioPublicacionesVacioComponent,
+    ResultadosServiciosComponent
   ],
   imports: [
     BrowserModule,
