@@ -11,10 +11,10 @@ export class PerfilPropioPublicacionesComponent implements OnInit {
   nombreUsuario: string;
   tituloPublicacion: string;
   descripcionPublicacion: string;
-  cantidadPublicaciones: number = 0; 
+  cantidadPublicaciones: number = 1; 
   show: boolean = true;
   publicaciones: Publicacion[];
-  items = ['First', 'Second', 'Third'];
+  items = ['First', 'Second', 'Third','First', 'Second', 'Third'];
   public stuff:any[] = [];
 
 
@@ -22,6 +22,8 @@ export class PerfilPropioPublicacionesComponent implements OnInit {
 
   ngOnInit() {
     this.nombreUsuario = 'aaa';
+
+    
     this.tituloPublicacion = 'Titulo';
     this.descripcionPublicacion = 'Descripcion';
     

@@ -75,6 +75,10 @@ html {
     color: rgba(16, 149, 173, 0.9);
 }
 
+#actual{
+    color: rgba(16, 149, 173, 0.9);
+}
+
 .EditarPerfil h3{
     font-size: 25px;
     margin-left: 8%;
