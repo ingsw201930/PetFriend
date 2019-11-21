@@ -25,8 +25,8 @@ export class IniciarSesionComponent implements OnInit {
   doLogin() {
     console.log(this.user + ' - ' + this.password);
     // TODO Obtain Role and Name current user
-    // this.global.role = 'ENTIDAD';
-    // this.global.nameCurrentUser = 'LOLO';
+     this.global.role = 'TIENDA';
+     this.global.nameCurrentUser = 'LOLO';
     if (this.restClient.login(this.user, this.password)) {
       //HERE after get response replace into global variable (this.global). 
       // this.global.nameCurrentUser = res.name;
