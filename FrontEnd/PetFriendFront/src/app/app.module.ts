@@ -20,7 +20,11 @@ import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-enti
 import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,12 @@ import { ResultadosServiciosComponent } from './componentes/resultados-servicios
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatFormFieldModule
   ],
   providers: [RestClientService],
   bootstrap: [AppComponent]

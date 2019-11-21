@@ -40,7 +40,7 @@ export class VistaPreviaComponent implements OnInit {
     this.nombreAnimal = this.animal.nombre;
     this.especieAnimal = this.animal.especie;
     this.edadAnimal = this.animal.edad;
-    this.generoAnimal = (this.animal.esHembra == true? 'Hembra' : 'Macho');
+    this.generoAnimal = this.animal.genero;
     this.razaAnimal = this.animal.raza;
     this.color1Animal = this.animal.color1;
     this.color2Animal = this.animal.color2;
