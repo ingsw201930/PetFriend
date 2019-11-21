@@ -21,6 +21,8 @@ public class UsuarioPublicoRESTController {
 	private IPublicacionAdopcionRepositorio<PublicacionAdopcion> animalAdopRepo;
 	@Autowired
 	private IPublicacionRepositorio<Publicacion> adopRepo;
+	@Autowired
+    private PublicacionAnimalController controlPub;
 	
 	@GetMapping("/paginaPrincipal")
 	public Iterable<Publicacion> pedirPaginaPrincipal()
@@ -40,6 +42,19 @@ public class UsuarioPublicoRESTController {
 			solution.add(this.adopRepo.findById(integer).get());
 		}
 		return solution;
+	}
+
+	
+	@GetMapping("/Adopcion")
+	public Iterable<Publicacion> pedirAAdopcion()
+	{
+		return this.controlPub.pedirPublicacionesAdopcion();
+	}
+
+	@GetMapping("/Adopcion/Avanzada")
+	public Iterable<Publicacion> pedirAAdopcionFiltros()
+	{
+		return this.controlPub.pedirPublicacionesAdopcion();
 	}
 
 	@GetMapping("/home")
