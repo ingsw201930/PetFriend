@@ -110,8 +110,6 @@ local.properties
 .mtj.tmp/
 
 # Package Files #
-*.jar
-!prototipo-0.0.2-SNAPSHOT.jar
 *.war
 *.nar
 *.ear

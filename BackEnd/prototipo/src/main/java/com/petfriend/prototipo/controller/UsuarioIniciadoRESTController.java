@@ -32,6 +32,7 @@ public class UsuarioIniciadoRESTController {
 	@PostMapping("{id}/publicacionAAdopcion")
 	public PublicacionAdopcion crearPAAdopcion(@PathVariable int id,@RequestBody PublicacionAdopcion pAnimal)
 	{
+		
 		return constructorPub.crearPAAdopcion(id, pAnimal);
 	}
 	
