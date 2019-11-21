@@ -73,6 +73,58 @@ html {
     font-size: 30px;
 }
 
+.BotonesTotal{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+/* Ocultar checkBox
+*/
+.boton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.boton {
+    margin: 10px 10px 5px 10px;
+    background-color: rgb(174, 174, 199);
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.boton:hover{
+    background-color: brown;
+    color: rgba(255, 255, 255, 0.952);
+}
+
+.checkmark{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+  
+.boton input:checked ~ .checkmark {
+    background-color: rgb(26, 170, 195);
+    border-radius: 15px;
+}
+
+.boton span{
+    font-size: 25px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.custom-select{
+    width: 300px ;
+}
+
 .ContenedorPublicaciones{
     background-color: rgba(90, 105, 120, 0.25);
     width: 80%;

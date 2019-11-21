@@ -10,12 +10,13 @@ export class ResultadosServiciosComponent implements OnInit {
   tituloPublicacion: string;
   descripcionPublicacion: string;
   show: boolean = true;
+  items = ['First', 'Second', 'Third','First', 'Second', 'Third'];
   constructor() { }
 
   ngOnInit() {
     this.tituloPublicacion = 'Titulo';
     this.descripcionPublicacion = 'Descripcion';
-    
+    this.show = true;
   }
 
 }

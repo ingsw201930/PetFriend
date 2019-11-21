@@ -2,17 +2,37 @@
         <section id="Usuario-Propio">
             <div class="Contenedores">
                 <div class="formPrincipal">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search" [(ngModel)]="nombreBusqueda">
-                        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Buscar</button>
-                    </form>
-                    <h1>▲ Busqueda avanzada</h1>
+
                 </div>
-                <div class="ContenedorAvanzado">
-                    <div class="Servicios" *ngIf="show">
-                        <h2>Hola</h2>
-                    </div>
-                    <h2>qqq</h2>
+                <div class="ContenedorPublicaciones">
+                        <ul>
+                                <li *ngFor="let item of items; let i = index">
+                                  <div class="Publicacion" *ngIf="show">
+                                        <div class="Descripcion-Publicacion">
+                                            <div class="Titulo-Publicacion">
+                                                <h1>{{tituloPublicacion}}</h1>
+                                                <h2>{{descripcionPublicacion}}</h2>
+                                            </div>
+                                            <div class="Opciones-Publicacion">
+                                                <div class="Chats-Publicacion">
+                                                    <a [routerLink]="['/Perfil']" >Chats</a>
+                                                </div>
+                                                <div class="OtrasOpciones-Publicacion">
+                                                    <div class="Editar-Publicacion">
+                                                        <a [routerLink]="['/Perfil']" >Editar</a>
+                                                    </div>
+                                                    <div class="Borrar-Publicacion">
+                                                        <a [routerLink]="['/Perfil']" >Borrar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Imagen-Publicacion">
+                                            <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                 </div>        
             </div>
         </section>
