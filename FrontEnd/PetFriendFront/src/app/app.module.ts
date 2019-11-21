@@ -18,9 +18,7 @@ import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/regis
 import { RegistrarEntidadComponent } from './componentes/registrar-entidad/registrar-entidad.component';
 import { AnimalesSimilaresComponent } from './componentes/animales-similares/animales-similares.component';
 import { AnimalesComponent } from './componentes/animales/animales.component';
-import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { ResultadosBusquedaComponent } from './componentes/resultados-busqueda/resultados-busqueda.component';
-import { AdoptarComponent } from './componentes/componentes/adoptar/adoptar.component';
 import { AdoptaBasicoComponent } from './componentes/adopta-basico/adopta-basico.component';
 import { ResultadosAdoptaComponent } from './componentes/resultados-adopta/resultados-adopta.component';
 import { AdoptaAvanzadoComponent } from './componentes/adopta-avanzado/adopta-avanzado.component';
@@ -42,9 +40,7 @@ import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar
     RegistrarEntidadComponent,
     AnimalesSimilaresComponent,
     AnimalesComponent,
-    BusquedaComponent,
     ResultadosBusquedaComponent,
-    AdoptarComponent,
     AdoptaBasicoComponent,
     ResultadosAdoptaComponent,
     AdoptaAvanzadoComponent,
