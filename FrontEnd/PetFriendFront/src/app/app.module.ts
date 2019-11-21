@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,11 +25,7 @@ import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-enti
 import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatRadioModule } from '@angular/material/radio';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     PerfilEntidadComponent,
     BusquedaServiciosAvanzadoComponent,
     PerfilPropioPublicacionesVacioComponent,
-    ResultadosServiciosComponent
+    ResultadosServiciosComponent,
+    BusquedaServiciosBasicoComponent
   ],
   imports: [
     BrowserModule,
