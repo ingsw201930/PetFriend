@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Global } from './modelo/global';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'PetFriendFront';
+  rol: string;
+  nombre: string;
+
+  constructor(public globals: Global) {
+    this.nombre = this.globals.nameCurrentUser;
+    this.rol = this.globals.role;
+   }
+
 }

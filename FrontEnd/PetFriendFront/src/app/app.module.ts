@@ -10,7 +10,7 @@ import { CrearPubicacionComponent } from './componentes/crear-pubicacion/crear-p
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
 import { RegistroComponent } from './componentes/registro/registro.component';
@@ -25,6 +25,7 @@ import { AdoptaAvanzadoComponent } from './componentes/adopta-avanzado/adopta-av
 import { EncontrarBasicoComponent } from './componentes/encontrar-basico/encontrar-basico.component';
 import { EncontrarAvanzadoComponent } from './componentes/encontrar-avanzado/encontrar-avanzado.component';
 import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar/resultados-encontrar.component';
+import { Global } from './modelo/global';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar
     FormsModule,
     HttpClientModule
   ],
-  providers: [RestClientService],
+  providers: [RestClientService,
+    Global],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,22 +4,24 @@
 <div class="fondo ">
     <nav class="navbar navbar-expand-lg navbar-default">
         <a class="navbar-brand" [routerLink]="['/']">PetFriend</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <br>
-                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Adopta <span class="sr-only">(current)</span></a>
+                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Adopta <span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <br>
                     <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Encuentra</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="globals.role == 'USUARIO' || globals.role == 'ADMIN'" class="nav-item">
                     <br>
                     <a class="nav-primary" [routerLink]="['/TiposDePublicacion']" style="color:#FFFFFF;">Publica</a>
                 </li>
@@ -27,10 +29,28 @@
                     <br>
                     <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Servicios</a>
                 </li>
+                <li *ngIf="globals.role == 'TIENDA'" class="nav-item">
+                    <br>
+                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Agregar Servicios</a>
+                </li>
+                <li *ngIf="globals.role == 'ADMIN'" class="nav-item">
+                    <br>
+                    <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Reportes</a>
+                </li>
             </ul>
-            <ul class="navbar-nav navbar-right">
+            <ul *ngIf="!globals.role" class="navbar-nav navbar-right">
                 <li><a [routerLink]="['/Registro']" class="btn btn-primary">Registrarse</a></li>
                 <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Iniciar Sesión</a></li>
+            </ul>
+            <ul *ngIf="globals.role == 'USUARIO'" class="navbar-nav navbar-right">
+                <h4 style="padding-top: 10px;">{{globals.nameCurrentUser}}</h4>
+                <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Salir</a></li>
+                <button class="btn btn-success">DONAR</button>
+            </ul>
+            <ul *ngIf="globals.role == 'ADMIN' || globals.role == 'TIENDA'"
+                class="navbar-nav navbar-right">
+                <h4 style="padding-top: 10px;">{{globals.nameCurrentUser}}</h4>
+                <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Salir</a></li>
             </ul>
 
         </div>

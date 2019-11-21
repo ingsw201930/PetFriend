@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Global } from 'src/app/modelo/global';
 
 @Component({
   selector: 'app-pantalla-principal',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pantalla-principal.component.css']
 })
 export class PantallaPrincipalComponent implements OnInit {
+  rols: string;
   imagen: string[] = [
     'assets/gato1.jpg',
     'http://www.eldiariodelcentrodelpais.com/wp-content/uploads/2017/11/P19-f1-1.jpg',
@@ -21,9 +23,23 @@ export class PantallaPrincipalComponent implements OnInit {
     'https://img.soy-chile.cl/Fotos/2014/11/10/file_20141110121800.jpg'
 
   ];
-  constructor() { }
+  name: string;
+
+  constructor(private global: Global) {
+    this.rols = global.role;
+    this.name = global.nameCurrentUser;
+    console.log('constructor ' + this.rols);
+  }
 
   ngOnInit() {
+  }
+
+  private changedRole() {
+    console.log(this.rols);
+    console.log(this.global.nameCurrentUser );
+    this.global.nameCurrentUser = this.name;
+    this.global.role = this.rols;
+    console.log(this.global.nameCurrentUser);
   }
 
 }
