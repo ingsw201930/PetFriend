@@ -30,7 +30,7 @@ export class PerfilPropioPublicacionesComponent implements OnInit {
     }
     else{
       this.show = false;
-      this.router.navigate(['/VistaPrevia']);
+      this.router.navigate(['/Perfil-Publicaciones-Vacio']);
     }
   }
 

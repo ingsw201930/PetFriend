@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+
+<body>
+        <section id="Usuario-Propio">
+            <div class="Contenedores">
+                <div class="ContenedorOpciones">
+                    <div class="ImagenPerfil">
+                        <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                        <h3>{{nombreUsuario}}</h3>
+                    </div>
+                    <hr>
+                    <div class="Opciones">
+                        <a [routerLink]="['/Perfil-Usuario']" >Información</a>
+                        <a [routerLink]="['/Perfil-Publicaciones']" >Publicaciones</a>
+                        <a [routerLink]="['/Perfil-Chats']" >Chats</a>
+                    </div>
+                    <hr>
+                    <div class="EditarPerfil">
+                        <h3>Editar perfil</h3>
+                    </div>
+                </div>
+                <div class="ContenedorPublicaciones">             
+                    <div class="ImagenPublicacion">
+                        <img id="imgUsuario" [src]="imagen" width="50%" height="50%">
+                    </div>
+                    <div class="TextoPublicacion">
+                        <h1>Aun no has creado publicaciones</h1>
+                        <h2>Ayuda a un animal a encontrar su hogar.</h2>
+                        <h2>Adopta un amigo.</h2>
+                        <h2>Notifica si se perdio tu mascota</h2>
+
+                        <button (click)="irAPublicar()" type="button" class="btn btn-primary btn-lg" style="float: right;">Crear Publicación</button>
+                    </div>
+                </div>
+                    
+            </div>
+        
+        </section>
+        
+            
+        </body>
+        
+        
+        
