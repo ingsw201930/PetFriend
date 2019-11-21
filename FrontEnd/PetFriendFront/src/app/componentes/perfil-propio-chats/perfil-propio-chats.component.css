@@ -1,0 +1,181 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('\..\..\..\assets\fondo.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Contenedores{
+    display: flex;
+}
+
+.ContenedorOpciones{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 20%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+.ImagenPerfil{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.ImagenPerfil img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.ImagenPerfil h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
+}
+
+.Opciones{
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 70%;
+    font-weight: bold;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: center;
+}
+
+.Opciones a{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+.Opciones a:hover{
+    color: rgba(16, 149, 173, 0.9);
+}
+
+.EditarPerfil h3{
+    font-size: 25px;
+    margin-left: 8%;
+    color: rgba(16, 26, 173, 0.9);
+    font-weight: bolder;
+}
+
+hr{
+    border-top: 1px dashed  rgba(68, 68, 68, 0.931) ;
+}
+
+.ContenedorChats{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 80%;
+    height: 700px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.Chat{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px;
+    height: 150px;
+}
+
+.Chat-Imagen{
+    background-color: rgba(150, 159, 170, 0.2);
+    width: 20%;
+    height: 150px;
+    margin: auto;
+}
+
+.Chat-Imagen img{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.Chat-Informacion{
+    margin: 20px 20px 20px 20px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+    align-content: stretch;
+    width: 100%;
+}
+
+.Chat-p1{
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: center;
+}
+
+.Chat-Titulo h2{
+    font-size: 35px;
+}
+
+.Chat-Notificacion{
+    background-color: rgba(0, 166, 255, 0.65);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.Chat-Notificacion h2{
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.Chat-p2{
+    display: flex;
+    max-height: 50px;
+    width: 90%;
+}
+
+.Chat-Flecha{
+    
+}
+
+.Chat-Descripcion{
+    margin-left: 10px;
+    max-height: 10px;
+}
+
+.Chat-Descripcion h3{
+    font-size: 16px;
+    max-height: 50px;
+    color: rgb(93, 93, 93);
+}

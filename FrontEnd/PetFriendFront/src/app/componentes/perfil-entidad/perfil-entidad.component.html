@@ -1,0 +1,69 @@
+<body>
+        <section id="Usuario-Propio">
+            <div class="Contenedores">
+                <div class="ContenedorOpciones">
+                    <div class="ImagenPerfil">
+                        <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                        <h3>{{nombreEntidad}}</h3>
+                    </div>
+                    <hr>
+                    <div class="Opciones">
+                        <a [routerLink]="['/Perfil-Entidad']" >Información</a>
+                        <a [routerLink]="['/Perfil-Publicaciones']" >Publicaciones</a>
+                        <a [routerLink]="['/Perfil-Chats']" >Chats</a>
+                    </div>
+                    <hr>
+                    <div class="EditarPerfil">
+                        <h3>Editar perfil</h3>
+                    </div>
+                </div>
+                <div class="ContenedorInformación">
+                    <div class="InformaciónPublica">
+                        <div class="Texto">
+                            <h3>{{nombreEntidad}}</h3>
+                            <h2>Correo: {{correoEntidad}}</h2>
+                            <h2>Dirección: {{direccionEntidad}}</h2>
+                            <h2>NIT: {{nitEntidad}}</h2>
+                        </div>
+                        <div class="ImagenPublica">
+                            <img id="imgUsuario" [src]="url1" width="250px" height="250px">
+                        </div>
+                    </div>
+                    <div class="CalificarEntidad">
+                        <div class="CalificacionActual">
+                            <h1>Calificación</h1>
+                            <div class="CalificacionNumeros">
+                                <h1>4.5</h1>
+                                <h2>/</h2>
+                                <h2>5</h2>
+                            </div>
+                           
+                        </div>
+                        <div class="CalificacionNueva">
+                            <form>
+                                <p class="clasificacionEstrellas">
+                                    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                    --><label for="radio1">★</label><!--
+                                    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                    --><label for="radio2">★</label><!--
+                                    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                    --><label for="radio3">★</label><!--
+                                    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                    --><label for="radio4">★</label><!--
+                                    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                    --><label for="radio5">★</label>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        
+        </section>
+        
+            
+        </body>
+        
+        
+        

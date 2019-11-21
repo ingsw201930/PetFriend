@@ -1,0 +1,50 @@
+<body>
+<section id="Usuario-Propio">
+    <div class="Contenedores">
+        <div class="ContenedorOpciones">
+            <div class="ImagenPerfil">
+                <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                <h3>{{nombreUsuario}}</h3>
+            </div>
+            <hr>
+            <div class="Opciones">
+                <a [routerLink]="['/Perfil-Usuario']" >Información</a>
+                <a [routerLink]="['/Perfil-Publicaciones']" >Publicaciones</a>
+                <a [routerLink]="['/Perfil-Chats']" >Chats</a>
+            </div>
+            <hr>
+            <div class="EditarPerfil">
+                <h3>Editar perfil</h3>
+            </div>
+        </div>
+        <div class="ContenedorInformación">
+            <div class="InformaciónPublica">
+                <div class="Texto">
+                    <h3>{{nombreUsuario}}</h3>
+                    <h2>NombreUsuario</h2>
+                    <h2>NombreUsuario</h2>
+                    <h2>NombreUsuario</h2>
+                </div>
+                <div class="ImagenPublica">
+                    <img id="imgUsuario" [src]="url1" width="250px" height="250px">
+                </div>
+            </div>
+            <hr>
+            <div class="InformaciónPrivada">
+                <div class="Titulo">
+                    <h3>Solo tú puedes ver esto</h3>
+                </div>
+
+                <h2>Correo: {{correoUsuario}}</h2>
+                <h2>Dirección: {{direccionUsuario}}</h2>
+            </div>
+        </div>
+            
+    </div>
+
+</section>
+
+    
+</body>
+
+

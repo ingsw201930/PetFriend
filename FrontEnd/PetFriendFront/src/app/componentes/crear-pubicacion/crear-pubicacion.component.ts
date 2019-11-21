@@ -89,5 +89,8 @@ export class CrearPubicacionComponent implements OnInit {
     this.service.animal = this.animal;
     this.router.navigate(['/VistaPrevia']);
   }
+  
+
+
 
 }

@@ -1,6 +1,7 @@
 package com.petfriend.prototipo.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -44,6 +46,9 @@ public /*abstract*/ class Publicacion {
     private String imagen4;
     @Column(name = "LOCALIDADPUBLICACION")
     private String localidad;//TODO
+    @OneToMany(mappedBy = "usuario2")
+    @JsonIgnore
+    private List<ConversacionUsuarioUsuario> conversacionesUsuario;
     
     public Publicacion()
     {
