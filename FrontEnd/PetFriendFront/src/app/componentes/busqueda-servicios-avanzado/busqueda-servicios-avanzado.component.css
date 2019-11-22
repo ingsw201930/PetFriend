@@ -124,3 +124,19 @@ html {
 .custom-select{
     width: 300px ;
 }
+
+.todo{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.todo h1{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.todo h2{
+    font-size: 25px;
+    font-weight: bold;
+}

@@ -24,7 +24,7 @@ export class BuscarServicioComponent implements OnInit {
   snacks:boolean = false;
   especie:boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -39,7 +39,7 @@ export class BuscarServicioComponent implements OnInit {
   }
 
   buscar(){
-    
+    this.router.navigate(['Resultados-Servicios']);
   }
 
 }
