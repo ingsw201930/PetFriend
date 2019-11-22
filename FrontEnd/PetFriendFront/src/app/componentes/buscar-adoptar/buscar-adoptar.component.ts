@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output,  EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { Publicacion } from 'src/app/modelo/publicacion';
 
@@ -9,6 +9,17 @@ import { Publicacion } from 'src/app/modelo/publicacion';
 })
 export class BuscarAdoptarComponent implements OnInit {
   Basico: boolean = true;
+
+  especie: string = '';
+  raza: string = '';
+  edad: string = '';
+  color1: string = '';
+  color2: string = '';
+  genero: string ='';
+  esterilizado: string ='';
+
+  
+
   constructor(private router: Router) { }
 
   ngOnInit() {

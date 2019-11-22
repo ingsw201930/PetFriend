@@ -13,16 +13,24 @@
                 </div>
                 <div class="ContenedorAvanzado">
                     <div class="mostrarBasico" *ngIf="Basico">
-                            <app-encontrar-basico></app-encontrar-basico>
+                            <app-adopta-basico></app-adopta-basico>
                     </div>
                     <div class="mostrarAvanzado" *ngIf="!Basico">
-                            <app-encontrar-avanzado></app-encontrar-avanzado> 
+                            <app-adopta-avanzado (salidaEspecie) = "especie = $event"
+                                     (salidaRaza) = "raza = $event"
+                                     (salidaEdad) = "edad = $event"
+                                     (salidaColor1) = "color1 = $event"
+                                     (salidaColor2) = "color2 = $event"
+                                     (salidaGenero) = "genero = $event"
+                                     (salidaEsterilizado) = "esterilizado = $event"></app-adopta-avanzado>
+
                     </div>
                 </div>        
             </div>
             
         </section>  
     </body>
+   
             
             
             

@@ -16,8 +16,14 @@
                             <app-adopta-basico></app-adopta-basico>
                     </div>
                     <div class="mostrarAvanzado" *ngIf="!Basico">
-                            <app-adopta-avanzado></app-adopta-avanzado>
-                        
+                            <app-adopta-avanzado (salidaEspecie) = "especie = $event"
+                                     (salidaRaza) = "raza = $event"
+                                     (salidaEdad) = "edad = $event"
+                                     (salidaColor1) = "color1 = $event"
+                                     (salidaColor2) = "color2 = $event"
+                                     (salidaGenero) = "genero = $event"
+                                     (salidaEsterilizado) = "esterilizado = $event"></app-adopta-avanzado>
+
                     </div>
                 </div>        
             </div>
