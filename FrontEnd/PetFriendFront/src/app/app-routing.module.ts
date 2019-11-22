@@ -33,7 +33,8 @@ import { ResultadosServiciosComponent } from './componentes/resultados-servicios
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
 import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
 import { RegistroServicioComponent } from './componentes/registro-servicio/registro-servicio.component';
-
+import { BuscarEncontradosComponent } from './componentes/buscar-encontrados/buscar-encontrados.component';
+import { BuscarAdoptarComponent } from './componentes/buscar-adoptar/buscar-adoptar.component';
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
@@ -51,9 +52,8 @@ const routes: Routes = [
   { path: 'Registro', component: RegistroComponent },
   { path: 'ResultadosBusqueda', component: ResultadosBusquedaComponent },
   { path: 'AdoptaAvanzado', component: AdoptaAvanzadoComponent },
-  { path: 'AdoptaBasico', component: AdoptaBasicoComponent },
-  { path: 'EncontrarAvanzado', component: EncontrarAvanzadoComponent },
-  { path: 'EncontrarBasico', component: EncontrarBasicoComponent },
+  { path: 'BuscarAdoptar', component: BuscarAdoptarComponent  },
+  { path: 'BuscarEncontrados', component: BuscarEncontradosComponent},
   { path: 'ResultadosAdopta', component: ResultadosAdoptaComponent },
   { path: 'ResultadosEncontrar', component: ResultadosEncontrarComponent },
   { path: 'Reportes', component: ReportesComponent },
