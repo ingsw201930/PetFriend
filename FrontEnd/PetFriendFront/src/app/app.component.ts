@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Global } from './modelo/global';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,16 @@ export class AppComponent {
   rol: string;
   nombre: string;
 
-  constructor(public globals: Global) {
-    this.nombre = this.globals.nameCurrentUser;
-    this.rol = this.globals.role;
+  constructor(public global: Global, private router: Router) {
+    this.nombre = this.global.nameCurrentUser;
+    this.rol = this.global.role;
    }
 
+   cerrarSesion(){
+    this.global.id = null;
+    this.global.nameCurrentUser = null;
+    this.global.role = null;
+
+    this.router.navigate(['/']);
+   }
 }

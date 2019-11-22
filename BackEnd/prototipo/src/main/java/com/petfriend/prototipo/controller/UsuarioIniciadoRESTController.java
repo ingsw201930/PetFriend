@@ -1,10 +1,13 @@
 package com.petfriend.prototipo.controller;
 
+import com.petfriend.prototipo.model.Administrador;
+import com.petfriend.prototipo.model.PersonaNatural;
+import com.petfriend.prototipo.model.ProveedoresServicio;
 import com.petfriend.prototipo.model.PublicacionAEncontrado;
 import com.petfriend.prototipo.model.PublicacionAPerdido;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
-import com.petfriend.prototipo.model.Sesion;
+import com.petfriend.prototipo.model.Refugio;
 import com.petfriend.prototipo.model.Usuario;
 import com.petfriend.prototipo.repositories.IPublicacionAEncontradoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
@@ -38,19 +41,35 @@ public class UsuarioIniciadoRESTController {
 	@Autowired
 	private FactoriaPublicacion factoriaPub;
 
-	@GetMapping(produces = "application/json")
+	@GetMapping
 	@RequestMapping({ "/validateLogin" })
 	@ResponseBody
-	public Sesion validateLogin(@RequestParam(defaultValue = "correo") String correo, @RequestParam(defaultValue = "pass") String pass) {
+	public String validateLogin(@RequestParam(defaultValue = "correo") String correo, @RequestParam(defaultValue = "pass") String pass) {
 		System.out.println("ENTRA");
 		Usuario u = this.usuarioRepo.findByCorreo(correo);
 		if(u == null)
-			return new Sesion(0, "", false);
-			System.out.println(u.getContrasenha());
+			return null;
 		if(!u.getContrasenha().equals(pass))
-			return new Sesion(0, "", false);
+			return null;
+		if(u instanceof Administrador)
+			return "ADMIN";
+		if(u instanceof PersonaNatural)
+			return "USUARIO";
+		if(u instanceof ProveedoresServicio)
+			return "TIENDA";
+		if(u instanceof Refugio)
+			return "USUARIO";
+		return null;
+	}
+
+	@GetMapping
+	@RequestMapping({ "/getId" })
+	public String getId(@RequestBody String correo) {
+		Usuario u = this.usuarioRepo.findByCorreo(correo);
+		if(u == null)
+		return null;
 		System.out.println(u.getIdUsuario());
-		return new Sesion(u.getIdUsuario(), correo, true);
+		return "" + u.getIdUsuario();
 	}
 	
 	@PostMapping("{id}/publicacionAAdopcion")

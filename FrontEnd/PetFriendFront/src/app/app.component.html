@@ -21,7 +21,7 @@
                     <br>
                     <a class="nav-primary" [routerLink]="['/a']" style="color:#FFFFFF;">Encuentra</a>
                 </li>
-                <li *ngIf="globals.role == 'USUARIO' || globals.role == 'ADMIN'" class="nav-item">
+                <li *ngIf="global.role == 'USUARIO' || global.role == 'ADMIN'" class="nav-item">
                     <br>
                     <a class="nav-primary" [routerLink]="['/TiposDePublicacion']" style="color:#FFFFFF;">Publica</a>
                 </li>
@@ -29,28 +29,28 @@
                     <br>
                     <a class="nav-primary" [routerLink]="['/BuscarServicio']" style="color:#FFFFFF;">Servicios</a>
                 </li>
-                <li *ngIf="globals.role == 'TIENDA'" class="nav-item">
+                <li *ngIf="global.role == 'TIENDA'" class="nav-item">
                     <br>
                     <a class="nav-primary" [routerLink]="['/RegistroServicio']" style="color:#FFFFFF;">Agregar Servicios</a>
                 </li>
-                <li *ngIf="globals.role == 'ADMIN'" class="nav-item">
+                <li *ngIf="global.role == 'ADMIN'" class="nav-item">
                     <br>
                     <a class="nav-primary" [routerLink]="['/Reportes']" style="color:#FFFFFF;">Reportes</a>
                 </li>
             </ul>
-            <ul *ngIf="!globals.role" class="navbar-nav navbar-right">
+            <ul *ngIf="!global.role" class="navbar-nav navbar-right">
                 <li><a [routerLink]="['/Registro']" class="btn btn-primary">Registrarse</a></li>
                 <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Iniciar Sesión</a></li>
             </ul>
-            <ul *ngIf="globals.role == 'USUARIO'" class="navbar-nav navbar-right">
-                <h4 style="padding-top: 10px;">{{globals.nameCurrentUser}}</h4>
-                <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Salir</a></li>
+            <ul *ngIf="global.role == 'USUARIO'" class="navbar-nav navbar-right">
+                <h4 style="padding-top: 10px;">{{global.nameCurrentUser}}</h4>
+                <li><a (click)="cerrarSesion()" class="btn btn-secondary">Salir</a></li>
                 <button class="btn btn-success">DONAR</button>
             </ul>
-            <ul *ngIf="globals.role == 'ADMIN' || globals.role == 'TIENDA'"
+            <ul *ngIf="global.role == 'ADMIN' || global.role == 'TIENDA'"
                 class="navbar-nav navbar-right">
-                <h4 style="padding-top: 10px;">{{globals.nameCurrentUser}}</h4>
-                <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Salir</a></li>
+                <h4 style="padding-top: 10px;">{{global.nameCurrentUser}}</h4>
+                <li><a (click)="cerrarSesion()" class="btn btn-secondary">Salir</a></li>
             </ul>
 
         </div>

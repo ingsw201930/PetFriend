@@ -7,6 +7,7 @@ import { Animal } from '../modelo/animal';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Publicacion } from '../modelo/publicacion';
 import { UsuarioService } from './usuario.service';
+import { Global } from 'src/app/modelo/global';
 
 @Injectable({
   providedIn: 'root'
@@ -48,9 +49,6 @@ export class PublicacionService {
   }
 
   send(animal: AnimalCompañia){
-    if(this.sesion.getSesionIniciada() == false){
-      return false;
-    }
 
     this.animal = new Animal;
     this.animal.nombre = animal.nombre;
@@ -62,6 +60,9 @@ export class PublicacionService {
       formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
 
     if(this.tipoPublicacion == 'adopcion'){
+      if(this.global.role != 'USUARIO' && this.global.role != 'REFUGIO'){
+        return false;
+      }
       this.publicacionAdopcion = new PublicacionAdopcion;
       this.publicacionAdopcion.animal = this.animal;
       this.publicacionAdopcion.descripcion = animal.descripcion;
@@ -77,7 +78,7 @@ export class PublicacionService {
         this.publicacionAdopcion.imagen4 = this.urls[3];
 
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
-        this.http.post('http://localhost:9890/usuario/' +  + '/publicacionAAdopcion', this.publicacionAdopcion, {headers: headers, withCredentials: true })
+        this.http.post('http://localhost:9890/usuario/' + this.global.id + '/publicacionAAdopcion', this.publicacionAdopcion, {headers: headers, withCredentials: true })
         .subscribe(data=> {
           console.log('entra');
         },
@@ -89,6 +90,10 @@ export class PublicacionService {
         ;
     }
     else if(this.tipoPublicacion == 'encontrado'){
+      if(this.global.role != 'USUARIO'){
+        return false;
+      }
+
       this.publicacionEncontrado = new PublicacionAEncontrado;
       this.publicacionEncontrado.animal = this.animal;
       this.publicacionEncontrado.descripcion = animal.descripcion;
@@ -105,7 +110,7 @@ export class PublicacionService {
         this.publicacionEncontrado.imagen4 = this.urls[3];
 
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
-        this.http.post('http://localhost:9890/usuario/1/publicacionAEncontrado', this.publicacionEncontrado, {headers: headers, withCredentials: true })
+        this.http.post('http://localhost:9890/usuario/' + this.global.id + '/publicacionAEncontrado', this.publicacionEncontrado, {headers: headers, withCredentials: true })
         .subscribe(data=> {
           console.log('entra');
         },
@@ -117,6 +122,9 @@ export class PublicacionService {
         ;
     }
     else if(this.tipoPublicacion == 'perdido'){
+      if(this.global.role != 'USUARIO'){
+        return false;
+      }
       this.publicacionPerdido = new PublicacionAPerdido;
       this.publicacionPerdido.animal = this.animal;
       this.publicacionPerdido.descripcion = animal.descripcion;
@@ -133,7 +141,7 @@ export class PublicacionService {
         this.publicacionPerdido.imagen4 = this.urls[3];
 
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
-        this.http.post('http://localhost:9890/usuario/1/publicacionAPerdido', this.publicacionPerdido, {headers: headers, withCredentials: true })
+        this.http.post('http://localhost:9890/usuario/' + this.global.id + '/publicacionAPerdido', this.publicacionPerdido, {headers: headers, withCredentials: true })
         .subscribe(data=> {
           console.log('entra');
         },
@@ -147,5 +155,5 @@ export class PublicacionService {
     return true;
   }
 
-  constructor(private http: HttpClient, private sesion: UsuarioService) { }
+  constructor(private http: HttpClient, private global: Global) { }
 }

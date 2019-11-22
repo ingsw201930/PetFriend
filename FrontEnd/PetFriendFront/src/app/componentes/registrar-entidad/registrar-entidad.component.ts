@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/modelo/usuario';
+import { RestClientService } from 'src/app/servicios/rest-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-entidad',
@@ -12,14 +15,16 @@ export class RegistrarEntidadComponent implements OnInit {
   ccontrasena: string = '';
   direccion: string = '';
   telefono: string = '';
-nit:String= '';
+  nit:String= '';
   imgURL: any;
   public message: string;
 
+  usuario: Usuario = new Usuario();
   imageSrc: string;
 
   url1: any = 'assets/user.png';
-  constructor() { }
+  constructor(private servicio: RestClientService, private router: Router) { }
+
 
   ngOnInit() {
   }
@@ -38,9 +43,21 @@ nit:String= '';
         //this.url1 = this.service.urls[0];
         //console.log(this.url1);
         this.url1 = reader.result;
-        console.log(this.url1);
         return;
       
     };
+  }
+
+  registrarUsuario(){
+    this.usuario.nombre=this.nombre;
+    this.usuario.correo=this.correo;
+    this.usuario.contrasenha=this.contrasena;
+    this.usuario.direccion=this.direccion;
+    this.usuario.telefono=this.telefono;
+    this.usuario.foto = this.url1;
+
+    this.servicio.registrarTienda(this.usuario);
+
+    this.router.navigate(['/']);
   }
 }

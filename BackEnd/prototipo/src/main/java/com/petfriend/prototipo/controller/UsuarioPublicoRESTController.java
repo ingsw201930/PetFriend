@@ -1,15 +1,11 @@
 package com.petfriend.prototipo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.petfriend.prototipo.model.PersonaNatural;
+import com.petfriend.prototipo.model.ProveedoresServicio;
 import com.petfriend.prototipo.model.Publicacion;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
@@ -56,15 +53,28 @@ public class UsuarioPublicoRESTController {
 		return solution;
 	}
 	
-	@PostMapping("/registrar")
+	@PostMapping("/registrarUsuario")
 	@ResponseBody
 	public String registrarUsuario(@RequestBody PersonaNatural pNatural)
 	{
+		System.out.println("Se intenta registrar");
 		Usuario u = this.usuarioRepo.findByCorreo(pNatural.getCorreo());
 		if(u != null)
 			return "USUARIO EXISTENTE";
 		
 		this.usuarioRepo.save(pNatural);
+		return "REGISTRADO";
+	}
+	
+	@PostMapping("/registrarTienda")
+	@ResponseBody
+	public String registrarTienda(@RequestBody ProveedoresServicio pServicio)
+	{
+		Usuario u = this.usuarioRepo.findByCorreo(pServicio.getCorreo());
+		if(u != null)
+			return "USUARIO EXISTENTE";
+		
+		this.usuarioRepo.save(pServicio);
 		return "REGISTRADO";
 	}
 

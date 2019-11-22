@@ -23,9 +23,31 @@ export class IniciarSesionComponent implements OnInit {
 
   ngOnInit() { }
 
-  doLogin() {
+  async doLogin(): Promise<void> {
     console.log(this.user + ' - ' + this.password);
-    this.restClient.authenticate(this.user, this.password);
-    //this.restClient.register(this.user, this.password);
+    let rol = await this.restClient.authenticate(this.user, this.password);
+    if(rol === 'USUARIO'){
+      this.global.role = 'USUARIO';
+      this.global.nameCurrentUser = this.user;
+    }
+    else if(rol == 'ADMIN'){
+      this.global.role = 'ADMIN';
+      this.global.nameCurrentUser = this.user;
+    }
+    else if(rol == 'TIENDA'){
+      this.global.role = 'TIENDA';
+      this.global.nameCurrentUser = this.user;
+    }
+    else
+     this.global.role = null;
+
+    if(this.global.role != null){
+      this.global.id = parseInt(await this.restClient.obtenerId(this.global.nameCurrentUser), 10);
+    }
+    else{
+      this.global.id = null;
+    }
+
+     this.router.navigate(['/']);
   }
 }

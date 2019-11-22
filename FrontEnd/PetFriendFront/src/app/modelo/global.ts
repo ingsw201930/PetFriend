@@ -4,4 +4,5 @@ import { Injectable } from '@angular/core';
 export class Global {
     role: string;
     nameCurrentUser: string;
+    id: number;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario} from 'src/app/modelo/usuario';
+import { RestClientService } from 'src/app/servicios/rest-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -20,7 +22,7 @@ export class RegistrarUsuarioComponent implements OnInit {
   imageSrc: string;
 
   url1: any = 'assets/user.png';
-  constructor() { }
+  constructor(private servicio: RestClientService, private router: Router) { }
 
   ngOnInit() {
    
@@ -37,22 +39,25 @@ export class RegistrarUsuarioComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     reader.onload = (_event) => {
      
-       // this.service.urls[0]=reader.result;
+       //this.service.urls[0]=reader.result;
         //this.url1 = this.service.urls[0];
         //console.log(this.url1);
         this.url1 = reader.result;
-        console.log(this.url1);
         return;
       
     };
   }
-registrarUsuario(){
-this.usuario.nombre=this.nombre;
-this.usuario.correo=this.correo;
-this.usuario.contrasenha=this.contrasena;
-this.usuario.direccion=this.direccion;
-this.usuario.telefono=this.telefono;
 
+  registrarUsuario(){
+    this.usuario.nombre=this.nombre;
+    this.usuario.correo=this.correo;
+    this.usuario.contrasenha=this.contrasena;
+    this.usuario.direccion=this.direccion;
+    this.usuario.telefono=this.telefono;
+    this.usuario.foto = this.url1;
 
-}
+    this.servicio.registrarUsuario(this.usuario);
+
+    this.router.navigate(['/']);
+  }
 }
