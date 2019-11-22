@@ -17,12 +17,14 @@ export class CrearPubicacionComponent implements OnInit {
   color1: string = '';
   color2: string = '';
   descripcion: string = '';
-  esHembra: boolean = false;
-  esterilizado: boolean = false;
+  generoAnimal: string;
+  esterilizadoAnimal: string;
   animal: AnimalCompañia = new AnimalCompañia;
   title: string = 'imagen';
   fecha: string = '';
   ban: boolean =this.servP.getTipoPublicacion() == 'adopcion';
+  generos: string[] = ['Macho','Hembra'];
+  opciones: string[] = ['Si', 'No'];
 
   imgURL: any;
   public message: string;
@@ -38,7 +40,7 @@ export class CrearPubicacionComponent implements OnInit {
   constructor(private router: Router, private service: AnimalCompañiaService, private servP: PublicacionService) { }
 
   ngOnInit() {
-    this.service.urls=[];
+    this.servP.urls=[];
   }
   preview(files) {
     const mimeType = files[0].type;
@@ -51,25 +53,25 @@ export class CrearPubicacionComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     reader.onload = (_event) => {
       if (this.url1 === 'assets/pet.png') {
-        this.service.urls[0]=reader.result;
-        this.url1 = this.service.urls[0];
+        this.servP.urls[0]=reader.result;
+        this.url1 = this.servP.urls[0];
         //console.log(this.url1);
         return;
       }
 
       if (this.url2 === 'assets/pet.png') {
-        this.service.urls[1]=reader.result;
-        this.url2 = this.service.urls[1];
+        this.servP.urls[1]=reader.result;
+        this.url2 = this.servP.urls[1];
         return;
       }
       if (this.url3 === 'assets/pet.png') {
-        this.service.urls[2]=reader.result;
-        this.url3 = this.service.urls[2];
+        this.servP.urls[2]=reader.result;
+        this.url3 = this.servP.urls[2];
         return;
       }
       if (this.url4 === 'assets/pet.png') {
-        this.service.urls[3]=reader.result;
-        this.url4 = this.service.urls[3];
+        this.servP.urls[3]=reader.result;
+        this.url4 = this.servP.urls[3];
         return;
       }
     };
@@ -82,12 +84,15 @@ export class CrearPubicacionComponent implements OnInit {
     this.animal.edad = this.edad;
     this.animal.color1 = this.color1;
     this.animal.color2 = this.color2;
-    this.animal.esHembra = this.esHembra;
-    this.animal.esterilizado = this.esterilizado;
+    this.animal.genero = this.generoAnimal;
+    this.animal.esterilizado = (this.esterilizadoAnimal == 'Si'? true : false);
     this.animal.descripcion = this.descripcion;
     this.animal.fecha = this.fecha;
     this.service.animal = this.animal;
     this.router.navigate(['/VistaPrevia']);
   }
+  
+
+
 
 }

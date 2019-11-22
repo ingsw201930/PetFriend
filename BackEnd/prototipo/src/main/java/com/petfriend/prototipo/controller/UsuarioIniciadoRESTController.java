@@ -1,17 +1,14 @@
 package com.petfriend.prototipo.controller;
 
-import com.petfriend.prototipo.model.Animal;
 import com.petfriend.prototipo.model.PublicacionAEncontrado;
 import com.petfriend.prototipo.model.PublicacionAPerdido;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
-import com.petfriend.prototipo.model.Usuario;
-import com.petfriend.prototipo.repositories.IAnimalRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAEncontradoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAdopcionRepositorio;
-import com.petfriend.prototipo.repositories.IUsuarioRepositorio;
 
+//import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,42 +27,12 @@ public class UsuarioIniciadoRESTController {
 	@Autowired
 	private IPublicacionAEncontradoRepositorio animalEncRepo;
 	@Autowired
-	private IUsuarioRepositorio usuarioRepo;
-	@Autowired
-	private IAnimalRepositorio animalRepo;
-	
+	private FactoriaPublicacion factoriaPub;
+
 	@PostMapping("{id}/publicacionAAdopcion")
 	public PublicacionAdopcion crearPAAdopcion(@PathVariable int id,@RequestBody PublicacionAdopcion pAnimal)
 	{
-		Usuario u= usuarioRepo.findById(id).get();
-		PublicacionAdopcion aux=null;
-		System.out.println("entra");
-		if(u!=null) {
-			PublicacionAdopcion p=new PublicacionAdopcion();
-			
-			System.out.println("entra7" +pAnimal.getLocalidad());
-
-			p.setLocalidad(pAnimal.getLocalidad());
-			p.setDescripcion(pAnimal.getDescripcion());
-			p.setDuenho(u);
-			
-			System.out.println("entra2"+pAnimal.getAnimal().getNombre());
-			//u.pushPublicacion(p);
-			Animal a= new Animal(p,
-								 pAnimal.getAnimal().getNombre(),
-								 pAnimal.getAnimal().getEspecie(),
-								 pAnimal.getAnimal().getRaza(),
-								 pAnimal.getAnimal().getColor(),
-								 pAnimal.getAnimal().getSexo(),
-								 pAnimal.getAnimal().getEsterilizado());
-								 
-			System.out.println("entra3");
-
-			aux=this.animalAdopRepo.save(p);
-			animalRepo.save(a);
-			//usuarioRepo.save(u);
-		}	
-		return aux;
+		return factoriaPub.crearPAAdopcion(id, pAnimal);
 	}
 	
 	@GetMapping("{id}/publicacionAAdopcion/{idP}")
@@ -75,31 +42,13 @@ public class UsuarioIniciadoRESTController {
 	}
 	
 	@PostMapping("{id}/publicacionAPerdido")
-	public PublicacionAPerdido crearPAPerdio(@PathVariable int id,@RequestBody PublicacionAPerdido pAnimal)
+	public PublicacionAPerdido crearPAPerdido(@PathVariable int id,@RequestBody PublicacionAPerdido pAnimal)
 	{
-		Usuario u= usuarioRepo.findById(id).get();
-		PublicacionAPerdido aux=null;
-		if(u!=null) {
-			PublicacionAPerdido p=new PublicacionAPerdido();
-			p.setLocalidad(pAnimal.getLocalidad());
-			p.setDescripcion(pAnimal.getDescripcion());
-			p.setDuenho(u);
-			//u.pushPublicacion(p);
-			Animal a= new Animal(p,pAnimal.getAnimal().getNombre(),
-								 pAnimal.getAnimal().getEspecie(),
-								 pAnimal.getAnimal().getRaza(),
-								 pAnimal.getAnimal().getColor(),
-								 pAnimal.getAnimal().getSexo(),
-								 pAnimal.getAnimal().getEsterilizado());
-			aux=this.animalPerdRepo.save(p);
-			animalRepo.save(a);
-			//usuarioRepo.save(u);
-		}	
-		return aux;
+		return factoriaPub.crearPAPerdido(id, pAnimal);
 	}
 	
 	@GetMapping("{id}/publicacionAPerdio/{idP}")
-	public PublicacionAnimal obtenerPAPerdio(@PathVariable int idP)
+	public PublicacionAnimal obtenerPAPerdido(@PathVariable int idP)
 	{
 		return this.animalPerdRepo.findById(idP).get();
 	}
@@ -107,25 +56,7 @@ public class UsuarioIniciadoRESTController {
 	@PostMapping("{id}/publicacionAEncontrado")
 	public PublicacionAEncontrado crearPAEncontrado(@PathVariable int id,@RequestBody PublicacionAEncontrado pAnimal)
 	{
-		Usuario u= usuarioRepo.findById(id).get();
-		PublicacionAEncontrado aux=null;
-		if(u!=null) {
-			PublicacionAEncontrado p=new PublicacionAEncontrado();
-			p.setLocalidad(pAnimal.getLocalidad());
-			p.setDescripcion(pAnimal.getDescripcion());
-			p.setDuenho(u);
-			//u.pushPublicacion(p);
-			Animal a= new Animal(p, pAnimal.getAnimal().getNombre(),
-								 pAnimal.getAnimal().getEspecie(),
-								 pAnimal.getAnimal().getRaza(),
-								 pAnimal.getAnimal().getColor(),
-								 pAnimal.getAnimal().getSexo(),
-								 pAnimal.getAnimal().getEsterilizado());
-			aux=this.animalEncRepo.save(p);
-			animalRepo.save(a);
-			//usuarioRepo.save(u);
-		}	
-		return aux;
+		return factoriaPub.crearPAEncontrado(id, pAnimal);
 	}
 	
 	@GetMapping("{id}/publicacionAEncontrado/{idP}")
@@ -134,18 +65,3 @@ public class UsuarioIniciadoRESTController {
 		return this.animalEncRepo.findById(idP).get();
 	}
 }
-/**
- *
- *{
-    "descripcion": "bonito4",
-    "localidad": "Chapi4",
-    "animal": {
-        "nombre": "mickey",
-        "especie": "gato",
-        "raza": "persa",
-        "color": "Gris",
-        "sexo": "M",
-        "esterilizado": true
-    }
-} 
-*/

@@ -1,0 +1,54 @@
+<body>
+        <section id="Usuario-Propio">
+            <div class="Contenedores">
+                <div class="ContenedorOpciones">
+                    <div class="ImagenPerfil">
+                        <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                        <h3>{{nombreUsuario}}</h3>
+                    </div>
+                    <hr>
+                    <div class="Opciones">
+                        <a [routerLink]="['/Perfil-Usuario']" >Información</a>
+                        <a [routerLink]="['/Perfil-Publicaciones']">Publicaciones</a>
+                        <a [routerLink]="['/Perfil-Chats']" id="actual">Chats</a>
+                    </div>
+                    <hr>
+                    <div class="EditarPerfil">
+                        <h3>Editar perfil</h3>
+                    </div>
+                </div>
+                <div class="ContenedorChats">
+                    <div class="Chat">
+                        <div class="Chat-Imagen">
+                            <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                        </div>
+                        <div class="Chat-Informacion">
+                            <div class="Chat-p1">
+                                <div class="Chat-Titulo">
+                                    <h2>{{nombreUsuarioChat}}</h2>
+                                </div>
+                                <div class="Chat-Notificacion">
+                                    <h2>{{cantidadMensajes}}</h2>
+                                </div>
+                            </div>
+                            <div class="Chat-p2">
+                                <div class="Chat-Flecha">
+                                    <h3>----</h3>    
+                                </div>
+                                <div class="Chat-Descripcion">
+                                    <h3>{{descripcionMensaje}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        
+        </section>
+        
+            
+        </body>
+        
+        
+        

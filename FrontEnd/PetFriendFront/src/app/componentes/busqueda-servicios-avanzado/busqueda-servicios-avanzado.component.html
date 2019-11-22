@@ -1,0 +1,82 @@
+<div class="todo" >
+        
+                <h1>Categorias</h1>
+                <h2>Seleccione una o varias categorias a buscar</h2>
+                <div class="BotonesTotal">
+                    <div class="Botones1">
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="veterinaria"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Veterinaria</span>
+                        </label>
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="refugio"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Refugio</span>
+                        </label>
+                    </div>
+                    <div class="Botones2">
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="peluqueria"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Peluqueria</span>
+                        </label>
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="comida"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Comida</span>
+                        </label>    
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="accesorios"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Accesorios</span>
+                        </label>
+                    </div>
+                    <div class="Botones3">
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="paseo"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Paseo</span>
+                        </label>
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="guarderia"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Guarderia</span>
+                        </label>
+                        <label class="boton">   
+                            <input type="checkbox" [(ngModel)]="banos"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Baños</span>
+                        </label>
+                    </div>
+                    <div class="Botones4">
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="aseo"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Aseo</span>
+                        </label>
+                        <label class="boton">    
+                            <input type="checkbox" [(ngModel)]="juguetes"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Juguetes</span>
+                        </label>
+                    </div>
+                    <div class="Botones5">
+                        <label class="boton">
+                            <input type="checkbox" [(ngModel)]="snacks"  data-md-icheck (change)="toggleVisibility($event)"/>
+                            <span class="checkmark">Snacks</span>
+                        </label>
+                    </div>             
+                </div>
+                
+                <h2>Seleccione especie del animal</h2>
+                <div class="EspecieAnimal">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie1">
+                        <option value="Canino">Canino</option>
+                        <option value="Felino">Felino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <h1>{{especie1}}</h1>
+                </div>
+
+                <label class="boton">
+                        <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
+                        <button (click)="func1()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq"><span class="checkmark">▲ Busqueda avanzada</span></button>
+                </label>
+
+                <div class="w" *ngIf="show">
+                    <h1>{{especie1}}</h1>
+                </div>
+               
+       
+            </div>
