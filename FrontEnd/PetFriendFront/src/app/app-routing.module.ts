@@ -15,11 +15,14 @@ import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servi
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
+import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
+
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
   { path: 'IniciarSesion', component: IniciarSesionComponent },
   { path: '', component: PantallaPrincipalComponent },
+  { path: 'BuscarServicio', component: BuscarServicioComponent },
   { path: 'PublicacionFinal', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'VistaPrevia', component: VistaPreviaComponent },

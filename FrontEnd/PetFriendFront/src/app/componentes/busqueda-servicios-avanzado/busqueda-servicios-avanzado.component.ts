@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { BuscarServicioService } from 'src/app/servicios/buscar-servicio.service';
+import { Servicio } from 'src/app/modelo/servicio';
 
 @Component({
   selector: 'app-busqueda-servicios-avanzado',
@@ -7,6 +9,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./busqueda-servicios-avanzado.component.css']
 })
 export class BusquedaServiciosAvanzadoComponent implements OnInit {
+  especie1: string = 'felino';
   veterinaria = false;
   refugio = false;
   peluqueria = false;
@@ -20,10 +23,13 @@ export class BusquedaServiciosAvanzadoComponent implements OnInit {
   snacks = false;
   theCheckbox = false;
   marked = false;
-
-  especie:string;
+  servicioBuscar:Servicio;
   nombreBusqueda:string = 'www';
-  constructor() { }
+  show:boolean = false;;
+
+  @Output() salida = new EventEmitter<string>();
+
+  constructor(private serv: BuscarServicioService) { }
 
   ngOnInit() {
 
@@ -31,6 +37,25 @@ export class BusquedaServiciosAvanzadoComponent implements OnInit {
 
   toggleVisibility(e){
     this.marked= e.target.checked;
+  }
+
+  func1(){
+
+    if(this.show == false){
+      this.salida.emit(this.especie1);
+      this.servicioBuscar = this.serv.getServicio();
+      this.servicioBuscar.especie = this.especie1;
+      this.show = true;
+      this.serv.setServicio(this.servicioBuscar);
+      
+    }
+    else{
+      this.show = false;
+    }
+
+    
+    console.log("algo");
+    
   }
 
 }

@@ -1,0 +1,35 @@
+<body>
+        <section id="Usuario-Propio">
+            <div class="Contenedores">
+                <div class="formPrincipal">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-16 " placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
+                        <button (click)="buscar()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq">Buscar</button>
+                        <h1>esto{{resultado}}</h1>
+                    </form>
+                    <label class="boton">
+                            <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
+                            <button (click)="cambiarMetodo()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq"><span class="checkmark">▲ Busqueda avanzada</span></button>
+                    </label>
+                </div>
+                <div class="ContenedorAvanzado">
+                    <div class="mostrarBasico" *ngIf="Basico">
+                        <app-busqueda-servicios-basico></app-busqueda-servicios-basico>
+                    </div>
+                    <div class="mostrarAvanzado" *ngIf="!Basico">
+                        <app-busqueda-servicios-avanzado (salida) = "resultado = $event"></app-busqueda-servicios-avanzado>
+                        
+                    </div>
+                </div>        
+            </div>
+            
+        </section>
+        <label class="boton">
+                <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
+                <button (click)="algoF()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq"><span class="checkmark">▲ Busqueda avanzada</span></button>
+        </label>
+        <h1>Final: {{resultado}}</h1>     
+    </body>
+            
+            
+            

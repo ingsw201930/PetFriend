@@ -26,6 +26,8 @@ import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servi
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
+import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servici
     BusquedaServiciosAvanzadoComponent,
     PerfilPropioPublicacionesVacioComponent,
     ResultadosServiciosComponent,
-    BusquedaServiciosBasicoComponent
+    BusquedaServiciosBasicoComponent,
+    BuscarServicioComponent
   ],
   imports: [
     BrowserModule,
