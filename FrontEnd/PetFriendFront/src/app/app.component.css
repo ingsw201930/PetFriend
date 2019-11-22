@@ -51,3 +51,10 @@
     font-family: 'Lato', sans-serif;
     background: url('..\assets\fondo.jpg');
 }
+ a{
+  text-align: center;
+  padding: 16px 0;
+  color: #eee;
+  display: block;
+  text-decoration: none;
+}

@@ -16,7 +16,7 @@ import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.co
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';//common/http
 import { RestClientService } from './servicios/rest-client.service';
 
 import { RegistroComponent } from './componentes/registro/registro.component';
@@ -39,6 +39,7 @@ import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/pe
 import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
 import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
 import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
+// tslint:disable-next-line: max-line-length
 import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';

@@ -44,7 +44,8 @@
             <ul *ngIf="globals.role == 'USUARIO'" class="navbar-nav navbar-right">
                 <h4 style="padding-top: 10px;">{{globals.nameCurrentUser}}</h4>
                 <li><a [routerLink]="['/IniciarSesion']" class="btn btn-secondary">Salir</a></li>
-                <button class="btn btn-success">DONAR</button>
+                <a class="btn btn-success" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AMK86V75MTLPJ&source=url">DONAR</a>
+
             </ul>
             <ul *ngIf="globals.role == 'ADMIN' || globals.role == 'TIENDA'" class="navbar-nav navbar-right">
                 <h4 style="padding-top: 10px;">{{globals.nameCurrentUser}}</h4>

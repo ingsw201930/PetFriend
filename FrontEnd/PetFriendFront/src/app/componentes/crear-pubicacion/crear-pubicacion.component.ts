@@ -88,10 +88,11 @@ export class CrearPubicacionComponent implements OnInit {
     this.animal.esterilizado = (this.esterilizadoAnimal == 'Si'? true : false);
     this.animal.descripcion = this.descripcion;
     this.animal.fecha = this.fecha;
+
     this.service.animal = this.animal;
     this.router.navigate(['/VistaPrevia']);
   }
-  
+
 
 
 
