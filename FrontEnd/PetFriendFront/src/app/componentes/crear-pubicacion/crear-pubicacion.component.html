@@ -36,15 +36,12 @@
             <div class="from-group">
                 <label for="exampleInputEmail1">Genero</label>
                 <div class="radioButton">
-                        <mat-radio-group
-                          aria-labelledby="example-radio-group-label"
-                          class="example-radio-group"
-                          [(ngModel)]="generoAnimal">
-                          <mat-radio-button class="radioButton" *ngFor="let genero of generos" [value]="genero">
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="generoAnimal">
+                        <mat-radio-button class="radioButton" *ngFor="let genero of generos" [value]="genero">
                             {{genero}}
-                          </mat-radio-button>
-                        </mat-radio-group>
-                        
+                        </mat-radio-button>
+                    </mat-radio-group>
+
                 </div>
 
             </div>
@@ -149,13 +146,10 @@
             <br>
             <div class="from-group">
                 <label for="exampleInputEmail1">Esterilizado</label>
-                <mat-radio-group
-                          aria-labelledby="example-radio-group-label"
-                          class="example-radio-group"
-                          [(ngModel)]="esterilizadoAnimal">
-                          <mat-radio-button class="radioButton" *ngFor="let esterilizado of opciones" [value]="esterilizado">
-                            {{esterilizado}}
-                          </mat-radio-button>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="esterilizadoAnimal">
+                    <mat-radio-button class="radioButton" *ngFor="let esterilizado of opciones" [value]="esterilizado">
+                        {{esterilizado}}
+                    </mat-radio-button>
                 </mat-radio-group>
 
             </div>
@@ -165,7 +159,7 @@
                     <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
                 </div>
             </div>
-            <div  [hidden]="ban" class="from-group" >
+            <div [hidden]="ban" class="from-group">
                 <label for="exampleInputEmail1">Fecha</label>
                 <div class="input-group">
                     <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>
