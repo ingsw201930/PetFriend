@@ -29,8 +29,7 @@ export class PublicacionService {
 
   async getRandom(): Promise<Publicacion[]>{
     return new Promise(resolve => {    
-      const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
-      this.http.get('http://localhost:9890/public/paginaPrincipal', {headers}).subscribe(data => {
+      this.http.get('http://localhost:9890/public/paginaPrincipal').subscribe(data => {
         let randomPubs = [];
         for(var i in data){
           let temp = new Publicacion();

@@ -26,6 +26,7 @@ export class IniciarSesionComponent implements OnInit {
 
   doLogin() {
     console.log(this.user + ' - ' + this.password);
-    this.restClient.authenticate(this.user, this.password)
+    //this.restClient.authenticate(this.user, this.password);
+    this.restClient.register(this.user, this.password);
   }
 }
