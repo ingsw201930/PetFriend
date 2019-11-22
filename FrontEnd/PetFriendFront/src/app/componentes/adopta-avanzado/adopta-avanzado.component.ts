@@ -18,4 +18,16 @@ export class AdoptaAvanzadoComponent implements OnInit {
   ngOnInit() {
   }
 
+  cambiarMetodo(){
+    if(this.Basico == false){
+      this.Basico = true;
+    }
+    else{
+      this.Basico = false;
+    }
+  }
+
+  buscar(){
+    
+  }
 }
