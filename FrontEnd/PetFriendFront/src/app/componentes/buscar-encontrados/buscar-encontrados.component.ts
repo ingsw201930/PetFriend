@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Publicacion } from 'src/app/modelo/publicacion';
 
 @Component({
   selector: 'app-buscar-encontrados',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarEncontradosComponent implements OnInit {
   Basico: boolean = true;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,6 +21,10 @@ export class BuscarEncontradosComponent implements OnInit {
     else{
       this.Basico = false;
     }
+  }
+
+  buscar(){
+    this.router.navigate(['Resultados-Servicios']);
   }
 
 }
