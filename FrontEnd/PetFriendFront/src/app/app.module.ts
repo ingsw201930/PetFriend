@@ -27,6 +27,7 @@ import { EncontrarAvanzadoComponent } from './componentes/encontrar-avanzado/enc
 import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar/resultados-encontrar.component';
 import { Global } from './modelo/global';
 import { ReportesComponent } from './componentes/reportes/reportes.component';
+import { RegistroServicioComponent } from './componentes/registro-servicio/registro-servicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { ReportesComponent } from './componentes/reportes/reportes.component';
     EncontrarBasicoComponent,
     EncontrarAvanzadoComponent,
     ResultadosEncontrarComponent,
-    ReportesComponent
+    ReportesComponent,
+    RegistroServicioComponent
   ],
   imports: [
     BrowserModule,
