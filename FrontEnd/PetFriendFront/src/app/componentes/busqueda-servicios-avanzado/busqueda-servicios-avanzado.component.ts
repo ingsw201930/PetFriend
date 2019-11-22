@@ -9,7 +9,7 @@ import { Servicio } from 'src/app/modelo/servicio';
   styleUrls: ['./busqueda-servicios-avanzado.component.css']
 })
 export class BusquedaServiciosAvanzadoComponent implements OnInit {
-  especie1: string = 'felino';
+  especie: string;
   veterinaria = false;
   refugio = false;
   peluqueria = false;
@@ -23,38 +23,47 @@ export class BusquedaServiciosAvanzadoComponent implements OnInit {
   snacks = false;
   theCheckbox = false;
   marked = false;
-  servicioBuscar:Servicio;
-  nombreBusqueda:string = 'www';
+  servicioAvanzado:Servicio;
   show:boolean = false;;
 
-  @Output() salida = new EventEmitter<string>();
+  @Output() salidaVeterinaria = new EventEmitter<boolean>();
+  @Output() salidaRefugio = new EventEmitter<boolean>();
+  @Output() salidaPeluqueria = new EventEmitter<boolean>();
+  @Output() salidaComida = new EventEmitter<boolean>();
+  @Output() salidaAccesorios = new EventEmitter<boolean>();
+  @Output() salidaPaseo = new EventEmitter<boolean>();
+  @Output() salidaGuarderia = new EventEmitter<boolean>();
+  @Output() salidaBanos = new EventEmitter<boolean>();
+  @Output() salidaAseo = new EventEmitter<boolean>();
+  @Output() salidaJuguetes = new EventEmitter<boolean>();
+  @Output() salidaSnacks = new EventEmitter<boolean>();
+  @Output() salidaEspecie = new EventEmitter<string>();
 
-  constructor(private serv: BuscarServicioService) { }
+  constructor() { }
 
   ngOnInit() {
 
   }
 
   toggleVisibility(e){
-    this.marked= e.target.checked;
+    this.marked = e.target.checked;
+
+    this.salidaVeterinaria.emit(this.veterinaria);
+    this.salidaRefugio.emit(this.refugio);
+    this.salidaPeluqueria.emit(this.peluqueria);
+    this.salidaComida.emit(this.comida);
+    this.salidaAccesorios.emit(this.accesorios);
+    this.salidaPaseo.emit(this.paseo);
+    this.salidaGuarderia.emit(this.guarderia);
+    this.salidaBanos.emit(this.banos);
+    this.salidaAseo.emit(this.aseo);
+    this.salidaJuguetes.emit(this.juguetes);
+    this.salidaSnacks.emit(this.snacks);
+    
   }
 
-  func1(){
-
-    if(this.show == false){
-      this.salida.emit(this.especie1);
-      this.servicioBuscar = this.serv.getServicio();
-      this.servicioBuscar.especie = this.especie1;
-      this.show = true;
-      this.serv.setServicio(this.servicioBuscar);
-      
-    }
-    else{
-      this.show = false;
-    }
-
-    
-    console.log("algo");
+  onClick(){
+      this.salidaEspecie.emit(this.especie);
     
   }
 
