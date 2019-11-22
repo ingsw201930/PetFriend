@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Global } from 'src/app/modelo/global';
+
+import { Publicacion } from 'src/app/modelo/publicacion';
+import { PublicacionService } from 'src/app/servicios/publicacion.service';
+import { PublicacionAdopcion } from 'src/app/modelo/publicacion-adopcion';
 
 @Component({
   selector: 'app-pantalla-principal',
@@ -23,6 +28,7 @@ export class PantallaPrincipalComponent implements OnInit {
     'https://img.soy-chile.cl/Fotos/2014/11/10/file_20141110121800.jpg'
 
   ];
+
   name: string;
 
   constructor(private global: Global) {
@@ -31,7 +37,26 @@ export class PantallaPrincipalComponent implements OnInit {
     console.log('constructor ' + this.rols);
   }
 
-  ngOnInit() {
+
+  publicaciones: any[];
+
+  constructor(private service: PublicacionService) { }
+
+  async ngOnInit(): Promise<void>{
+    this.publicaciones = await this.service.getRandom();
+    console.log(this.publicaciones);
+    if(this.publicaciones == null)
+      return;
+    var cont = 1;
+    this.publicaciones.forEach(element => {
+      this.imagen[cont] = element.imagen1;
+      console.log(element.imagen1);
+      cont++;
+    });
+  }
+
+  selectImage(i){
+    console.log(i);
   }
 
   private changedRole() {

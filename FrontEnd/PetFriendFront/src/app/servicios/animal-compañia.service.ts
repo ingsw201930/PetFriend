@@ -6,7 +6,6 @@ import { AnimalCompañia } from '../modelo/animal-compañia';
 })
 export class AnimalCompañiaService {
   animal: AnimalCompañia;
-  urls: any[] = [];
   constructor() { }
 
   setAnimal(animal: AnimalCompañia) {

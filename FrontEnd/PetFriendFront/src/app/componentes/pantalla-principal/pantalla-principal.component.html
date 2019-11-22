@@ -11,9 +11,8 @@
         <div class="mainPrincipal">
             <div class="formPrincipal">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas"
-                        aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Search</button>
+                    <input class="form-control mr-16 " type="search" placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -24,7 +23,7 @@
 
                     <div class="content-carrousel">
 
-                        <figure *ngFor="let imgnm of imagen" class="shadow">
+                        <figure class="shadow" [ngClass]="{ selected: i == selectedIndex }" *ngFor="let imgnm of imagen; let i = index" (mouseup)="selectImage(i)">
                             <img [src]="imgnm" alt="">
                         </figure>
 

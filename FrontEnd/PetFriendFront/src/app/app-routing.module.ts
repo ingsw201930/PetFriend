@@ -7,6 +7,7 @@ import { PublicacionFinalComponent } from './componentes/publicacion-final/publi
 import { TiposDePublicacionComponent } from './componentes/tipos-de-publicacion/tipos-de-publicacion.component';
 import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
+
 import {AnimalesComponent} from './componentes/animales/animales.component';
 import {AnimalesSimilaresComponent} from './componentes/animales-similares/animales-similares.component';
 import {RegistrarEntidadComponent} from './componentes/registrar-entidad/registrar-entidad.component';
@@ -21,13 +22,26 @@ import {ResultadosAdoptaComponent} from './componentes/resultados-adopta/resulta
 import {ResultadosEncontrarComponent} from './componentes/resultados-encontrar/resultados-encontrar.component';
 import { ReportesComponent } from './componentes/reportes/reportes.component';
 
+import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
+import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
+import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
+import { PerfilEntidadComponent } from './componentes/perfil-entidad/perfil-entidad.component';
+import { BusquedaServiciosAvanzadoComponent } from './componentes/busqueda-servicios-avanzado/busqueda-servicios-avanzado.component';
+import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-propio-publicaciones-vacio/perfil-propio-publicaciones-vacio.component';
+import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
+import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
+import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
+
+
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
   { path: 'IniciarSesion', component: IniciarSesionComponent },
   { path: '', component: PantallaPrincipalComponent },
+  { path: 'BuscarServicio', component: BuscarServicioComponent },
   { path: 'PublicacionFinal', component: PublicacionFinalComponent },
   { path: 'TiposDePublicacion', component: TiposDePublicacionComponent },
   { path: 'VistaPrevia', component: VistaPreviaComponent },
+
   { path: 'Animales', component: AnimalesComponent },
   { path: 'AnimalesSimilares', component: AnimalesSimilaresComponent },
   { path: 'RegistrarEntidad', component: RegistrarEntidadComponent },
@@ -41,8 +55,15 @@ const routes: Routes = [
   { path: 'ResultadosAdopta', component: ResultadosAdoptaComponent },
   { path: 'ResultadosEncontrar', component: ResultadosEncontrarComponent },
   { path: 'Reportes', component: ReportesComponent },
-  { path: '**', component: NotFoundComponent }
-
+  { path: 'Perfil-Usuario', component: PerfilPropioComponent },
+  { path: 'Perfil-Chats', component: PerfilPropioChatsComponent },
+  { path: 'Perfil-Publicaciones', component: PerfilPropioPublicacionesComponent},
+  { path: 'Perfil-Publicaciones-Vacio', component: PerfilPropioPublicacionesVacioComponent},
+  { path: 'Perfil-Entidad', component: PerfilEntidadComponent },
+  { path: 'Busqueda-Servicios-Basico', component:  BusquedaServiciosBasicoComponent  },
+  { path: 'Busqueda-Servicios-Avanzado', component:  BusquedaServiciosAvanzadoComponent  },
+  { path: 'Resultados-Servicios', component:  ResultadosServiciosComponent  },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
