@@ -18,6 +18,22 @@ import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
+
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
+import { RegistrarEntidadComponent } from './componentes/registrar-entidad/registrar-entidad.component';
+import { AnimalesSimilaresComponent } from './componentes/animales-similares/animales-similares.component';
+import { AnimalesComponent } from './componentes/animales/animales.component';
+import { ResultadosBusquedaComponent } from './componentes/resultados-busqueda/resultados-busqueda.component';
+import { AdoptaBasicoComponent } from './componentes/adopta-basico/adopta-basico.component';
+import { ResultadosAdoptaComponent } from './componentes/resultados-adopta/resultados-adopta.component';
+import { AdoptaAvanzadoComponent } from './componentes/adopta-avanzado/adopta-avanzado.component';
+import { EncontrarBasicoComponent } from './componentes/encontrar-basico/encontrar-basico.component';
+import { EncontrarAvanzadoComponent } from './componentes/encontrar-avanzado/encontrar-avanzado.component';
+import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar/resultados-encontrar.component';
+import { Global } from './modelo/global';
+import { ReportesComponent } from './componentes/reportes/reportes.component';
+import { RegistroServicioComponent } from './componentes/registro-servicio/registro-servicio.component';
 import { PerfilPropioComponent } from './componentes/perfil-propio/perfil-propio.component';
 import { PerfilPropioChatsComponent } from './componentes/perfil-propio-chats/perfil-propio-chats.component';
 import { PerfilPropioPublicacionesComponent } from './componentes/perfil-propio-publicaciones/perfil-propio-publicaciones.component';
@@ -39,6 +55,22 @@ import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-se
     VistaPreviaComponent,
     PublicacionFinalComponent,
     NotFoundComponent,
+
+    RegistroComponent,
+    RegistrarUsuarioComponent,
+    RegistrarEntidadComponent,
+    AnimalesSimilaresComponent,
+    AnimalesComponent,
+    ResultadosBusquedaComponent,
+    AdoptaBasicoComponent,
+    ResultadosAdoptaComponent,
+    AdoptaAvanzadoComponent,
+    EncontrarBasicoComponent,
+    EncontrarAvanzadoComponent,
+    ResultadosEncontrarComponent,
+    ReportesComponent,
+    RegistroServicioComponent,
+
     PerfilPropioComponent,
     PerfilPropioChatsComponent,
     PerfilPropioPublicacionesComponent,
@@ -60,7 +92,8 @@ import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-se
     MatRadioModule,
     MatFormFieldModule
   ],
-  providers: [RestClientService],
+  providers: [RestClientService,
+    Global],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

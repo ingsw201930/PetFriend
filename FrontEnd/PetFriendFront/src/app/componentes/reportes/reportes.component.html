@@ -1,0 +1,32 @@
+<br>
+<div class="container">
+    <div class="text-center">
+        <h2>Lista de Reportes</h2>
+    </div>
+    <div class="row contenedorPublicación">
+        <div class="col">
+            <div *ngFor="let report of reports" class="card mt-2">
+                <div class="card">
+                    <h5 class="card-header"> {{report.estado | uppercase}}</h5>
+                </div>
+                <div class="card-body">
+                    <h5>Descripción</h5>
+                    <p class="card-text">{{report.descripcion}}</p>
+                    <h5>Conclusión</h5>
+                    <p *ngIf="report.estado == 'RESUELTO' else loggedOut" class="card-text">{{report.conclusion}}</p>
+                    <button type="button" class="btn btn-success" (click)="resolve(report)">Resolver</button>
+                    <button type="button" class="btn btn-danger ml-2" (click)="remove(report)">Eliminar</button>
+                    <ng-template #loggedOut>
+                        <div class="form-group shadow-textarea">
+                            <textarea  class="form-control z-depth-1" [(ngModel)]="report.conclusion" id="exampleFormControlTextarea6" rows="3"
+                                placeholder="Escriba la conclusiòn..."></textarea>
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="card-footer text-muted">
+                    {{report.fecha | date:'medium'}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+<br>
+<br>
+<div class="container">
+    <div class="row contenedorPublicación">
+
+        <div class="col-6">
+
+            <div class="form-group">
+                <h4>Especie</h4>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie">
+        
+                                <option value="Canino">Canino</option>
+                                <option value="Felino">Felino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                </div>
+            </div>
+
+
+            <div class="form-group" *ngIf="especie==='Canino'">
+
+                <h4>Raza</h4>
+                <div class="input-group mb-3">
+
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
+                                <option selected>Seleccione</option>
+                                <option value="Pitbull">Pitbull</option>
+                                <option value="Pinscher">Pinscher</option>
+                                <option value="Criollo">Criollo</option>
+                                <option value="No lo se">No lo se</option>
+                            </select>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="especie==='Felino'">
+                <h4>Raza</h4>
+                <div class="input-group mb-3">
+
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
+                                <option selected>Seleccione</option>
+                                <option value="Angora">Angora</option>
+                                <option value="Criollo">Criollo</option>
+                                <option value="Persa">Persa</option>
+                                <option value="No lo se">No lo se</option>
+                            </select>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="especie==='Otro'">
+                <h4>Raza</h4>
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba la raza del animal" [(ngModel)]="raza">
+
+                </div>
+            </div>
+            <div class="form-group" *ngIf="especie==''">
+                <h4>Raza</h4>
+                <div class="input-group mb-3">
+
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
+                                <option selected>Seleccione una especie</option>
+        
+                            </select>
+                </div>
+            </div>
+            <div class="from-group">
+                <h4>Genero</h4>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="genero">
+                            <option value="Hembra">Hembra</option>
+                                        <option value="Macho">Macho</option>
+                                    
+                                        <option value="Cualquiera">Cualquiera</option>
+                                    </select>
+                </div>
+
+            </div>
+            <div class="from-group">
+                <h4>Esterilizado</h4>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="esterilizado">
+                    
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                            <option value="Cualquiera">Cualquiera</option>
+                                        </select>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-6">
+
+            <div class="form-group">
+                <h4>Edad(promedio)</h4>
+                <div class="input-group mb-3">
+
+                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="edad">
+                                        <option selected>Seleccione</option>
+                                        <option value="Cachorro">Cachorro</option>
+                                        <option value="Joven">Joven</option>
+                                        <option value="Adulto">Adulto</option>
+                                        <option value="Senil">Senil</option>
+                                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Color</label>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+
+                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color1">
+                                            <option selected>Color Predominante</option>
+                                            <option value="Blanco">Blanco</option>
+                                            <option value="Negro">Negro</option>
+                                            <option value="Cafe">Cafe</option>
+                                            <option value="Amarillo">Amarillo</option>
+                                        </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+
+                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color2">
+                                            <option selected>Color Secundario</option>
+                                            <option value="Blanco">Blanco</option>
+                                            <option value="Negro">Negro</option>
+                                            <option value="Cafe">Cafe</option>
+                                            <option value="Amarillo">Amarillo</option>
+                                        </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+        </div>
+
+    </div>
+
+
+</div>
