@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adopta-avanzado.component.css']
 })
 export class AdoptaAvanzadoComponent implements OnInit {
-
+  especie: string = '';
+  raza: string = '';
+  edad: string = '';
+  color1: string = '';
+  color2: string = '';
+  genero: String='';
+  esterilizado: String='';
   constructor() { }
 
   ngOnInit() {
