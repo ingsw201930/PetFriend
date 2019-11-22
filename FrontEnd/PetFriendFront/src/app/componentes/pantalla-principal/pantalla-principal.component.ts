@@ -31,23 +31,24 @@ export class PantallaPrincipalComponent implements OnInit {
 
   name: string;
 
-  constructor(private global: Global) {
+  publicaciones: any[];
+
+  constructor(private service: PublicacionService, private global: Global) {
     this.rols = global.role;
     this.name = global.nameCurrentUser;
     console.log('constructor ' + this.rols);
+
   }
 
 
-  publicaciones: any[];
-
-  constructor(private service: PublicacionService) { }
-
-  async ngOnInit(): Promise<void>{
+  async ngOnInit(): Promise<void> {
     this.publicaciones = await this.service.getRandom();
     console.log(this.publicaciones);
-    if(this.publicaciones == null)
+    if (this.publicaciones == null)
+    {
       return;
-    var cont = 1;
+    }
+    let cont = 1;
     this.publicaciones.forEach(element => {
       this.imagen[cont] = element.imagen1;
       console.log(element.imagen1);
@@ -55,13 +56,13 @@ export class PantallaPrincipalComponent implements OnInit {
     });
   }
 
-  selectImage(i){
+  selectImage(i) {
     console.log(i);
   }
 
   private changedRole() {
     console.log(this.rols);
-    console.log(this.global.nameCurrentUser );
+    console.log(this.global.nameCurrentUser);
     this.global.nameCurrentUser = this.name;
     this.global.role = this.rols;
     console.log(this.global.nameCurrentUser);
