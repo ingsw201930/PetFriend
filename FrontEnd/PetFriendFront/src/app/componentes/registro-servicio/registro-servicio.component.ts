@@ -8,10 +8,18 @@ import { Servicio } from 'src/app/modelo/servicio';
 })
 export class RegistroServicioComponent implements OnInit {
 
-  servicio: Servicio;
+  servicio: Servicio = {
+    titulo: '',
+    descripcion: '',
+    fecha: new Date(),
+    localidad: '',
+  };
+
   url1: any = 'assets/selfService.png';
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
@@ -31,5 +39,9 @@ export class RegistroServicioComponent implements OnInit {
       return;
 
     };
+  }
+
+  crearServicio() {
+    console.log(this.servicio);
   }
 }
