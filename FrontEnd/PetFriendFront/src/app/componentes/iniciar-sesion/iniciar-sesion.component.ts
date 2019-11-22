@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestClientService } from 'src/app/servicios/rest-client.service';
 import { Usuario } from 'src/app/modelo/usuario';
 import { Router } from '@angular/router';
+import { Global } from 'src/app/modelo/global';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -10,27 +11,31 @@ import { Router } from '@angular/router';
 })
 export class IniciarSesionComponent implements OnInit {
 
-  private titulo: string = 'Petfriend';
-
+  private titulo = 'Petfriend';
   user = '';
   password = '';
-  
   result: any;
-  isError:boolean;
   message: any;
-  
-  constructor(private restClient: RestClientService, private router: Router) {
+  isError = false;
+
+  constructor(private restClient: RestClientService, private router: Router, private global: Global) {
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   doLogin() {
     console.log(this.user + ' - ' + this.password);
-    if(this.restClient.login(this.user, this.password)){
+    // TODO Obtain Role and Name current user
+     this.global.role = 'TIENDA';
+     this.global.nameCurrentUser = 'LOLO';
+    if (this.restClient.login(this.user, this.password)) {
+      //HERE after get response replace into global variable (this.global).
+      // this.global.nameCurrentUser = res.name;
+      // this.global.role = res.name;
       this.router.navigate([``]);
     }
-    else{
-
+    else {
+      this.isError = true;
     }
   }
 }

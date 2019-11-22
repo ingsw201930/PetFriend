@@ -6,7 +6,7 @@ export class AnimalCompañia {
   color1: string;
   color2: string;
   descripcion: string;
-  esHembra: boolean;
+  genero: string;
   esterilizado: boolean;
   fecha: string;
 }

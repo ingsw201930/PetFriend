@@ -179,3 +179,7 @@ hr{
     max-height: 50px;
     color: rgb(93, 93, 93);
 }
+
+#actual{
+    color: rgba(16, 149, 173, 0.9);
+}

@@ -35,15 +35,16 @@
             </div>
             <div class="from-group">
                 <label for="exampleInputEmail1">Genero</label>
-                <div class="input-group mb-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Hembra</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Macho</label>
-                    </div>
+                <div class="radioButton">
+                        <mat-radio-group
+                          aria-labelledby="example-radio-group-label"
+                          class="example-radio-group"
+                          [(ngModel)]="generoAnimal">
+                          <mat-radio-button class="radioButton" *ngFor="let genero of generos" [value]="genero">
+                            {{genero}}
+                          </mat-radio-button>
+                        </mat-radio-group>
+                        
                 </div>
 
             </div>
@@ -148,16 +149,14 @@
             <br>
             <div class="from-group">
                 <label for="exampleInputEmail1">Esterilizado</label>
-                <div class="input-group mb-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
-                        <label class="form-check-label" for="inlineRadio3">Si</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
-                        <label class="form-check-label" for="inlineRadio4">No</label>
-                    </div>
-                </div>
+                <mat-radio-group
+                          aria-labelledby="example-radio-group-label"
+                          class="example-radio-group"
+                          [(ngModel)]="esterilizadoAnimal">
+                          <mat-radio-button class="radioButton" *ngFor="let esterilizado of opciones" [value]="esterilizado">
+                            {{esterilizado}}
+                          </mat-radio-button>
+                </mat-radio-group>
 
             </div>
             <div class="from-group">

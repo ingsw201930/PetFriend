@@ -1,0 +1,126 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url('\..\..\..\assets\fondo.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Contenedores{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.formPrincipal {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
+.formPrincipal input{
+    width: 300px;
+}
+
+.formPrincipal button{
+    background-color: rgba(12, 161, 24, 0.822); 
+    color: rgba(255, 255, 255, 0.952);
+    font-weight: bolder;
+}
+
+.formPrincipal h1{
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.ContenedorAvanzado{
+    background-color: rgba(90, 105, 120, 0.25);
+    width: 90%;
+    height: 550px;
+    margin: 10px 20px 20px 20px;
+    border-radius: 35px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.ContenedorAvanzado h1{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.ContenedorAvanzado h2{
+    font-size: 30px;
+}
+
+.BotonesTotal{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+/* Ocultar checkBox
+*/
+.boton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.boton {
+    margin: 10px 10px 5px 10px;
+    background-color: rgb(174, 174, 199);
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.checkmark{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+  
+.boton input:checked ~ .checkmark {
+    background-color: rgb(26, 170, 195);
+    border-radius: 15px;
+}
+
+.boton span{
+    font-size: 25px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.custom-select{
+    width: 300px ;
+}
+
+.mostrarAvanzado{
+    justify-content: center;
+}

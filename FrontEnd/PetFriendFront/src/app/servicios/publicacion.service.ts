@@ -52,8 +52,8 @@ export class PublicacionService {
     this.animal.nombre = animal.nombre;
     this.animal.especie = animal.especie;
     this.animal.color1 = animal.color1;
-    this.animal.sexo = (animal.esHembra == true? 'H' : 'M');
-    this.animal.esterilizado = animal.esterilizado;
+    this.animal.sexo = (animal.genero == 'Hembra'? 'H' : 'M');
+    this.animal.esterilizado = (animal.esterilizado == true? 'true' : 'false');
     const formHeaders = new HttpHeaders();
       formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -72,7 +72,7 @@ export class PublicacionService {
       if(this.urls[3] !== 'assets/pet.png')
         this.publicacionAdopcion.imagen4 = this.urls[3];
 
-      
+
       console.log(this.publicacionAdopcion);
       //console.log(
         this.http.post('http://localhost:9890/usuario/1/publicacionAAdopcion',

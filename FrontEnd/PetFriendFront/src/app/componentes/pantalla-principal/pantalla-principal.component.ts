@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Global } from 'src/app/modelo/global';
+
 import { Publicacion } from 'src/app/modelo/publicacion';
 import { PublicacionService } from 'src/app/servicios/publicacion.service';
 import { PublicacionAdopcion } from 'src/app/modelo/publicacion-adopcion';
@@ -9,6 +12,7 @@ import { PublicacionAdopcion } from 'src/app/modelo/publicacion-adopcion';
   styleUrls: ['./pantalla-principal.component.css']
 })
 export class PantallaPrincipalComponent implements OnInit {
+  rols: string;
   imagen: string[] = [
     'assets/gato1.jpg',
     'http://www.eldiariodelcentrodelpais.com/wp-content/uploads/2017/11/P19-f1-1.jpg',
@@ -25,16 +29,26 @@ export class PantallaPrincipalComponent implements OnInit {
 
   ];
 
+  name: string;
+
   publicaciones: any[];
 
-  constructor(private service: PublicacionService) { }
+  constructor(private service: PublicacionService, private global: Global) {
+    this.rols = global.role;
+    this.name = global.nameCurrentUser;
+    console.log('constructor ' + this.rols);
 
-  async ngOnInit(): Promise<void>{
+  }
+
+
+  async ngOnInit(): Promise<void> {
     this.publicaciones = await this.service.getRandom();
     console.log(this.publicaciones);
-    if(this.publicaciones == null)
+    if (this.publicaciones == null)
+    {
       return;
-    var cont = 1;
+    }
+    let cont = 1;
     this.publicaciones.forEach(element => {
       this.imagen[cont] = element.imagen1;
       console.log(element.imagen1);
@@ -42,8 +56,16 @@ export class PantallaPrincipalComponent implements OnInit {
     });
   }
 
-  selectImage(i){
+  selectImage(i) {
     console.log(i);
+  }
+
+  private changedRole() {
+    console.log(this.rols);
+    console.log(this.global.nameCurrentUser);
+    this.global.nameCurrentUser = this.name;
+    this.global.role = this.rols;
+    console.log(this.global.nameCurrentUser);
   }
 
 }
