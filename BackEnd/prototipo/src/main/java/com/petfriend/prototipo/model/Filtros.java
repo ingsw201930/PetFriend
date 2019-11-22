@@ -7,7 +7,7 @@ public class Filtros {
     private String color1;
     private String color2;
     private String sexo;
-    private String esterilizado;
+    private Boolean esterilizado;
 
     public String getEspecie() {
         return especie;
@@ -57,11 +57,11 @@ public class Filtros {
         this.sexo = sexo;
     }
 
-    public String getEsterilizado() {
+    public Boolean getEsterilizado() {
         return esterilizado;
     }
 
-    public void setEsterilizado(String esterilizado) {
+    public void setEsterilizado(Boolean esterilizado) {
         this.esterilizado = esterilizado;
     }
 

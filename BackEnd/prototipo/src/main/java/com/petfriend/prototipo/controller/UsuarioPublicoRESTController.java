@@ -2,12 +2,14 @@ package com.petfriend.prototipo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.petfriend.prototipo.model.Filtros;
 import com.petfriend.prototipo.model.Publicacion;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
@@ -52,9 +54,17 @@ public class UsuarioPublicoRESTController {
 	}
 
 	@GetMapping("/Adopcion/Avanzada")
-	public Iterable<Publicacion> pedirAAdopcionFiltros()
+	public Iterable<Publicacion> pedirAAdopcionFiltros(@RequestBody Filtros filtros)
 	{
-		return this.controlPub.pedirPublicacionesAdopcion();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("entra master");
+		
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		return this.controlPub.pedirPublicacionesAdopcionFiltros(filtros);
 	}
 
 	@GetMapping("/home")

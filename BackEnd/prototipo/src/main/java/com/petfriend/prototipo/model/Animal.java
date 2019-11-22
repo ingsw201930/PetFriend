@@ -33,10 +33,11 @@ public class Animal implements Serializable{
     private Character sexo;
     @Column(name = "ESTERILIZADO")
     private Boolean esterilizado;
+    @Column(name = "EDAD")
+    private String edad;
     @OneToOne
     @JsonIgnore
     private PublicacionAnimal publicacion;
-    //TODO --- fotos
     
     public Animal(PublicacionAnimal publicacion, String nombre, String especie, String raza, String color1, String color2,
 			Character sexo, Boolean esterilizado) {
@@ -60,7 +61,7 @@ public class Animal implements Serializable{
 		this.sexo = n.sexo;
 		this.esterilizado = n.esterilizado;
 	}
-
+	
 	public int getIdAnimal() {
 		return idAnimal;
 	}
@@ -121,5 +122,13 @@ public class Animal implements Serializable{
 	}
 	public Animal() {
 		
+	}
+
+	public String getEdad() {
+		return edad;
+	}
+
+	public void setEdad(String edad) {
+		this.edad = edad;
 	}
 }

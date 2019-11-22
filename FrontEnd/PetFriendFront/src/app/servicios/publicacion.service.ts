@@ -53,7 +53,7 @@ export class PublicacionService {
     this.animal.especie = animal.especie;
     this.animal.color1 = animal.color1;
     this.animal.sexo = (animal.esHembra == true? 'H' : 'M');
-    this.animal.esterilizado = (animal.esterilizado == true? 'true' : 'false');
+    this.animal.esterilizado = animal.esterilizado;
     const formHeaders = new HttpHeaders();
       formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
 
