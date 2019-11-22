@@ -16,4 +16,20 @@ export class RegistroServicioComponent implements OnInit {
   ngOnInit() {
   }
 
+  preview(files) {
+    const mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      console.log('Only images are supported.');
+      return;
+    }
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    // tslint:disable-next-line: variable-name
+    reader.onload = (_event) => {
+      this.url1 = reader.result;
+      console.log(this.url1);
+      return;
+
+    };
+  }
 }
