@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import { VistaPreviaComponent } from './componentes/vista-previa/vista-previa.co
 import { PublicacionFinalComponent } from './componentes/publicacion-final/publicacion-final.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';//common/http
+import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
 
 import { RegistroComponent } from './componentes/registro/registro.component';
@@ -91,7 +92,10 @@ import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-se
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBjghgOsi0i6FzSnXV7lIBDqp4t0YS0T48'
+    })
   ],
   providers: [RestClientService,
     Global],

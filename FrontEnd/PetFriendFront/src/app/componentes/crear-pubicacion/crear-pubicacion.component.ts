@@ -22,6 +22,9 @@ export class CrearPubicacionComponent implements OnInit {
   animal: AnimalCompañia = new AnimalCompañia;
   title: string = 'imagen';
   fecha: string = '';
+  lat = 4.628385;
+  lng = -74.064968;
+  drag = true;
   ban: boolean =this.servP.getTipoPublicacion() == 'adopcion';
   generos: string[] = ['Macho','Hembra'];
   opciones: string[] = ['Si', 'No'];
@@ -93,7 +96,10 @@ export class CrearPubicacionComponent implements OnInit {
     this.router.navigate(['/VistaPrevia']);
   }
 
-
-
+  onChoseLocation(event){
+    console.log(event);
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng;
+  }
 
 }
