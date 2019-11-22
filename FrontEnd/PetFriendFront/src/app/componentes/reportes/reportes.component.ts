@@ -42,7 +42,7 @@ export class ReportesComponent implements OnInit {
   }
 
   remove(report: Reporte) {
-    //TODO eviar peticion para que se elimine ese reporte con id report.id
+    // TODO eviar peticion para que se elimine ese reporte con id report.id
     const index = this.reports.indexOf(report, 0);
     if (index > -1) {
       this.reports.splice(index, 1);
