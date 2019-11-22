@@ -26,6 +26,10 @@ export class CrearPubicacionComponent implements OnInit {
   generos: string[] = ['Macho','Hembra'];
   opciones: string[] = ['Si', 'No'];
 
+  lat = 4.628385;
+  lng = -74.064968;
+  drag = true;
+
   imgURL: any;
   public message: string;
 
@@ -91,8 +95,13 @@ export class CrearPubicacionComponent implements OnInit {
     this.service.animal = this.animal;
     this.router.navigate(['/VistaPrevia']);
   }
-  
 
 
 
+
+  onChoseLocation(event){
+    console.log(event);
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng;
+  }
 }

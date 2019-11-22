@@ -41,7 +41,7 @@ export class PublicacionFinalComponent implements OnInit {
     this.razaAnimal = this.animal.raza;
     this.color1Animal = this.animal.color1;
     this.color2Animal = this.animal.color2;
-    this.esterilizadoAnimal = (this.animal.esterilizado == true? 'Esterilizado' : 'Sin esterilizar');
+    this.esterilizadoAnimal = (this.animal.esterilizado === true) ? 'Esterilizado' : 'Sin esterilizar';
     this.descripcionPublicacion = this.animal.descripcion;
     this.localidadAnimal = 'Bogotá';
     this.fecha = this.animal.fecha;

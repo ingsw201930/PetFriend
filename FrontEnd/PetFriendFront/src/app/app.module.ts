@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +44,8 @@ import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-pr
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
 import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
+
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
 
 @NgModule({
@@ -90,7 +93,10 @@ import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-se
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBjghgOsi0i6FzSnXV7lIBDqp4t0YS0T48'
+    })
   ],
   providers: [RestClientService,
     Global],

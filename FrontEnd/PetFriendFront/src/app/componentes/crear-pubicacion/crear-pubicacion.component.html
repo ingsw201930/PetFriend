@@ -44,7 +44,7 @@
                             {{genero}}
                           </mat-radio-button>
                         </mat-radio-group>
-                        
+
                 </div>
 
             </div>
@@ -159,13 +159,23 @@
                 </mat-radio-group>
 
             </div>
+                <label for="exampleInputEmail1">Lugar (Doble click para seleccionar el lugar)</label>
+                <br>
+              <div class="col">
+                  <agm-map [latitude]="lat" [longitude]="lng" (mapDblClick)="onChoseLocation($event)" [zoom]="16">
+                    <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="drag"> </agm-marker>
+                  </agm-map>
+              </div>
+
+
+
             <div class="from-group">
                 <label for="exampleInputEmail1">Descripción</label>
                 <div class="input-group">
                     <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
                 </div>
             </div>
-            <div  [hidden]="ban" class="from-group" >
+            <div  class="from-group" >
                 <label for="exampleInputEmail1">Fecha</label>
                 <div class="input-group">
                     <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>

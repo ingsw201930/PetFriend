@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Global } from './modelo/global';
+import { MouseEvent } from '@agm/core';
 
 @Component({
   selector: 'app-root',
