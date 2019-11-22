@@ -23,7 +23,7 @@
             <div class="form-group">
                 <h4>Especie</h4>
                 <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie">
         
                                 <option value="Canino">Canino</option>
                                 <option value="Felino">Felino</option>
@@ -38,7 +38,7 @@
                 <h4>Raza</h4>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
                                 <option selected>Seleccione</option>
                                 <option value="Pitbull">Pitbull</option>
                                 <option value="Pinscher">Pinscher</option>
@@ -51,7 +51,7 @@
                 <h4>Raza</h4>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect01" [(ngModel)]="raza">
                                 <option selected>Seleccione</option>
                                 <option value="Angora">Angora</option>
                                 <option value="Criollo">Criollo</option>
@@ -81,7 +81,7 @@
             <div class="from-group">
                 <h4>Genero</h4>
                 <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="genero">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect02" [(ngModel)]="genero">
                             <option value="Hembra">Hembra</option>
                                         <option value="Macho">Macho</option>
                                     
@@ -93,7 +93,7 @@
             <div class="from-group">
                 <h4>Esterilizado</h4>
                 <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="esterilizado">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect02" [(ngModel)]="esterilizado">
                     
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -111,7 +111,7 @@
                 <h4>Edad(promedio)</h4>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="edad">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect01" [(ngModel)]="edad">
                                         <option selected>Seleccione</option>
                                         <option value="Cachorro">Cachorro</option>
                                         <option value="Joven">Joven</option>
@@ -126,7 +126,7 @@
                     <div class="col">
                         <div class="input-group mb-3">
 
-                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color1">
+                            <select (click) = "onClick()" class="custom-select" id="inputGroupSelect01" [(ngModel)]="color1">
                                             <option selected>Color Predominante</option>
                                             <option value="Blanco">Blanco</option>
                                             <option value="Negro">Negro</option>
@@ -138,7 +138,7 @@
                     <div class="col">
                         <div class="input-group mb-3">
 
-                            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="color2">
+                            <select (click) = "onClick()" class="custom-select" id="inputGroupSelect01" [(ngModel)]="color2">
                                             <option selected>Color Secundario</option>
                                             <option value="Blanco">Blanco</option>
                                             <option value="Negro">Negro</option>

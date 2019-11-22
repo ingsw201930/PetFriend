@@ -52,47 +52,44 @@ html {
     font-weight: bolder;
 }
 
-.formPrincipal h1 {
+.formPrincipal h1{
     margin-top: 15px;
     font-size: 20px;
 }
 
-.ContenedorAvanzado {
+.ContenedorAvanzado{
     background-color: rgba(90, 105, 120, 0.25);
     width: 90%;
     height: 550px;
     margin: 10px 20px 20px 20px;
     border-radius: 35px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
 }
 
-.ContenedorAvanzado h1 {
+.ContenedorAvanzado h1{
     font-size: 70px;
     font-weight: bolder;
 }
 
-.ContenedorAvanzado h2 {
+.ContenedorAvanzado h2{
     font-size: 30px;
 }
 
-.BotonesTotal {
+.BotonesTotal{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
 }
-
-
 /* Ocultar checkBox
 */
-
 .boton input {
     position: absolute;
     opacity: 0;
@@ -108,24 +105,45 @@ html {
     justify-content: center;
 }
 
-.checkmark {
+.boton:hover{
+    background-color: brown;
+    color: rgba(255, 255, 255, 0.952);
+}
+
+.checkmark{
     justify-content: center;
     align-content: center;
     align-items: center;
 }
 
-.boton input:checked~.checkmark {
+.boton input:checked ~ .checkmark {
     background-color: rgb(26, 170, 195);
     border-radius: 15px;
 }
 
-.boton span {
+.boton span{
     font-size: 25px;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
 
-.custom-select {
-    width: 300px;
+.custom-select{
+    width: 300px ;
+}
+
+.todo{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.todo h1{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.todo h2{
+    font-size: 25px;
+    font-weight: bold;
 }
