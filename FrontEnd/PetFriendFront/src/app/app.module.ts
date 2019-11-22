@@ -45,7 +45,7 @@ import { ResultadosServiciosComponent } from './componentes/resultados-servicios
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
 import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
 
-import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+//import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
 
 @NgModule({

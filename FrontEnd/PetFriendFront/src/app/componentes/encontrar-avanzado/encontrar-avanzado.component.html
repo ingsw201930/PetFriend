@@ -98,7 +98,7 @@
                     
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                            <option value="Cualquiera">Cualquiera</option>
+                                            <option value="Cualquiera">No se</option>
                                         </select>
                 </div>
 
@@ -154,7 +154,7 @@
 
         <div class="row">
             <div class="col-10"></div>
-            <div class="col"> <button [routerLink]="['/ResultadosEncontrar']" type="button" class="btn btn-primary btn-lg" style="float: right;">Buscar</button>
+            <div class="col"> <button type="button" class="btn btn-primary btn-lg" style="float: right;" (click)="buscar()">Buscar</button>
             </div>
             <div class="col-1"></div>
         </div>
