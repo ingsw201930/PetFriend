@@ -118,7 +118,20 @@
                     </div>
                 </div>
             </div>
+            <div class="from-group">
+                <label for="exampleInputEmail1">Descripción</label>
+                <div class="input-group">
+                    <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
+                </div>
+            </div>
+            <div [hidden]="ban" class="from-group">
+                <label for="exampleInputEmail1">Fecha</label>
+                <div class="input-group">
+                    <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>
+                </div>
+            </div>
         </div>
+
         <div class="col-7">
             <div class="row">
                 <div class="col">
@@ -160,20 +173,9 @@
                     <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="drag"> </agm-marker>
                   </agm-map>
               </div>
-            <div class="from-group">
-                <label for="exampleInputEmail1">Descripción</label>
-                <div class="input-group">
-                    <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
-                </div>
-            </div>
-            <div [hidden]="ban" class="from-group">
-                <label for="exampleInputEmail1">Fecha</label>
-                <div class="input-group">
-                    <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>
-                </div>
-            </div>
+
             <br>
-            <button (click)="publicar()" type="button" class="btn btn-primary btn-lg" style="float: right;">Publicar</button>
+            <button (click)="publicar()" type="button" class="btn btn-primary btn-lg btn-block" style="float: right;">Publicar</button>
         </div>
 
     </div>
