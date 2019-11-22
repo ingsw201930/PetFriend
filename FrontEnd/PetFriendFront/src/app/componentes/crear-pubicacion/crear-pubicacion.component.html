@@ -37,11 +37,11 @@
                 <label for="exampleInputEmail1">Genero</label>
                 <div class="input-group mb-3">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="true" [(ngModel)]="esHembra">
                         <label class="form-check-label" for="inlineRadio1">Hembra</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="false" [(ngModel)]="esHembra">
                         <label class="form-check-label" for="inlineRadio2">Macho</label>
                     </div>
                 </div>
@@ -147,23 +147,24 @@
             </div>
             <br>
             <div class="from-group">
-                <label for="exampleInputEmail1">Esterilizado</label>
-                <div class="input-group mb-3">
+                <label>Esterilizado</label>
+                <div class="form-group mb-3">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" [(ngModel)]="esterilizado" name="inlineRadioOptions1" id="inlineRadio3" value="true">
-                        <label class="form-check-label" for="inlineRadio3">Si</label>
+                        <input  type="radio" [ngModel]="esterilizado" name="inlineRadioOptions1" id="inlineRadio3" value="true">
+                        <label  for="inlineRadio3">Si</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" [(ngModel)]="esterilizado" name="inlineRadioOptions1" id="inlineRadio4" value="false">
-                        <label class="form-check-label" for="inlineRadio4">No</label>
+                        <input  type="radio" [(ngModel)]="esterilizado" name="inlineRadioOptions1" id="inlineRadio4" value="false">
+                        <label  for="inlineRadio4">No</label>
+
                     </div>
                 </div>
 
             </div>
-                <label for="exampleInputEmail1">Lugar</label>
+                <label for="exampleInputEmail1">Lugar (Doble click para seleccionar el lugar)</label>
                 <br>
               <div class="col">
-                  <agm-map [latitude]="lat" [longitude]="lng" (mapDblClick)="onChoseLocation($event)">
+                  <agm-map [latitude]="lat" [longitude]="lng" (mapDblClick)="onChoseLocation($event)" [zoom]="16">
                     <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="drag"> </agm-marker>
                   </agm-map>
               </div>
@@ -176,7 +177,7 @@
                     <textarea class="form-control" aria-label="With textarea" placeholder="Describa brevemente el animal de la publicación" [(ngModel)]="descripcion"></textarea>
                 </div>
             </div>
-            <div  [hidden]="ban" class="from-group" >
+            <div  class="from-group" >
                 <label for="exampleInputEmail1">Fecha</label>
                 <div class="input-group">
                     <textarea id="fecha" class="form-control" aria-label="With textarea" placeholder="dd/mm/aa" [(ngModel)]="fecha"></textarea>

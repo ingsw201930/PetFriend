@@ -11,8 +11,8 @@ import { PublicacionService } from 'src/app/servicios/publicacion.service';
   styleUrls: ['./vista-previa.component.css']
 })
 export class VistaPreviaComponent implements OnInit {
-    
-  
+
+
   title: string;
   nombreAnimal: string;
   especieAnimal: string;
@@ -40,11 +40,11 @@ export class VistaPreviaComponent implements OnInit {
     this.nombreAnimal = this.animal.nombre;
     this.especieAnimal = this.animal.especie;
     this.edadAnimal = this.animal.edad;
-    this.generoAnimal = (this.animal.esHembra == true? 'Hembra' : 'Macho');
+    this.generoAnimal = (this.animal.esHembra === true? 'Hembra' : 'Macho');
     this.razaAnimal = this.animal.raza;
     this.color1Animal = this.animal.color1;
     this.color2Animal = this.animal.color2;
-    this.esterilizadoAnimal = (this.animal.esterilizado == true? 'Esterilizado' : 'Sin esterilizar');
+    this.esterilizadoAnimal = (this.animal.esterilizado === true? 'Esterilizado' : 'Sin esterilizar');
     this.descripcionPublicacion = this.animal.descripcion;
     this.localidadAnimal = 'Bogotá';
     this.fecha = this.animal.fecha;

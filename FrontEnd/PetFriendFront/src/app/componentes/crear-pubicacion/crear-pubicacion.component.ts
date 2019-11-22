@@ -17,8 +17,8 @@ export class CrearPubicacionComponent implements OnInit {
   color1: string = '';
   color2: string = '';
   descripcion: string = '';
-  esHembra: boolean = false;
-  esterilizado: boolean = false;
+  esHembra: boolean;
+  esterilizado: boolean;
   animal: AnimalCompañia = new AnimalCompañia;
   title: string = 'imagen';
   fecha: string = '';
