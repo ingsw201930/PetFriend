@@ -16,20 +16,12 @@ export class EncontrarAvanzadoComponent implements OnInit {
   color2: string = '';
   genero: string='';
   esterilizado: string='';
-
-  @Output() salidaEspecie = new EventEmitter<string>();
-  @Output() salidaRaza = new EventEmitter<string>();
-  @Output() salidaEdad = new EventEmitter<string>();
-  @Output() salidaColor1 = new EventEmitter<string>();
-  @Output() salidaColor2 = new EventEmitter<string>();
-  @Output() salidaGenero = new EventEmitter<string>();
-  @Output() salidaEsterilizado = new EventEmitter<string>();
   filtro:Filtros;
   constructor(private pubServ: PublicacionService,private router:Router) { }
 
   ngOnInit() {
   }
-
+/*
   cambiarMetodo(){
     if(this.Basico == false){
       this.Basico = true;
@@ -38,7 +30,7 @@ export class EncontrarAvanzadoComponent implements OnInit {
       this.Basico = false;
     }
   }
-
+*/
   buscar(){
     if(this.especie!='')
     {
@@ -71,15 +63,6 @@ export class EncontrarAvanzadoComponent implements OnInit {
     //[routerLink]="['/ResultadosEncontrar']"
     this.pubServ.setFiltro(this.filtro);
     this.router.navigate(['/ResultadosEncontrar']);
-  }
-  onClick(){
-    this.salidaEspecie.emit(this.especie);
-    this.salidaRaza.emit(this.raza);
-    this.salidaEdad.emit(this.edad);
-    this.salidaColor1.emit(this.color1);
-    this.salidaColor2.emit(this.color2);
-    this.salidaGenero.emit(this.genero);
-    this.salidaEsterilizado.emit(this.esterilizado);
   }
 
 }

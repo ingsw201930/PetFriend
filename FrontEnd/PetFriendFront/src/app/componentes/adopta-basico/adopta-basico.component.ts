@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Publicacion } from 'src/app/modelo/publicacion';
+import { PublicacionService } from 'src/app/servicios/publicacion.service';
 
 @Component({
   selector: 'app-adopta-basico',
@@ -8,12 +9,24 @@ import { Publicacion } from 'src/app/modelo/publicacion';
   styleUrls: ['./adopta-basico.component.css']
 })
 export class AdoptaBasicoComponent implements OnInit {
-  publicaciones: Publicacion[];
+  publicaciones: any[];
   items = ['First', 'Second', 'Third','First', 'Second', 'Third'];
   show: boolean = true;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private pubSer:PublicacionService) { }
 
-  ngOnInit() {
+  async ngOnInit(): Promise<void> {
+    this.publicaciones = await this.pubSer.getPublicacionesAdopcion();
+    console.log(this.publicaciones);
+    if (this.publicaciones == null)
+    {
+      return;
+    }
+    for (let index = 0; index < this.publicaciones.length; index++) {
+      if(index == 6)
+        break;
+      const element = this.publicaciones[index];
+      this.items[index] = element.imagen1;
+    }
   }
 
   buscar(){

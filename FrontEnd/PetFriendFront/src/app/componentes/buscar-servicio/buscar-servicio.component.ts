@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Servicio } from 'src/app/modelo/servicio';
 import { BuscarServicioService } from 'src/app/servicios/buscar-servicio.service';
+import { PublicacionService } from 'src/app/servicios/publicacion.service';
+import { Publicacion } from 'src/app/modelo/publicacion';
 
 
 @Component({
@@ -24,9 +26,22 @@ export class BuscarServicioComponent implements OnInit {
   snacks:boolean = false;
   especie:boolean = false;
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
+  constructor(private router: Router, private pubSer:PublicacionService) { }
+  publicaciones: Publicacion[];
+  items = ['First', 'Second', 'Third','First', 'Second', 'Third'];
+  async ngOnInit(): Promise<void> {
+    this.publicaciones = await this.pubSer.getPublicacionesServicios();
+    console.log(this.publicaciones);
+    if (this.publicaciones == null)
+    {
+      return;
+    }
+    for (let index = 0; index < this.publicaciones.length; index++) {
+      if(index == 6)
+        break;
+      const element = this.publicaciones[index];
+      this.items[index] = element.imagen1;
+    }
   }
 
   cambiarMetodo(){

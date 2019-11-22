@@ -150,6 +150,59 @@ export class PublicacionService {
         ;
     }
   }
-
+  async getPublicacionesPerdidos(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/Perdido').subscribe(data => {
+        let pubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          pubs.push(temp);
+        }
+        resolve(pubs);
+      },
+      err => {
+        console.log('error');
+        console.log(err);
+        resolve(null);
+      });
+    });
+  }
+  async getPublicacionesAdopcion(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/Adopcion').subscribe(data => {
+        let pubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          pubs.push(temp);
+        }
+        resolve(pubs);
+      },
+      err => {
+        console.log('error');
+        console.log(err);
+        resolve(null);
+      });
+    });
+  }
+  async getPublicacionesServicios(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/Servicios').subscribe(data => {
+        let pubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          pubs.push(temp);
+        }
+        resolve(pubs);
+      },
+      err => {
+        console.log('error');
+        console.log(err);
+        resolve(null);
+      });
+    });
+  }
   constructor(private http: HttpClient) { }
 }

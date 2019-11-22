@@ -32,7 +32,7 @@ public class UsuarioPublicoRESTController {
 		List<Integer> randoms = animalAdopRepo.findRandom();
 		List<Integer> ids = new ArrayList<Integer>();
 		List<Publicacion> solution = new ArrayList<Publicacion>();
-		System.out.println("Lo pide");
+		//System.out.println("Lo pide");
 		for (int i=0 ; i<10 ; ++i) {
 
 			if(randoms.size() > i){
@@ -53,6 +53,17 @@ public class UsuarioPublicoRESTController {
 		return this.controlPub.pedirPublicacionesAdopcion();
 	}
 
+	@GetMapping("/Perdido")
+	public Iterable<Publicacion> pedirAPerdido()
+	{
+		return this.controlPub.pedirPublicacionesPerdido();
+	}
+	@GetMapping("/Servicios")
+	public Iterable<Publicacion> pedirServicios()
+	{
+		return this.controlPub.pedirPublicacionesServicios();
+	}
+	
 	@GetMapping("/Busqueda/Adopcion/Avanzada")
 	public Iterable<Publicacion> pedirAAdopcionFiltros(@RequestBody Filtros filtros)
 	{

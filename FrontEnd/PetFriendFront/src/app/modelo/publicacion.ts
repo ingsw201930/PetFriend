@@ -1,3 +1,5 @@
+import { Animal } from './animal';
+
 export class Publicacion {
     id: number;
     descripcion: string;
@@ -6,4 +8,5 @@ export class Publicacion {
     imagen2: string;
     imagen3: string;
     imagen4: string;
+    animal: Animal;
 }

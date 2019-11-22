@@ -23,6 +23,7 @@ export class BuscarEncontradosComponent implements OnInit {
 
 
   ngOnInit() {
+    //console.log("oiga1");
   }
 
   cambiarMetodo(){
@@ -35,7 +36,7 @@ export class BuscarEncontradosComponent implements OnInit {
   }
 
   buscar(){
-    this.router.navigate(['/ResultadosEncontrar']);
+    //this.router.navigate(['/ResultadosEncontrar']);
   }
 
 }

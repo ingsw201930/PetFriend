@@ -1,4 +1,5 @@
 export class Animal {
+    idAnimal: number;
     nombre: string;
     especie: string;
     raza: string;
@@ -6,4 +7,5 @@ export class Animal {
     color2: string;
     sexo: string;
     esterilizado: Boolean;
+    edad: string;
 }
