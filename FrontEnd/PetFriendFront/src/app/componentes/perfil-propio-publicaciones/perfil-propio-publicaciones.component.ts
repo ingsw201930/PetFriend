@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PerfilPropioPublicacionesComponent implements OnInit {
   nombreUsuario: string;
+  url1:any;
   tituloPublicacion: string;
   descripcionPublicacion: string;
   cantidadPublicaciones: number = 1; 

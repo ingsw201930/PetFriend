@@ -5,5 +5,5 @@ export class Animal {
     color1: string;
     color2: string;
     sexo: string;
-    esterilizado: string;
+    esterilizado: Boolean;
 }

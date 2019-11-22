@@ -32,10 +32,10 @@ public class Animal implements Serializable{
     @Column(name = "SEXO")
     private Character sexo;
     @Column(name = "ESTERILIZADO")
-	private Boolean esterilizado;
-	
-    //TODO --- fotos
-    
+    private Boolean esterilizado;
+    @Column(name = "EDAD")
+    private String edad;
+
     public Animal(String nombre, String especie, String raza, String color1, String color2,
 			Character sexo, Boolean esterilizado) {
 		super();
@@ -110,6 +110,14 @@ public class Animal implements Serializable{
 		return serialVersionUID;
 	}
 	public Animal() {
-		
+
+	}
+
+	public String getEdad() {
+		return edad;
+	}
+
+	public void setEdad(String edad) {
+		this.edad = edad;
 	}
 }

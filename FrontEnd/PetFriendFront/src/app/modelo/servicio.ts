@@ -1,7 +1,6 @@
 import { Usuario } from './usuario';
 
 export class Servicio {
-
   especie?: string;
   id?: number;
   fecha: Date;
@@ -22,5 +21,4 @@ export class Servicio {
   snacks?= false;
   theCheckbox?= false;
   marked?= false;
-
 }

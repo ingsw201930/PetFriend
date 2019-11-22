@@ -14,6 +14,7 @@ import java.util.List;
 
 import com.petfriend.prototipo.model.PersonaNatural;
 import com.petfriend.prototipo.model.ProveedoresServicio;
+import com.petfriend.prototipo.model.Filtros;
 import com.petfriend.prototipo.model.Publicacion;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
@@ -32,7 +33,9 @@ public class UsuarioPublicoRESTController {
 	private IPublicacionRepositorio<Publicacion> adopRepo;
 	@Autowired
 	private IUsuarioRepositorio usuarioRepo;
-	
+	@Autowired
+  private PublicacionAnimalController controlPub;
+
 	@GetMapping("/paginaPrincipal")
 	public Iterable<Publicacion> pedirPaginaPrincipal()
 	{
@@ -52,7 +55,7 @@ public class UsuarioPublicoRESTController {
 		}
 		return solution;
 	}
-	
+
 	@PostMapping("/registrarUsuario")
 	@ResponseBody
 	public String registrarUsuario(@RequestBody PersonaNatural pNatural)
@@ -61,11 +64,11 @@ public class UsuarioPublicoRESTController {
 		Usuario u = this.usuarioRepo.findByCorreo(pNatural.getCorreo());
 		if(u != null)
 			return "USUARIO EXISTENTE";
-		
+
 		this.usuarioRepo.save(pNatural);
 		return "REGISTRADO";
 	}
-	
+
 	@PostMapping("/registrarTienda")
 	@ResponseBody
 	public String registrarTienda(@RequestBody ProveedoresServicio pServicio)
@@ -73,9 +76,58 @@ public class UsuarioPublicoRESTController {
 		Usuario u = this.usuarioRepo.findByCorreo(pServicio.getCorreo());
 		if(u != null)
 			return "USUARIO EXISTENTE";
-		
+
 		this.usuarioRepo.save(pServicio);
 		return "REGISTRADO";
+	}
+
+
+	@GetMapping("/Adopcion")
+	public Iterable<Publicacion> pedirAAdopcion()
+	{
+		return this.controlPub.pedirPublicacionesAdopcion();
+	}
+
+	@GetMapping("/Busqueda/Adopcion/Avanzada")
+	public Iterable<Publicacion> pedirAAdopcionFiltros(@RequestBody Filtros filtros)
+	{
+		/*System.out.println("");
+		System.out.println("");
+		System.out.println("entra master");
+
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
+		return this.controlPub.pedirPublicacionesAdopcionFiltros(filtros);
+	}
+
+	@GetMapping("/Busqueda/Perdido/Avanzada")
+	public Iterable<Publicacion> pedirAPerdidoFiltros(@RequestBody Filtros filtros)
+	{
+		/*System.out.println("");
+		System.out.println("");
+		System.out.println("entra master");
+
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
+		return this.controlPub.pedirPublicacionesPerdidoFiltros(filtros);
+	}
+
+	@GetMapping("/Busqueda/Encontrado/Avanzada")
+	public Iterable<Publicacion> pedirAEncontradoFiltros(@RequestBody Filtros filtros)
+	{
+		/*System.out.println("");
+		System.out.println("");
+		System.out.println("entra master");
+
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
+		return this.controlPub.pedirPublicacionesEncontradoFiltros(filtros);
 	}
 
 	@GetMapping("/home")
@@ -83,5 +135,5 @@ public class UsuarioPublicoRESTController {
 	{
 		return this.animalAdopRepo.findAll();
 	}
-	
+
 }

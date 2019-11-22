@@ -4,8 +4,7 @@
     <div class="row contenedorPublicación">
         <div class="col-5">
             <h4>Nombre</h4>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre "
-                [(ngModel)]="servicio.titulo">
+            <input type="text" class="form-control" placeholder="Nombre " [(ngModel)]="servicio.titulo">
             <h4>Localidad</h4>
             <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="servicio.localidad">
                 <option value="Antonio"> Localidad de Antonio Nariño</option>
@@ -32,7 +31,7 @@
             <h4>Descripción</h4>
             <div class="form-group shadow-textarea">
                 <textarea class="form-control z-depth-1" [(ngModel)]="servicio.descripcion"
-                    id="exampleFormControlTextarea6" rows="3" placeholder="Escriba la conclusiòn..."></textarea>
+                    id="exampleFormControlTextarea6" rows="3" placeholder="Escriba la descripción..."></textarea>
             </div>
         </div>
         <div class="col-7">
@@ -50,14 +49,10 @@
             </div>
             <br>
             <br>
-            <div class="row">
-                <div class="col-6">
-                    <h5>Estos datos no seran publicos amenos que el usuario lo permita</h5>
-                </div>
-                <div class="col-6">
-                    <button [routerLink]="['/']" type="button" class="btn btn-success btn-block">Crear</button>
-                </div>
-            </div>
+
+
+            <button type="button" class="btn btn-success btn-lg btn-block" (click)="crearServicio()">Crear</button>
+
         </div>
     </div>
 </div>

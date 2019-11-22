@@ -39,7 +39,7 @@ public class UsuarioIniciadoRESTController {
 	@Autowired
 	private IPublicacionAEncontradoRepositorio animalEncRepo;
 	@Autowired
-	private FactoriaPublicacion factoriaPub;
+	private ConstructorPublicacion constructorPub;
 
 	@GetMapping
 	@RequestMapping({ "/validateLogin" })
@@ -75,9 +75,16 @@ public class UsuarioIniciadoRESTController {
 	@PostMapping("{id}/publicacionAAdopcion")
 	public PublicacionAdopcion crearPAAdopcion(@PathVariable int id,@RequestBody PublicacionAdopcion pAnimal)
 	{
-		return factoriaPub.crearPAAdopcion(id, pAnimal);
+
+		return constructorPub.crearPAAdopcion(id, pAnimal);
 	}
-	
+
+	@GetMapping("{id}/Perfil")
+	public PublicacionAnimal obtenerPerfilUsuario(@PathVariable int idP)
+	{
+		return this.animalAdopRepo.findById(idP).get();
+	}
+
 	@GetMapping("{id}/publicacionAAdopcion/{idP}")
 	public PublicacionAnimal obtenerPAAdopcion(@PathVariable int idP)
 	{
@@ -87,7 +94,7 @@ public class UsuarioIniciadoRESTController {
 	@PostMapping("{id}/publicacionAPerdido")
 	public PublicacionAPerdido crearPAPerdido(@PathVariable int id,@RequestBody PublicacionAPerdido pAnimal)
 	{
-		return factoriaPub.crearPAPerdido(id, pAnimal);
+		return constructorPub.crearPAPerdido(id, pAnimal);
 	}
 	
 	@GetMapping("{id}/publicacionAPerdio/{idP}")
@@ -99,7 +106,7 @@ public class UsuarioIniciadoRESTController {
 	@PostMapping("{id}/publicacionAEncontrado")
 	public PublicacionAEncontrado crearPAEncontrado(@PathVariable int id,@RequestBody PublicacionAEncontrado pAnimal)
 	{
-		return factoriaPub.crearPAEncontrado(id, pAnimal);
+		return constructorPub.crearPAEncontrado(id, pAnimal);
 	}
 	
 	@GetMapping("{id}/publicacionAEncontrado/{idP}")

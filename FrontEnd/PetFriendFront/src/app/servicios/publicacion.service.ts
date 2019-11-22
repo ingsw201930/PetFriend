@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Publicacion } from '../modelo/publicacion';
 import { UsuarioService } from './usuario.service';
 import { Global } from 'src/app/modelo/global';
+import { Filtros } from '../modelo/filtros';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +19,19 @@ export class PublicacionService {
   private publicacionEncontrado: PublicacionAEncontrado;
   private publicacionPerdido: PublicacionAPerdido;
   private animal: Animal;
+  private filtro:Filtros;
   urls: any[] = [];
-
+  setFiltro(fil:Filtros)
+  {
+    this.filtro=fil;
+  }
+  getFiltro()
+  {
+    return this.filtro;
+  }
   setTipoPublicacion(nom: string){
     this.tipoPublicacion = nom;
-    console.log(this.tipoPublicacion);
+    //console.log(this.tipoPublicacion);
   }
 
   getTipoPublicacion():string{
@@ -30,7 +39,7 @@ export class PublicacionService {
   }
 
   async getRandom(): Promise<Publicacion[]>{
-    return new Promise(resolve => {    
+    return new Promise(resolve => {
       this.http.get('http://localhost:9890/public/paginaPrincipal').subscribe(data => {
         let randomPubs = [];
         for(var i in data){
@@ -55,7 +64,7 @@ export class PublicacionService {
     this.animal.especie = animal.especie;
     this.animal.color1 = animal.color1;
     this.animal.sexo = (animal.genero == 'Hembra'? 'H' : 'M');
-    this.animal.esterilizado = (animal.esterilizado == true? 'true' : 'false');
+    this.animal.esterilizado = (animal.esterilizado == true? true : false);
     const formHeaders = new HttpHeaders();
       formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
 

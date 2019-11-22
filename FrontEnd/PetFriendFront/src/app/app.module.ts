@@ -44,6 +44,10 @@ import { PerfilPropioPublicacionesVacioComponent } from './componentes/perfil-pr
 import { ResultadosServiciosComponent } from './componentes/resultados-servicios/resultados-servicios.component';
 import { BusquedaServiciosBasicoComponent } from './componentes/busqueda-servicios-basico/busqueda-servicios-basico.component';
 import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-servicio.component';
+import { BuscarEncontradosComponent } from './componentes/buscar-encontrados/buscar-encontrados.component';
+import { BuscarAdoptarComponent } from './componentes/buscar-adoptar/buscar-adoptar.component';
+
+//import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
@@ -81,7 +85,9 @@ import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
     PerfilPropioPublicacionesVacioComponent,
     ResultadosServiciosComponent,
     BusquedaServiciosBasicoComponent,
-    BuscarServicioComponent
+    BuscarServicioComponent,
+    BuscarEncontradosComponent,
+    BuscarAdoptarComponent
   ],
   imports: [
     BrowserModule,
