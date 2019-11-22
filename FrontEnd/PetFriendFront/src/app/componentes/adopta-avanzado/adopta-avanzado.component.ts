@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adopta-avanzado.component.css']
 })
 export class AdoptaAvanzadoComponent implements OnInit {
+  Basico: boolean = true;
   especie: string = '';
   raza: string = '';
   edad: string = '';

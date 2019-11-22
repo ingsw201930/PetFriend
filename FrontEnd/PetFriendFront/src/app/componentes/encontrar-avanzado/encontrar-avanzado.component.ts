@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encontrar-avanzado.component.css']
 })
 export class EncontrarAvanzadoComponent implements OnInit {
+  Basico: boolean = true;
   especie: string = '';
   raza: string = '';
   edad: string = '';
