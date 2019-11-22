@@ -9,6 +9,7 @@ import { Servicio } from 'src/app/modelo/servicio';
 export class RegistroServicioComponent implements OnInit {
 
   servicio: Servicio = {
+    titulo: '',
     descripcion: '',
     fecha: new Date(),
     localidad: '',
