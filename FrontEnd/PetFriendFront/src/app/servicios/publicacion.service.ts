@@ -6,6 +6,7 @@ import { PublicacionAPerdido } from '../modelo/publicacion-aperdido';
 import { Animal } from '../modelo/animal';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Publicacion } from '../modelo/publicacion';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,9 @@ export class PublicacionService {
   }
 
   send(animal: AnimalCompañia){
+    if(this.sesion.getSesionIniciada() == false){
+      return false;
+    }
 
     this.animal = new Animal;
     this.animal.nombre = animal.nombre;
@@ -73,7 +77,7 @@ export class PublicacionService {
         this.publicacionAdopcion.imagen4 = this.urls[3];
 
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
-        this.http.post('http://localhost:9890/usuario/1/publicacionAAdopcion', this.publicacionAdopcion, {headers: headers, withCredentials: true })
+        this.http.post('http://localhost:9890/usuario/' +  + '/publicacionAAdopcion', this.publicacionAdopcion, {headers: headers, withCredentials: true })
         .subscribe(data=> {
           console.log('entra');
         },
@@ -140,7 +144,8 @@ export class PublicacionService {
         //)
         ;
     }
+    return true;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sesion: UsuarioService) { }
 }

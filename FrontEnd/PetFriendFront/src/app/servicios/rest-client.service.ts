@@ -9,11 +9,13 @@ export class RestClientService {
   constructor(private http: HttpClient, private sesionService: UsuarioService) {}
 
   authenticate(username: string, password: string) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("user" + ':' + "password") });
     let params = new HttpParams();
-    params = params.append('correo', 'user@correo.com');
+    params = params.append('correo', username);
+    params = params.append('pass', password);
     this.http.get('http://localhost:9890/usuario/validateLogin', {headers: headers, withCredentials: true, params: params})
     .subscribe(data => {
+      console.log(data);
       let temp = new Sesion();
       Object.assign(temp, data);
       this.sesionService.setSesion(temp);
@@ -27,10 +29,10 @@ export class RestClientService {
   }
 
   register(username: string, password: string){
-    let params = new HttpParams();
-    params = params.append('correo', username);
-    params = params.append('pass', password);
-    this.http.get('http://localhost:9890/public/registrar', {withCredentials: true, params: params})
+    let nuevoUsuario = new Usuario();
+    nuevoUsuario.contrasenha = password;
+    nuevoUsuario.correo = username;
+    this.http.post('http://localhost:9890/public/registrar', nuevoUsuario, {responseType: 'text' as 'text' })
     .subscribe(data => {
       console.log(data);
     },

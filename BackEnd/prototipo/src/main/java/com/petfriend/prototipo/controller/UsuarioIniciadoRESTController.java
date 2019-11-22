@@ -41,8 +41,14 @@ public class UsuarioIniciadoRESTController {
 	@GetMapping(produces = "application/json")
 	@RequestMapping({ "/validateLogin" })
 	@ResponseBody
-	public Sesion validateLogin(@RequestParam(defaultValue = "correo") String correo) {
+	public Sesion validateLogin(@RequestParam(defaultValue = "correo") String correo, @RequestParam(defaultValue = "pass") String pass) {
+		System.out.println("ENTRA");
 		Usuario u = this.usuarioRepo.findByCorreo(correo);
+		if(u == null)
+			return new Sesion(0, "", false);
+			System.out.println(u.getContrasenha());
+		if(!u.getContrasenha().equals(pass))
+			return new Sesion(0, "", false);
 		System.out.println(u.getIdUsuario());
 		return new Sesion(u.getIdUsuario(), correo, true);
 	}

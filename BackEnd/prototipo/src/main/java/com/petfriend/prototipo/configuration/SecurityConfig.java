@@ -84,12 +84,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
-    
-    @Bean
-    public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-        final Properties users = new Properties();
-        users.put("user","pass,ROLE_USER,enabled"); //add whatever other user you need
-        return new InMemoryUserDetailsManager(users);
-    }
-
 }
