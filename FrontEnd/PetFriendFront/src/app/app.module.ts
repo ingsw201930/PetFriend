@@ -26,6 +26,7 @@ import { EncontrarBasicoComponent } from './componentes/encontrar-basico/encontr
 import { EncontrarAvanzadoComponent } from './componentes/encontrar-avanzado/encontrar-avanzado.component';
 import { ResultadosEncontrarComponent } from './componentes/resultados-encontrar/resultados-encontrar.component';
 import { Global } from './modelo/global';
+import { ReportesComponent } from './componentes/reportes/reportes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { Global } from './modelo/global';
     AdoptaAvanzadoComponent,
     EncontrarBasicoComponent,
     EncontrarAvanzadoComponent,
-    ResultadosEncontrarComponent
+    ResultadosEncontrarComponent,
+    ReportesComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ import {EncontrarAvanzadoComponent} from './componentes/encontrar-avanzado/encon
 import {EncontrarBasicoComponent} from './componentes/encontrar-basico/encontrar-basico.component';
 import {ResultadosAdoptaComponent} from './componentes/resultados-adopta/resultados-adopta.component';
 import {ResultadosEncontrarComponent} from './componentes/resultados-encontrar/resultados-encontrar.component';
+import { ReportesComponent } from './componentes/reportes/reportes.component';
 
 const routes: Routes = [
   { path: 'CrearUnaPublicacion', component: CrearPubicacionComponent },
@@ -39,7 +40,7 @@ const routes: Routes = [
   { path: 'EncontrarBasico', component: EncontrarBasicoComponent },
   { path: 'ResultadosAdopta', component: ResultadosAdoptaComponent },
   { path: 'ResultadosEncontrar', component: ResultadosEncontrarComponent },
-
+  { path: 'Reportes', component: ReportesComponent },
   { path: '**', component: NotFoundComponent }
 
 ];

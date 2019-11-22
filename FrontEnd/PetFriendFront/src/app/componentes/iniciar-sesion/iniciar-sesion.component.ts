@@ -16,6 +16,7 @@ export class IniciarSesionComponent implements OnInit {
   password = '';
   result: any;
   message: any;
+  isError = false;
 
   constructor(private restClient: RestClientService, private router: Router, private global: Global) {
   }
@@ -34,7 +35,7 @@ export class IniciarSesionComponent implements OnInit {
       this.router.navigate([``]);
     }
     else {
-
+      this.isError = true;
     }
   }
 }
