@@ -4,14 +4,36 @@
     <div class="row contenedorPublicación">
         <div class="col-5">
             <h4>Nombre</h4>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre " [(ngModel)]="servicio.titulo">
-            <h4>Correo</h4>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre "
+                [(ngModel)]="servicio.titulo">
+            <h4>Localidad</h4>
             <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="servicio.localidad">
-                    <option value="Canino">Canino</option>
-                    <option value="Felino">Felino</option>
-                    <option value="Otro">Otro</option>
-                </select>
-
+                <option value="Antonio"> Localidad de Antonio Nariño</option>
+                <option value="Barrios"> Localidad de Barrios Unodos</option>
+                <option value="Bosa"> Localidad de Bosa </option>
+                <option value="Chapinero"> Localidad de Chapinero </option>
+                <option value="Ciudad"> Localidad de Ciudad Bolivar</option>
+                <option value="Engativá"> Localidad de Engativá </option>
+                <option value="Fontibón"> Localidad de Fontibón </option>
+                <option value="Kennedy"> Localidad de Kennedy </option>
+                <option value="Canino"> Localidad de La Candelaria</option>
+                <option value="Candelaria"> Localidad de Los Martires</option>
+                <option value="Puente"> Localidad de Puente Aranda</option>
+                <option value="Rafael"> Localidad de Rafael Uribe Uribe</option>
+                <option value="San"> Localidad de San Cristobal</option>
+                <option value="Santa"> Localidad de Santa Fe</option>
+                <option value="Suba"> Localidad de Suba </option>
+                <option value="Sumapaz"> Localidad de Sumapaz </option>
+                <option value="Teusaquillo"> Localidad de Teusaquillo </option>
+                <option value="Tunjuelito"> Localidad de Tunjuelito </option>
+                <option value="Usaquén"> Localidad de Usaquén </option>
+                <option value="Usme"> Localidad de Usme </option>
+            </select>
+            <h4>Descripción</h4>
+            <div class="form-group shadow-textarea">
+                <textarea class="form-control z-depth-1" [(ngModel)]="servicio.descripcion"
+                    id="exampleFormControlTextarea6" rows="3" placeholder="Escriba la conclusiòn..."></textarea>
+            </div>
         </div>
         <div class="col-7">
             <div class="row">
