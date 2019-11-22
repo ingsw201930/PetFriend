@@ -53,7 +53,7 @@ html {
 .ContenedorAvanzado{
     background-color: rgba(90, 105, 120, 0.25);
     width: 90%;
-    height: 700px;
+    height: 550px;
     margin: 10px 20px 20px 20px;
     border-radius: 35px;
     display: flex;
@@ -81,21 +81,21 @@ html {
 	align-items: center;
 	align-content: center;
 }
-
-.boton {
-    margin: 10px 10px 10px 10px;
-    background-color: rgb(174, 174, 199);
-    border-radius: 15px;
-    width: 150px;
-    justify-content: center;
-    align-content: center;
-    justify-content: center;
-}
-
+/* Ocultar checkBox
+*/
 .boton input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
+}
+
+.boton {
+    margin: 10px 10px 5px 10px;
+    background-color: rgb(174, 174, 199);
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .boton:hover{
@@ -111,6 +111,7 @@ html {
   
 .boton input:checked ~ .checkmark {
     background-color: rgb(26, 170, 195);
+    border-radius: 15px;
 }
 
 .boton span{
@@ -118,4 +119,8 @@ html {
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+.custom-select{
+    width: 300px ;
 }

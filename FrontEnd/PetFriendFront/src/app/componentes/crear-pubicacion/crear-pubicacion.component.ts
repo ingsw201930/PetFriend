@@ -17,12 +17,14 @@ export class CrearPubicacionComponent implements OnInit {
   color1: string = '';
   color2: string = '';
   descripcion: string = '';
-  esHembra: boolean = false;
-  esterilizado: boolean = false;
+  generoAnimal: string;
+  esterilizadoAnimal: string;
   animal: AnimalCompañia = new AnimalCompañia;
   title: string = 'imagen';
   fecha: string = '';
   ban: boolean =this.servP.getTipoPublicacion() == 'adopcion';
+  generos: string[] = ['Macho','Hembra'];
+  opciones: string[] = ['Si', 'No'];
 
   imgURL: any;
   public message: string;
@@ -82,8 +84,8 @@ export class CrearPubicacionComponent implements OnInit {
     this.animal.edad = this.edad;
     this.animal.color1 = this.color1;
     this.animal.color2 = this.color2;
-    this.animal.esHembra = this.esHembra;
-    this.animal.esterilizado = this.esterilizado;
+    this.animal.genero = this.generoAnimal;
+    this.animal.esterilizado = (this.esterilizadoAnimal == 'Si'? true : false);
     this.animal.descripcion = this.descripcion;
     this.animal.fecha = this.fecha;
     this.service.animal = this.animal;

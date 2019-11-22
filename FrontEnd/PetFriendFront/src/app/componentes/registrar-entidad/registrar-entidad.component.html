@@ -1,0 +1,69 @@
+<br>
+<br>
+<div class="container">
+    <div class="row contenedorPublicación">
+
+        <div class="col-5">
+            <h4>Nombre</h4>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre " [(ngModel)]="nombre">
+            <h4>Correo</h4>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo " [(ngModel)]="correo">
+            <h4>Contraseña</h4>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contraseña " [(ngModel)]="contrasena">
+            <h4>Confirmar contraseña</h4>
+
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ConfirmarContraseña " [(ngModel)]="ccontrasena">
+            <h4>Dirección</h4>
+
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dirección " [(ngModel)]="direccion">
+            <h4>Teléfono</h4>
+
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Teléfono" [(ngModel)]="telefono">
+            <h4>NIT</h4>
+
+            <input type="NIT" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NIT" [(ngModel)]="nit">
+
+
+
+
+        </div>
+
+
+        <div class="col-7">
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <img [src]="url1" height="250">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <input class="file" #file type="file" accept='image/*' (change)="preview(file.files)" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+
+                <div class="col-6">
+
+                    <h5>Estos datos no seran publicos amenos que el usuario lo permita</h5>
+
+                </div>
+                <div class="col-6">
+
+                    <button [routerLink]="['/']" type="button" class="btn btn-success btn-lg">Crear</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>

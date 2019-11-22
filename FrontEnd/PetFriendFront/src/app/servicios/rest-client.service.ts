@@ -56,7 +56,7 @@ export class RestClientService {
   }
 
   getAdminData() {
-    return this.http.get('http://localhost:9890/admin/test',  {
+    return this.http.get('http://localhost:9890/admin/test', {
       withCredentials: true
     });
   }

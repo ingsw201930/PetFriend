@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestClientService } from 'src/app/servicios/rest-client.service';
 import { Usuario } from 'src/app/modelo/usuario';
 import { Router } from '@angular/router';
+import { Global } from 'src/app/modelo/global';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -10,19 +11,17 @@ import { Router } from '@angular/router';
 })
 export class IniciarSesionComponent implements OnInit {
 
-  private titulo: string = 'Petfriend';
-
+  private titulo = 'Petfriend';
   user = '';
   password = '';
-  
   result: any;
-  
   message: any;
-  
-  constructor(private restClient: RestClientService, private router: Router) {
+  isError = false;
+
+  constructor(private restClient: RestClientService, private router: Router, private global: Global) {
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   doLogin() {
     console.log(this.user + ' - ' + this.password);

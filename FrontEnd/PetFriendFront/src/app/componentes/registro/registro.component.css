@@ -1,0 +1,17 @@
+.contenedorRegistro {
+    background-color: rgba(90, 105, 120, 0.25);
+    border-radius: 25px;
+    width: 1100px;
+    height: 550px;
+    padding: 30px 30px 30px 30px;
+    margin: 30px 30px 0px 0px;
+}
+
+.contenedorPub {
+    background-color: rgba(90, 105, 120, 0.25);
+    border-radius: 25px;
+    width: 1100px;
+    height: 100px;
+    padding: 30px 30px 30px 30px;
+    margin: 30px 30px 0px 0px;
+}
