@@ -24,7 +24,7 @@ export class IniciarSesionComponent implements OnInit {
   ngOnInit() { }
 
   async doLogin(): Promise<void> {
-    console.log(this.user + ' - ' + this.password);
+
     let rol = await this.restClient.authenticate(this.user, this.password);
     if(rol === 'USUARIO'){
       this.global.role = 'USUARIO';

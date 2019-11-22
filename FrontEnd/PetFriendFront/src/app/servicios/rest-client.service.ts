@@ -18,12 +18,11 @@ export class RestClientService {
       params = params.append('pass', password);
       this.http.get('http://localhost:9890/usuario/validateLogin', {headers: headers, withCredentials: true, params: params, responseType: 'text' as 'text' })
       .subscribe(data => {
-        console.log(data);
+
         resolve(data);
       },
       err => {
-        console.log('error');
-        console.log(err);
+
         resolve(null);
       })
       ;
@@ -38,8 +37,7 @@ export class RestClientService {
         resolve(data);
       },
       err => {
-        console.log('error');
-        console.log(err);
+
         resolve(null);
       })
       ;
@@ -50,11 +48,10 @@ export class RestClientService {
   registrarUsuario(usuario: Usuario){
     this.http.post('http://localhost:9890/public/registrarUsuario', usuario, {responseType: 'text' as 'text' })
     .subscribe(data => {
-      console.log(data);
+
     },
     err => {
-      console.log('error');
-      console.log(err);
+
     })
     ;
   }
@@ -62,11 +59,10 @@ export class RestClientService {
   registrarTienda(usuario: Usuario){
     this.http.post('http://localhost:9890/public/registrarTienda', usuario, {responseType: 'text' as 'text' })
     .subscribe(data => {
-      console.log(data);
+
     },
     err => {
-      console.log('error');
-      console.log(err);
+
     })
     ;
   }

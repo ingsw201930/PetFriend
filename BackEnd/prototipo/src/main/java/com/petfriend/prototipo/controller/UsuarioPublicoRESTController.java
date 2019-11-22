@@ -42,12 +42,10 @@ public class UsuarioPublicoRESTController {
 		List<Integer> randoms = animalAdopRepo.findRandom();
 		List<Integer> ids = new ArrayList<Integer>();
 		List<Publicacion> solution = new ArrayList<Publicacion>();
-		System.out.println("Lo pide");
 		for (int i=0 ; i<10 ; ++i) {
 
 			if(randoms.size() > i){
 				ids.add(randoms.get(i));
-				System.out.println(ids.get(i));
 			}
 		}
 		for (Integer integer : ids) {
@@ -60,7 +58,6 @@ public class UsuarioPublicoRESTController {
 	@ResponseBody
 	public String registrarUsuario(@RequestBody PersonaNatural pNatural)
 	{
-		System.out.println("Se intenta registrar");
 		Usuario u = this.usuarioRepo.findByCorreo(pNatural.getCorreo());
 		if(u != null)
 			return "USUARIO EXISTENTE";
@@ -88,52 +85,32 @@ public class UsuarioPublicoRESTController {
 		return this.controlPub.pedirPublicacionesAdopcion();
 	}
 
+	@GetMapping("/Perdido")
+	public Iterable<Publicacion> pedirAPerdido()
+	{
+		return this.controlPub.pedirPublicacionesPerdido();
+	}
+	@GetMapping("/Servicios")
+	public Iterable<Publicacion> pedirServicios()
+	{
+		return this.controlPub.pedirPublicacionesServicios();
+	}
 	@GetMapping("/Busqueda/Adopcion/Avanzada")
 	public Iterable<Publicacion> pedirAAdopcionFiltros(@RequestBody Filtros filtros)
 	{
-		/*System.out.println("");
-		System.out.println("");
-		System.out.println("entra master");
-
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");*/
 		return this.controlPub.pedirPublicacionesAdopcionFiltros(filtros);
 	}
 
 	@GetMapping("/Busqueda/Perdido/Avanzada")
 	public Iterable<Publicacion> pedirAPerdidoFiltros(@RequestBody Filtros filtros)
 	{
-		/*System.out.println("");
-		System.out.println("");
-		System.out.println("entra master");
-
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");*/
 		return this.controlPub.pedirPublicacionesPerdidoFiltros(filtros);
 	}
 
 	@GetMapping("/Busqueda/Encontrado/Avanzada")
 	public Iterable<Publicacion> pedirAEncontradoFiltros(@RequestBody Filtros filtros)
 	{
-		/*System.out.println("");
-		System.out.println("");
-		System.out.println("entra master");
-
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");*/
 		return this.controlPub.pedirPublicacionesEncontradoFiltros(filtros);
-	}
-
-	@GetMapping("/home")
-	public Iterable<PublicacionAnimal> getAAdopcion()
-	{
-		return this.animalAdopRepo.findAll();
 	}
 
 }

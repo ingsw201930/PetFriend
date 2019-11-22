@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PublicacionService } from 'src/app/servicios/publicacion.service';
 import { Filtros } from 'src/app/modelo/filtros';
 import { RouterLink, Router } from '@angular/router';
@@ -16,6 +16,7 @@ export class EncontrarAvanzadoComponent implements OnInit {
   color2: string = '';
   genero: string='';
   esterilizado: string='';
+  Basico = false;
 
   @Output() salidaEspecie = new EventEmitter<string>();
   @Output() salidaRaza = new EventEmitter<string>();

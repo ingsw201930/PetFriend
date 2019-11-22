@@ -45,7 +45,6 @@ public class UsuarioIniciadoRESTController {
 	@RequestMapping({ "/validateLogin" })
 	@ResponseBody
 	public String validateLogin(@RequestParam(defaultValue = "correo") String correo, @RequestParam(defaultValue = "pass") String pass) {
-		System.out.println("ENTRA");
 		Usuario u = this.usuarioRepo.findByCorreo(correo);
 		if(u == null)
 			return null;
@@ -68,7 +67,6 @@ public class UsuarioIniciadoRESTController {
 		Usuario u = this.usuarioRepo.findByCorreo(correo);
 		if(u == null)
 		return null;
-		System.out.println(u.getIdUsuario());
 		return "" + u.getIdUsuario();
 	}
 	

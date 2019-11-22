@@ -47,9 +47,6 @@ import { BuscarServicioComponent } from './componentes/buscar-servicio/buscar-se
 import { BuscarEncontradosComponent } from './componentes/buscar-encontrados/buscar-encontrados.component';
 import { BuscarAdoptarComponent } from './componentes/buscar-adoptar/buscar-adoptar.component';
 
-//import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
-
-import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [

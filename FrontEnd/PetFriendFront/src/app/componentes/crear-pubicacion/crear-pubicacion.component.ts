@@ -48,7 +48,7 @@ export class CrearPubicacionComponent implements OnInit {
   preview(files) {
     const mimeType = files[0].type;
     if (mimeType.match(/image\/*/) == null) {
-      console.log('Only images are supported.');
+
       return;
     }
     const reader = new FileReader();
@@ -58,7 +58,7 @@ export class CrearPubicacionComponent implements OnInit {
       if (this.url1 === 'assets/pet.png') {
         this.servP.urls[0]=reader.result;
         this.url1 = this.servP.urls[0];
-        //console.log(this.url1);
+
         return;
       }
 
@@ -99,7 +99,7 @@ export class CrearPubicacionComponent implements OnInit {
 
 
   onChoseLocation(event){
-    console.log(event);
+
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
   }

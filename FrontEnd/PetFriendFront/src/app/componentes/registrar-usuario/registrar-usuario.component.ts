@@ -31,7 +31,7 @@ export class RegistrarUsuarioComponent implements OnInit {
   preview(files) {
     const mimeType = files[0].type;
     if (mimeType.match(/image\/*/) == null) {
-      console.log('Only images are supported.');
+
       return;
     }
     const reader = new FileReader();
@@ -41,7 +41,7 @@ export class RegistrarUsuarioComponent implements OnInit {
      
        //this.service.urls[0]=reader.result;
         //this.url1 = this.service.urls[0];
-        //console.log(this.url1);
+
         this.url1 = reader.result;
         return;
       

@@ -5,6 +5,8 @@ import { Global } from 'src/app/modelo/global';
 import { Publicacion } from 'src/app/modelo/publicacion';
 import { PublicacionService } from 'src/app/servicios/publicacion.service';
 import { PublicacionAdopcion } from 'src/app/modelo/publicacion-adopcion';
+import { Router } from '@angular/router';
+import { AnimalCompañia } from 'src/app/modelo/animal-compañia';
 
 @Component({
   selector: 'app-pantalla-principal',
@@ -33,17 +35,17 @@ export class PantallaPrincipalComponent implements OnInit {
 
   publicaciones: any[];
 
-  constructor(private service: PublicacionService, private global: Global) {
+  constructor(private service: PublicacionService, private global: Global, private router: Router) {
     this.rols = global.role;
     this.name = global.nameCurrentUser;
-    console.log('constructor ' + this.rols);
 
+    
   }
 
 
   async ngOnInit(): Promise<void> {
     this.publicaciones = await this.service.getRandom();
-    console.log(this.publicaciones);
+
     if (this.publicaciones == null)
     {
       return;
@@ -51,21 +53,35 @@ export class PantallaPrincipalComponent implements OnInit {
     let cont = 1;
     this.publicaciones.forEach(element => {
       this.imagen[cont] = element.imagen1;
-      console.log(element.imagen1);
+
       cont++;
     });
   }
 
   selectImage(i) {
-    console.log(i);
+    //console.log(i);
+    let animal: AnimalCompañia;
+    animal.nombre = this.publicaciones[i].animal.nombre ;
+    animal.especie = this.publicaciones[i].animal.especie;
+    animal.raza = this.publicaciones[i].animal.raza;
+    animal.edad = this.publicaciones[i].animal.edad;
+    animal.color1 = this.publicaciones[i].animal.color1;
+    animal.color2 = this.publicaciones[i].animal.color2;
+    animal.descripcion = this.publicaciones[i].descripcion;
+    animal.genero = this.publicaciones[i].animal.genero;
+    animal.esterilizado = this.publicaciones[i].animal.esterilizado;
+    animal.fecha = this.publicaciones[i].fecha;
+
+    this.service.send(animal);
+
+    this.router.navigate(['/PublicacionFinal']);
   }
 
   private changedRole() {
-    console.log(this.rols);
-    console.log(this.global.nameCurrentUser);
+
     this.global.nameCurrentUser = this.name;
     this.global.role = this.rols;
-    console.log(this.global.nameCurrentUser);
+
   }
 
 }

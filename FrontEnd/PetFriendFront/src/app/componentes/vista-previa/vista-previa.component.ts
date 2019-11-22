@@ -51,7 +51,7 @@ export class VistaPreviaComponent implements OnInit {
   }
 
   enviarPublicacion() {
-    console.log("llegamos aquí");
+
     this.servPub.send(this.animal);
     this.router.navigate(['/PublicacionFinal']);
   }

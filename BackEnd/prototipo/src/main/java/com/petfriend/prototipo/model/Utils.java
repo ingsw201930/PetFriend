@@ -26,7 +26,6 @@ public class Utils {
         try {
             for (int readNum; (readNum = fis.read(buf)) != -1;) {
                 bos.write(buf, 0, readNum);      
-                System.out.println("read " + readNum + " bytes,");
             }
         } catch (IOException ex) {
         }
@@ -58,7 +57,5 @@ public class Utils {
         ImageIO.write(bufferedImage, "jpeg", imageFile);
         //"jpeg" is the format of the image
         //imageFile is the file to be written to.
- 
-        System.out.println(imageFile.getPath());
     }
 }

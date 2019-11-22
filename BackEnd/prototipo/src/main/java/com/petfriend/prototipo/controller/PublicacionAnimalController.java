@@ -8,10 +8,12 @@ import com.petfriend.prototipo.model.Filtros;
 import com.petfriend.prototipo.model.Publicacion;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
+import com.petfriend.prototipo.model.PublicacionServicio;
 import com.petfriend.prototipo.repositories.IPublicacionAEncontradoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAdopcionRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionRepositorio;
+import com.petfriend.prototipo.repositories.IPublicacionServicioRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,32 +22,53 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 public class PublicacionAnimalController {
 
     @Autowired
-    private IPublicacionRepositorio<Publicacion> pubRepo;
-    @Autowired
-    private IPublicacionAdopcionRepositorio<PublicacionAdopcion> animalAdopRepo;
+    private IPublicacionAdopcionRepositorio<PublicacionAdopcion> pubAnimalAdopRepo;
     @Autowired
     private IPublicacionAPerdidoRepositorio animalPerdRepo;
     @Autowired
     private IPublicacionAEncontradoRepositorio animalEncRepo;
+    @Autowired
+    private IPublicacionServicioRepositorio servRepo;
     
 
     public Iterable<Publicacion> pedirPublicacionesAdopcion() {
-        Iterable<PublicacionAnimal> aux = animalAdopRepo.findAll();
+        Iterable<PublicacionAnimal> aux = pubAnimalAdopRepo.findAll();
 		List<Publicacion> solution = new ArrayList<Publicacion>();
 		for (PublicacionAnimal a : aux) {
-			solution.add(this.pubRepo.findById(a.getId()).get());
+			solution.add(a);
+		}
+        return solution;
+    }
+    public Iterable<Publicacion> pedirPublicacionesPerdido() {
+        Iterable<PublicacionAnimal> aux = animalPerdRepo.findAll();
+		List<Publicacion> solution = new ArrayList<Publicacion>();
+		for (PublicacionAnimal a : aux) {
+			solution.add(a);
+		}
+        return solution;
+        //System.out.println("jaja "+solution.size());
+    }
+    public Iterable<Publicacion> pedirPublicacionesEncontrado() {
+        Iterable<PublicacionAnimal> aux = animalEncRepo.findAll();
+		List<Publicacion> solution = new ArrayList<Publicacion>();
+		for (PublicacionAnimal a : aux) {
+			solution.add(a);
+		}
+        return solution;
+    }
+    public Iterable<Publicacion> pedirPublicacionesServicios()
+    {
+        Iterable<PublicacionServicio> aux = servRepo.findAll();
+		List<Publicacion> solution = new ArrayList<Publicacion>();
+		for (PublicacionServicio a : aux) {
+			solution.add(a);
 		}
         return solution;
     }
     
     public Iterable<Publicacion> pedirPublicacionesAdopcionFiltros(final Filtros filtros) {
         List<Animal> auxAnimal=new ArrayList<>();
-        //System.out.println("entra 2"+filtros.getEspecie());
-        //Iterable<Animal> au=animalRepo.findAllByEspecie("Canino");
-        //System.out.println(" kaka "+au.toString());
-        //System.out.println("al menos");
-        //System.out.println(" llega 10! "+filtros.getColor1());
-        List<PublicacionAnimal> auxAn=(List<PublicacionAnimal>) animalAdopRepo.findAll();
+        List<PublicacionAnimal> auxAn=(List<PublicacionAnimal>) pubAnimalAdopRepo.findAll();
         for(PublicacionAnimal pAn: auxAn)
         {
             auxAnimal.add(pAn.getAnimal());    
@@ -55,10 +78,8 @@ public class PublicacionAnimalController {
             List<Integer> nums=new ArrayList<>();
             for(int i=0; i<auxAnimal.size(); i++)
             {
-                //System.out.println(" v "+auxAnimal.get(i).getColor1()+" c "+filtros.getColor1()+" id "+ auxAnimal.get(i).getIdAnimal());
                 if(!auxAnimal.get(i).getColor1().equalsIgnoreCase(filtros.getColor1()))
                 {
-                    //System.out.println("elimina");
                     nums.add(i);
                 }
             }
@@ -68,7 +89,6 @@ public class PublicacionAnimalController {
             }
         }
         
-        //System.out.println("entra 1  _________________________________");
         if(filtros.getColor2()!=null)
         {
             List<Integer> nums=new ArrayList<>();
@@ -85,7 +105,6 @@ public class PublicacionAnimalController {
             }
         }
         
-        //System.out.println("entra 2  _________________________________");
         if(filtros.getEdad()!=null)
         {
             List<Integer> nums=new ArrayList<>();
@@ -102,7 +121,6 @@ public class PublicacionAnimalController {
             }
         }
         
-        //System.out.println("entra 3  _________________________________");
         if(filtros.getEsterilizado()!=null)
         {
             List<Integer> nums=new ArrayList<>();
@@ -173,14 +191,19 @@ public class PublicacionAnimalController {
         }
         
         //System.out.println("entra 7  _________________________________");
-		List<Publicacion> solution = new ArrayList<Publicacion>();
-		for(Animal a : auxAnimal) {
-            //System.out.println(" id: "+);
-            solution.add(this.pubRepo.findById(a.getPublicacion().getId()).get());
+        List<Publicacion> solution = new ArrayList<Publicacion>();
+        for(PublicacionAnimal pAn: auxAn)
+        {
+            for(int i=0; i<auxAnimal.size(); i++)
+            {
+                if(pAn.getAnimal().getIdAnimal()==auxAnimal.get(i).getIdAnimal())
+                    solution.add(pAn);
+            }
+                
         }
         return solution;
     }
-    public Iterable<Publicacion> pedirPublicacionesEncontradoFiltros(final Filtros filtros) {
+    public Iterable<Publicacion> pedirPublicacionesEncontradoFiltros(final Filtros filtros){
         List<Animal> auxAnimal=new ArrayList<>();
         //System.out.println("entra 2"+filtros.getEspecie());
         //Iterable<Animal> au=animalRepo.findAllByEspecie("Canino");
@@ -315,10 +338,15 @@ public class PublicacionAnimalController {
         }
         
         //System.out.println("entra 7  _________________________________");
-		List<Publicacion> solution = new ArrayList<Publicacion>();
-		for(Animal a : auxAnimal) {
-            //System.out.println(" id: "+);
-            solution.add(this.pubRepo.findById(a.getPublicacion().getId()).get());
+        List<Publicacion> solution = new ArrayList<Publicacion>();
+        for(PublicacionAnimal pAn: auxAn)
+        {
+            for(int i=0; i<auxAnimal.size(); i++)
+            {
+                if(pAn.getAnimal().getIdAnimal()==auxAnimal.get(i).getIdAnimal())
+                    solution.add(pAn);
+            }
+                
         }
         return solution;
     }
@@ -438,7 +466,7 @@ public class PublicacionAnimalController {
                 auxAnimal.remove((int)nums.get(i));
             }
         }
-
+        
         //System.out.println("entra 6  _________________________________");
         if(filtros.getEspecie()!=null)
         {
@@ -457,10 +485,15 @@ public class PublicacionAnimalController {
         }
         
         //System.out.println("entra 7  _________________________________");
-		List<Publicacion> solution = new ArrayList<Publicacion>();
-		for(Animal a : auxAnimal) {
-            //System.out.println(" id: "+);
-            solution.add(this.pubRepo.findById(a.getPublicacion().getId()).get());
+        List<Publicacion> solution = new ArrayList<Publicacion>();
+        for(PublicacionAnimal pAn: auxAn)
+        {
+            for(int i=0; i<auxAnimal.size(); i++)
+            {
+                if(pAn.getAnimal().getIdAnimal()==auxAnimal.get(i).getIdAnimal())
+                    solution.add(pAn);
+            }
+                
         }
         return solution;
     }

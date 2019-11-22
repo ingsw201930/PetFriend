@@ -31,7 +31,7 @@ export class PublicacionService {
   }
   setTipoPublicacion(nom: string){
     this.tipoPublicacion = nom;
-    //console.log(this.tipoPublicacion);
+
   }
 
   getTipoPublicacion():string{
@@ -50,8 +50,7 @@ export class PublicacionService {
         resolve(randomPubs);
       },
       err => {
-        console.log('error');
-        console.log(err);
+
         resolve(null);
       });
     });
@@ -89,11 +88,10 @@ export class PublicacionService {
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
         this.http.post('http://localhost:9890/usuario/' + this.global.id + '/publicacionAAdopcion', this.publicacionAdopcion, {headers: headers, withCredentials: true })
         .subscribe(data=> {
-          console.log('entra');
+
         },
         err => {
-          console.log('error');
-          console.log(err);
+
         })
         //)
         ;
@@ -121,11 +119,10 @@ export class PublicacionService {
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
         this.http.post('http://localhost:9890/usuario/' + this.global.id + '/publicacionAEncontrado', this.publicacionEncontrado, {headers: headers, withCredentials: true })
         .subscribe(data=> {
-          console.log('entra');
+
         },
         err => {
-          console.log('error');
-          console.log(err);
+
         })
         //)
         ;
@@ -152,17 +149,66 @@ export class PublicacionService {
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
         this.http.post('http://localhost:9890/usuario/' + this.global.id + '/publicacionAPerdido', this.publicacionPerdido, {headers: headers, withCredentials: true })
         .subscribe(data=> {
-          console.log('entra');
+
         },
         err => {
-          console.log('error');
-          console.log(err);
+
         })
         //)
         ;
     }
     return true;
   }
+  async getPublicacionesPerdidos(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/Perdido').subscribe(data => {
+        let pubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          pubs.push(temp);
+        }
+        resolve(pubs);
+      },
+      err => {
 
+        resolve(null);
+      });
+    });
+  }
+  async getPublicacionesAdopcion(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/Adopcion').subscribe(data => {
+        let pubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          pubs.push(temp);
+        }
+        resolve(pubs);
+      },
+      err => {
+
+        resolve(null);
+      });
+    });
+  }
+  async getPublicacionesServicios(): Promise<Publicacion[]>{
+    return new Promise(resolve => {
+      this.http.get('http://localhost:9890/public/Servicios').subscribe(data => {
+        let pubs = [];
+        for(var i in data){
+          let temp = new Publicacion();
+          Object.assign(temp, data[i]);
+          pubs.push(temp);
+        }
+        resolve(pubs);
+      },
+      err => {
+
+        resolve(null);
+      });
+    });
+  }
   constructor(private http: HttpClient, private global: Global) { }
 }
