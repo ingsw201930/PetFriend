@@ -7,7 +7,7 @@
                         <button (click)="buscar()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq">Buscar</button>
                     </form>
                     <label class="boton">
-                            <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
+                            <input type="checkbox" data-md-icheck />
                             <button (click)="cambiarMetodo()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq"><span class="checkmark">▲ Busqueda avanzada</span></button>
                     </label>
                 </div>
@@ -20,7 +20,7 @@
                                                          (salidaRefugio) = "refugio = $event"
                                                          (salidaPeluqueria) = "peluqueria = $event"
                                                          (salidaComida) = "comida = $event"
-                                                         (salidaAccesorios) = "accesorios = $event"
+                                                         (salidaAccesorios) = "accesorio = $event"
                                                          (salidaPaseo) = "paseo = $event"
                                                          (salidaGuarderia) = "guarderia = $event"
                                                          (salidaBanos) = "banos = $event"

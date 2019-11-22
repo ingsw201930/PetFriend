@@ -77,7 +77,7 @@ export class PantallaPrincipalComponent implements OnInit {
     this.router.navigate(['/PublicacionFinal']);
   }
 
-  private changedRole() {
+   changedRole() {
 
     this.global.nameCurrentUser = this.name;
     this.global.role = this.rols;

@@ -11,7 +11,7 @@ export class PerfilPropioPublicacionesVacioComponent implements OnInit {
   cantidadPublicaciones: number = 0; 
   imagen: any = 'assets/Perro.png';
   constructor(private router: Router) { }
-
+  url1: any;
   ngOnInit() {
     this.nombreUsuario = 'aaa';
     if(this.cantidadPublicaciones >= 1){
