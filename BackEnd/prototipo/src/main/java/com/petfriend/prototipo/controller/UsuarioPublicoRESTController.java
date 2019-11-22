@@ -53,18 +53,46 @@ public class UsuarioPublicoRESTController {
 		return this.controlPub.pedirPublicacionesAdopcion();
 	}
 
-	@GetMapping("/Adopcion/Avanzada")
+	@GetMapping("/Busqueda/Adopcion/Avanzada")
 	public Iterable<Publicacion> pedirAAdopcionFiltros(@RequestBody Filtros filtros)
 	{
-		System.out.println("");
+		/*System.out.println("");
 		System.out.println("");
 		System.out.println("entra master");
 		
 		System.out.println("-------------------------------------------");
 		System.out.println("-------------------------------------------");
 		System.out.println("-------------------------------------------");
-		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
 		return this.controlPub.pedirPublicacionesAdopcionFiltros(filtros);
+	}
+
+	@GetMapping("/Busqueda/Perdido/Avanzada")
+	public Iterable<Publicacion> pedirAPerdidoFiltros(@RequestBody Filtros filtros)
+	{
+		/*System.out.println("");
+		System.out.println("");
+		System.out.println("entra master");
+		
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
+		return this.controlPub.pedirPublicacionesPerdidoFiltros(filtros);
+	}
+
+	@GetMapping("/Busqueda/Encontrado/Avanzada")
+	public Iterable<Publicacion> pedirAEncontradoFiltros(@RequestBody Filtros filtros)
+	{
+		/*System.out.println("");
+		System.out.println("");
+		System.out.println("entra master");
+		
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
+		return this.controlPub.pedirPublicacionesEncontradoFiltros(filtros);
 	}
 
 	@GetMapping("/home")
