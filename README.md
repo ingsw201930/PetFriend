@@ -24,6 +24,7 @@ Manual de prueba
 
 3.4 Escribir en la terminal npm update
 
+3.5 Escribir en la terminal npm install @agm/core
 4. Se instala PostgreSQL, se deja como usuario postgres(el que trae por defecto).
 La contraseña que se coloca debe se 'admin' 
 por ultimo cuando se ha instalado con el pgAdmin se inicia y se crea una base de 
