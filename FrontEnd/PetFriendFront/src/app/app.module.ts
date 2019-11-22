@@ -92,7 +92,7 @@ import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    MatFormFieldModule
+    MatFormFieldModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBjghgOsi0i6FzSnXV7lIBDqp4t0YS0T48'
     })
