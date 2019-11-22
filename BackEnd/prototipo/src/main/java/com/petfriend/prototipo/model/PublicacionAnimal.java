@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 @Entity
 @PrimaryKeyJoinColumn(name = "id_publicacion")
 public class PublicacionAnimal extends Publicacion {
-	@OneToOne(mappedBy = "publicacion")
+	@OneToOne
 	private Animal animalAsociado;
 	
 	public Animal getAnimal() {

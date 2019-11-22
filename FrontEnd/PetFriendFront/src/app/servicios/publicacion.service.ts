@@ -73,11 +73,17 @@ export class PublicacionService {
       if(this.urls[3] !== 'assets/pet.png')
         this.publicacionAdopcion.imagen4 = this.urls[3];
 
-      
-      console.log(this.publicacionAdopcion);
-
         const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
-        this.http.post('http://localhost:9890/usuario/1/publicacionAAdopcion', this.publicacionAdopcion, {headers});
+        this.http.post('http://localhost:9890/usuario/1/publicacionAAdopcion', this.publicacionAdopcion, {headers: headers, withCredentials: true })
+        .subscribe(data=> {
+          console.log('entra');
+        },
+        err => {
+          console.log('error');
+          console.log(err);
+        })
+        //)
+        ;
     }
     else if(this.tipoPublicacion == 'encontrado'){
       this.publicacionEncontrado = new PublicacionAEncontrado;
@@ -95,8 +101,9 @@ export class PublicacionService {
       if(this.urls[3] !== 'assets/pet.png')
         this.publicacionEncontrado.imagen4 = this.urls[3];
 
-      this.http.post('http://localhost:9890/usuario/1/publicacionAEncontrado',
-        this.publicacionEncontrado).subscribe(data=> {
+        const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
+        this.http.post('http://localhost:9890/usuario/1/publicacionAEncontrado', this.publicacionEncontrado, {headers: headers, withCredentials: true })
+        .subscribe(data=> {
           console.log('entra');
         },
         err => {
@@ -122,8 +129,9 @@ export class PublicacionService {
       if(this.urls[3] !== 'assets/pet.png')
         this.publicacionPerdido.imagen4 = this.urls[3];
 
-      this.http.post('http://localhost:9890/usuario/1/publicacionAPerdido',
-        this.publicacionPerdido).subscribe(data=> {
+        const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user' + ':' + 'password') });
+        this.http.post('http://localhost:9890/usuario/1/publicacionAPerdido', this.publicacionPerdido, {headers: headers, withCredentials: true })
+        .subscribe(data=> {
           console.log('entra');
         },
         err => {

@@ -32,16 +32,13 @@ public class Animal implements Serializable{
     @Column(name = "SEXO")
     private Character sexo;
     @Column(name = "ESTERILIZADO")
-    private Boolean esterilizado;
-    @OneToOne
-    @JsonIgnore
-    private PublicacionAnimal publicacion;
+	private Boolean esterilizado;
+	
     //TODO --- fotos
     
-    public Animal(PublicacionAnimal publicacion, String nombre, String especie, String raza, String color1, String color2,
+    public Animal(String nombre, String especie, String raza, String color1, String color2,
 			Character sexo, Boolean esterilizado) {
 		super();
-		this.publicacion = publicacion;
 		this.nombre = nombre;
 		this.especie = especie;
 		this.raza = raza;
@@ -66,13 +63,6 @@ public class Animal implements Serializable{
 	}
 	public void setIdAnimal(int idAnimal) {
 		this.idAnimal = idAnimal;
-	}
-		
-	public PublicacionAnimal getPublicacion() {
-		return publicacion;
-	}
-	public void setPublicacion(PublicacionAnimal publicacion) {
-		this.publicacion = publicacion;
 	}
 	public String getNombre() {
 		return nombre;

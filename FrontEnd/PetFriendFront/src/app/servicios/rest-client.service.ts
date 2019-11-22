@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Sesion } from '../modelo/sesion';
 
 @Injectable()
 export class RestClientService {
@@ -10,7 +11,18 @@ export class RestClientService {
 
   authenticate(username: string, password: string) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    console.log(this.http.get('http://localhost:9890/usuario/1/validateLogin',{headers}));
+    let params = new HttpParams();
+    params = params.append('correo', 'user@correo.com');
+    this.http.get('http://localhost:9890/usuario/validateLogin', {headers: headers, withCredentials: true, params: params})
+    .subscribe(data=> {
+      console.log('entra');
+    },
+    err => {
+      console.log('error');
+      console.log(err);
+    })
+    //)
+    ;
   }
 
   getCompanies() {

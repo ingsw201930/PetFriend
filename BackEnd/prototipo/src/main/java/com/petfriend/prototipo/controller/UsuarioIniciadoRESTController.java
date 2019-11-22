@@ -4,10 +4,12 @@ import com.petfriend.prototipo.model.PublicacionAEncontrado;
 import com.petfriend.prototipo.model.PublicacionAPerdido;
 import com.petfriend.prototipo.model.PublicacionAdopcion;
 import com.petfriend.prototipo.model.PublicacionAnimal;
+import com.petfriend.prototipo.model.Sesion;
+import com.petfriend.prototipo.model.Usuario;
 import com.petfriend.prototipo.repositories.IPublicacionAEncontradoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAPerdidoRepositorio;
 import com.petfriend.prototipo.repositories.IPublicacionAdopcionRepositorio;
-import com.petfriend.prototipo.security.User;
+import com.petfriend.prototipo.repositories.IUsuarioRepositorio;
 
 //import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +19,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping({"/usuario"})
 public class UsuarioIniciadoRESTController {
 	@Autowired
 	private IPublicacionAdopcionRepositorio<PublicacionAdopcion> animalAdopRepo;
 	@Autowired
 	private IPublicacionAPerdidoRepositorio animalPerdRepo;
+	@Autowired
+	private IUsuarioRepositorio usuarioRepo;
 	@Autowired
 	private IPublicacionAEncontradoRepositorio animalEncRepo;
 	@Autowired
@@ -33,8 +40,11 @@ public class UsuarioIniciadoRESTController {
 
 	@GetMapping(produces = "application/json")
 	@RequestMapping({ "/validateLogin" })
-	public User validateLogin() {
-		return new User( "User succesfully authenticated");
+	@ResponseBody
+	public Sesion validateLogin(@RequestParam(defaultValue = "correo") String correo) {
+		Usuario u = this.usuarioRepo.findByCorreo(correo);
+		System.out.println(u.getIdUsuario());
+		return new Sesion(u.getIdUsuario(), correo, true);
 	}
 	
 	@PostMapping("{id}/publicacionAAdopcion")

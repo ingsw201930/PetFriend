@@ -44,17 +44,17 @@ public class FactoriaPublicacion {
 			p.setDuenho(u);
 			
 			//u.pushPublicacion(p);
-			Animal a= new Animal(p,
-								 pAnimal.getAnimal().getNombre(),
+			Animal a= new Animal(pAnimal.getAnimal().getNombre(),
 								 pAnimal.getAnimal().getEspecie(),
 								 pAnimal.getAnimal().getRaza(),
 								 pAnimal.getAnimal().getColor1(),
 								 pAnimal.getAnimal().getColor2(),
 								 pAnimal.getAnimal().getSexo(),
 								 pAnimal.getAnimal().getEsterilizado());
-			aux=this.animalAdopRepo.save(p);
-			animalRepo.save(a);
-			//usuarioRepo.save(u);
+			p.setAnimal(a);
+			this.animalRepo.save(a);
+			this.animalAdopRepo.save(p);
+			aux=p; 
 		}	
 		return aux;
 	}
@@ -73,7 +73,7 @@ public class FactoriaPublicacion {
 			p.setImagen4(pAnimal.getImagen4());
 			p.setDuenho(u);
 			//u.pushPublicacion(p);
-			Animal a= new Animal(p,pAnimal.getAnimal().getNombre(),
+			Animal a= new Animal(pAnimal.getAnimal().getNombre(),
 								 pAnimal.getAnimal().getEspecie(),
 								 pAnimal.getAnimal().getRaza(),
 								 pAnimal.getAnimal().getColor1(),
@@ -101,7 +101,7 @@ public class FactoriaPublicacion {
 			p.setImagen4(pAnimal.getImagen4());
 			p.setDuenho(u);
 			//u.pushPublicacion(p);
-			Animal a= new Animal(p, pAnimal.getAnimal().getNombre(),
+			Animal a= new Animal(pAnimal.getAnimal().getNombre(),
 								 pAnimal.getAnimal().getEspecie(),
 								 pAnimal.getAnimal().getRaza(),
 								 pAnimal.getAnimal().getColor1(),

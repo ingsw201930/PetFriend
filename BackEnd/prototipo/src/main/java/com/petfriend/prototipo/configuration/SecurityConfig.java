@@ -1,9 +1,10 @@
 package com.petfriend.prototipo.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -38,33 +39,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private LogoutSuccessHandler logoutSuccessHandler;
     
-	@Bean
-    public PasswordEncoder encoder() {
-        return new BCryptPasswordEncoder();
-    }
-	@Override
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-		.withUser("admin").password("{noop}password").roles("ADMIN")
+	@Autowired
+	public void configureGlobal(final AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+        .withUser("user").password("{noop}password").roles("USER")
         .and()
-        .withUser("user").password("{noop}password").roles("USER");
-		
-	}
+        .withUser("admin").password("{noop}password").roles("ADMIN");
+    }
+    
 	@Override
-	public void configure(HttpSecurity http) throws Exception {
+	public void configure(final HttpSecurity http) throws Exception {
 		
         http
         .cors()
-        .and()
-        .csrf().disable()
-        .exceptionHandling()
-        .authenticationEntryPoint(entryPoint)
         .and()
         .authorizeRequests()
             .antMatchers("/public/**", "/login/**", "/test/**","/pubAnimal/**").permitAll()
             .antMatchers("/admin/**").hasRole("ADMIN")
             .antMatchers("/usuario/**").hasRole("USER")
             .anyRequest().authenticated()
+        .and()
+        .httpBasic()
         .and()
         .formLogin()
             .successHandler(successHandler)
@@ -73,25 +68,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .logout() 
             .logoutSuccessHandler(logoutSuccessHandler)
         .and()
+        .csrf().disable()
         ;
-/*         http.csrf().disable().
-        authorizeRequests().
-        antMatchers(HttpMethod.OPTIONS, "/**").permitAll().
-        anyRequest().authenticated().
-        and().
-        httpBasic(); */
+		
     }
+
     @Bean
 	public CorsFilter corsFilter() {
 		// ver https://stackoverflow.com/a/42053745
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
 		config.setAllowCredentials(true);
-		config.addAllowedOrigin("http://localhost:4200");
+		config.addAllowedOrigin("*");
 		config.addAllowedHeader("*");
 		config.addAllowedMethod("*");
 		source.registerCorsConfiguration("/**", config);
-		return new CorsFilter(source);
+        return new CorsFilter(source);
     }
-    
+
 }
