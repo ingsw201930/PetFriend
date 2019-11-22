@@ -5,7 +5,6 @@
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-16 " placeholder="Buscar animales, refugios o tiendas" aria-label="Search">
                         <button (click)="buscar()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq">Buscar</button>
-                        <h1>esto{{resultado}}</h1>
                     </form>
                     <label class="boton">
                             <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
@@ -17,18 +16,24 @@
                         <app-busqueda-servicios-basico></app-busqueda-servicios-basico>
                     </div>
                     <div class="mostrarAvanzado" *ngIf="!Basico">
-                        <app-busqueda-servicios-avanzado (salida) = "resultado = $event"></app-busqueda-servicios-avanzado>
+                        <app-busqueda-servicios-avanzado (salidaVeterinaria) = "veterinaria = $event"
+                                                         (salidaRefugio) = "refugio = $event"
+                                                         (salidaPeluqueria) = "peluqueria = $event"
+                                                         (salidaComida) = "comida = $event"
+                                                         (salidaAccesorios) = "accesorios = $event"
+                                                         (salidaPaseo) = "paseo = $event"
+                                                         (salidaGuarderia) = "guarderia = $event"
+                                                         (salidaBanos) = "banos = $event"
+                                                         (salidaAseo) = "aseo = $event"
+                                                         (salidaJuguetes) = "juguetes = $event"
+                                                         (salidaSnacks) = "snacks = $event"
+                                                         (salidaEspecie) = "especie = $event"></app-busqueda-servicios-avanzado>
                         
                     </div>
                 </div>        
             </div>
             
-        </section>
-        <label class="boton">
-                <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
-                <button (click)="algoF()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq"><span class="checkmark">▲ Busqueda avanzada</span></button>
-        </label>
-        <h1>Final: {{resultado}}</h1>     
+        </section>  
     </body>
             
             

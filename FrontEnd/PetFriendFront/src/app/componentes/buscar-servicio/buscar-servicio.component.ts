@@ -11,17 +11,23 @@ import { BuscarServicioService } from 'src/app/servicios/buscar-servicio.service
 })
 export class BuscarServicioComponent implements OnInit {
   Basico: boolean = true;
-  Buscar: string;
-  algo: string;
-  resultado: string;
-  servicioBuscar: Servicio;
+  veterinaria: boolean = false;
+  refugio:boolean = false;
+  peluqueria:boolean = false;
+  comida:boolean = false;
+  accesorio:boolean = false;
+  paseo:boolean = false;
+  guarderia:boolean = false;
+  banos:boolean = false;
+  aseo:boolean = false;
+  juguetes:boolean = false;
+  snacks:boolean = false;
+  especie:boolean = false;
 
-  constructor( private serv: BuscarServicioService) { }
+  constructor() { }
 
   ngOnInit() {
   }
-
-
 
   cambiarMetodo(){
     if(this.Basico == false){
@@ -32,9 +38,8 @@ export class BuscarServicioComponent implements OnInit {
     }
   }
 
-  algoF(){
-    this.servicioBuscar = this.serv.getServicio();
-    this.resultado = this.servicioBuscar.especie;
+  buscar(){
+    
   }
-  
+
 }

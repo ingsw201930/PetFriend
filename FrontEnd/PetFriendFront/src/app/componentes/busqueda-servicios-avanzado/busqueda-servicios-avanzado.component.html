@@ -61,22 +61,13 @@
                 
                 <h2>Seleccione especie del animal</h2>
                 <div class="EspecieAnimal">
-                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie1">
+                    <select (click) = "onClick()" class="custom-select" id="inputGroupSelect02" [(ngModel)]="especie">
                         <option value="Canino">Canino</option>
                         <option value="Felino">Felino</option>
                         <option value="Otro">Otro</option>
                     </select>
-                    <h1>{{especie1}}</h1>
                 </div>
 
-                <label class="boton">
-                        <input type="checkbox" data-md-icheck (change)="toggleVisibility($event)"/>
-                        <button (click)="func1()" class="btn btn-outline-success my-2 my-sm-0 " type="submit" value="busq"><span class="checkmark">▲ Busqueda avanzada</span></button>
-                </label>
-
-                <div class="w" *ngIf="show">
-                    <h1>{{especie1}}</h1>
-                </div>
-               
+             
        
             </div>
