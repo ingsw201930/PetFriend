@@ -35,7 +35,7 @@ export class BuscarEncontradosComponent implements OnInit {
   }
 
   buscar(){
-    this.router.navigate(['Resultados-Servicios']);
+    this.router.navigate(['/ResultadosEncontrar']);
   }
 
 }

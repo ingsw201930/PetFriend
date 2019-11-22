@@ -1,1 +1,31 @@
-<p>resultados-busqueda works!</p>
+<body>
+        <section id="Usuario-Propio">
+            <div class="Contenedores">
+                <div class="formPrincipal">
+
+                </div>
+                <div class="ContenedorPublicaciones">
+                    <ul>
+                        <li *ngFor="let publi of items; let i = index">
+                            <div class="Publicacion" *ngIf="show">
+                                <div class="Descripcion-Publicacion">
+                                    <div class="Titulo-Publicacion">
+                                        <h1>{{tituloPublicacion}}</h1>
+                                        <h2>{{descripcionPublicacion}}</h2>
+                                    </div>        
+                                </div>
+                                <div class="Imagen-Publicacion">
+                                    <img id="imgUsuario" [src]="url1" width="75%" height="75%">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>        
+            </div>
+        </section>
+            
+                
+</body>
+            
+            
+            
