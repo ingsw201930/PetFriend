@@ -22,7 +22,10 @@ export class CrearPubicacionComponent implements OnInit {
   animal: AnimalCompañia = new AnimalCompañia;
   title: string = 'imagen';
   fecha: string = '';
-  ban: boolean =this.servP.getTipoPublicacion() == 'adopcion';
+  lat = 4.628385;
+  lng = -74.064968;
+  drag = true;
+  ban: boolean = this.servP.getTipoPublicacion() == 'adopcion';
 
   imgURL: any;
   public message: string;
@@ -90,4 +93,9 @@ export class CrearPubicacionComponent implements OnInit {
     this.router.navigate(['/VistaPrevia']);
   }
 
+  onChoseLocation(event){
+    console.log(event);
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng;
+  }
 }

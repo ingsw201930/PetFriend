@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,13 +14,14 @@ import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestClientService } from './servicios/rest-client.service';
-import { RegistroComponent } from './componente/registro/registro.component';
-import { RegistrarUsuarioComponent } from './componente/registrar-usuario/registrar-usuario.component';
-import { RegistrarEntidadComponent } from './componente/registrar-entidad/registrar-entidad.component';
-import { AnimalesSimilaresComponent } from './componente/animales-similares/animales-similares.component';
-import { AnimalesComponent } from './componente/animales/animales.component';
-import { BusquedaComponent } from './componente/busqueda/busqueda.component';
-import { ResultadosBusquedaComponent } from './componente/resultados-busqueda/resultados-busqueda.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
+import { RegistrarEntidadComponent } from './componentes/registrar-entidad/registrar-entidad.component';
+import { AnimalesSimilaresComponent } from './componentes/animales-similares/animales-similares.component';
+import { AnimalesComponent } from './componentes/animales/animales.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { ResultadosBusquedaComponent } from './componentes/resultados-busqueda/resultados-busqueda.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,10 @@ import { ResultadosBusquedaComponent } from './componente/resultados-busqueda/re
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBjghgOsi0i6FzSnXV7lIBDqp4t0YS0T48'
+    })
   ],
   providers: [RestClientService],
   bootstrap: [AppComponent]
